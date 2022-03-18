@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+  
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8MEPQP7RCV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-8MEPQP7RCV');
+  </script>
+
+ 
+<script>
+  (function(h,o,t,j,a,r){
+      h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+      h._hjSettings={hjid:2857053,hjsv:6};
+      a=o.getElementsByTagName('head')[0];
+      r=o.createElement('script');r.async=1;
+      r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+      a.appendChild(r);
+  })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+
+  <meta charset="utf-8">
+  
+  <title>Man in the Middle Attacks by ARP Spoofing | Gourav Dhar</title>
+  <meta property="og:title" content=Man&#32;in&#32;the&#32;Middle&#32;Attacks&#32;by&#32;ARP&#32;Spoofing&#32;|&#32;Gourav&#32;Dhar />
+  <meta name="twitter:title" content=Man&#32;in&#32;the&#32;Middle&#32;Attacks&#32;by&#32;ARP&#32;Spoofing&#32;|&#32;Gourav&#32;Dhar>
+  
+
+  
+  <meta property="og:image" content=https://gourav-dhar.com/images/blogs/mitm.jpeg />
+  <meta name="twitter:image" content=https://gourav-dhar.com/images/blogs/mitm.jpeg/>
+  
+
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="A man in the middle (MITM) attack is a term for when a machine positions itself in between a connection between a user and the internet to impersonate one of the parties.">
+  <meta name="twitter:description" content="A man in the middle (MITM) attack is a term for when a machine positions itself in between a connection between a user and the internet to impersonate one of the parties.">
+  <meta property="og:description" content="A man in the middle (MITM) attack is a term for when a machine positions itself in between a connection between a user and the internet to impersonate one of the parties."/>
+
+  <meta name="author" content="Gourav">
+  <meta name="generator" content="Hugo 0.68.3" />
+
+  <!-- plugins -->
+  
+  <link rel="stylesheet" href="https://gourav-dhar.com/plugins/bootstrap/bootstrap.min.css ">
+  
+  <link rel="stylesheet" href="https://gourav-dhar.com/plugins/slick/slick.css ">
+  
+  <link rel="stylesheet" href="https://gourav-dhar.com/plugins/themify-icons/themify-icons.css ">
+  
+
+  <!-- Main Stylesheet -->
+  
+  <link rel="stylesheet" href="https://gourav-dhar.com/scss/style.min.css" media="screen">
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="https://gourav-dhar.com/images/favicon.png " type="image/x-icon">
+  <link rel="icon" href="https://gourav-dhar.com/images/favicon.png " type="image/x-icon">
+
+  
+  
+
+  
+
+</head><body><div id="preloader">
+
+<!-- preloader start -->
+<div class="preloader">
+  
+  <img src="https://gourav-dhar.com/images/hourglass.gif " alt="preloader">
+  
+</div>
+<!-- preloader end -->
+
+</div><div id="header">
+<!-- navigation -->
+<header class="navigation">
+  <div class="container">
+    
+    <nav class="navbar navbar-expand-lg navbar-white bg-transparent border-bottom pl-0">
+      <a class="navbar-brand mobile-view" href="https://gourav-dhar.com/"><img class="img-fluid"
+          src="https://gourav-dhar.com/images/logo.webp" alt="Gourav Dhar | Software Dev, Blogger, Hacker | IIT Roorkee &#39;19"></a>
+      <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation">
+        <i class="ti-menu"></i>
+      </button>
+
+      <div class="collapse navbar-collapse text-center" id="navigation">
+        <div class="desktop-view">
+          <ul class="navbar-nav mr-auto">
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://twitter.com/go_rrrave" target="_blank"><i class="ti-twitter-alt"></i></a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.instagram.com/go_rrrave" target="_blank"><i class="ti-instagram"></i></a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/gouravdhar" target="_blank"><i class="ti-github"></i></a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://in.linkedin.com/in/gouravdhar" target="_blank"><i class="ti-linkedin"></i></a>
+            </li>
+            
+          </ul>
+        </div>
+
+        <a class="navbar-brand mx-auto desktop-view" href="https://gourav-dhar.com/"><img class="img-logo"
+            src="https://gourav-dhar.com/images/logo.webp" alt="Gourav Dhar | Software Dev, Blogger, Hacker | IIT Roorkee &#39;19"></a>
+
+        <ul class="navbar-nav">
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://gourav-dhar.com/about/">About</a>
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://gourav-dhar.com/blogs/">Blogs</a>
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://gourav-dhar.com/profile">profile</a>
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://gourav-dhar.com/contact/">Contact</a>
+          </li>
+          
+          
+        </ul>
+
+        
+        <!-- search -->
+        <div class="search pl-lg-4">
+          <button id="searchOpen" class="search-btn"><i class="ti-search"></i></button>
+          <div class="search-wrapper">
+            <form action="https://gourav-dhar.com//search" class="h-100">
+              <input class="search-box px-4" id="search-query" name="s" type="search" placeholder="Type & Hit Enter...">
+            </form>
+            <button id="searchClose" class="search-close"><i class="ti-close text-dark"></i></button>
+          </div>
+        </div>
+        
+
+        
+      </div>
+    </nav>
+  </div>
+</header>
+<!-- /navigation -->
+</div>
+
+<section class="section-sm">
+  <div class="container">
+    <div class="row">
+       
+      <div class="col-lg-8 mx-auto">
+        
+        <a href="/categories/ethical-hacking"
+          class="text-primary">Ethical hacking</a>
+        
+        <h1>Man in the Middle Attacks by ARP Spoofing : Tutorials and Examples</h1>
+        <div class="mb-3 post-meta">
+          <span>By Gourav</span>
+          
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          <span>19 February 2022</span>
+          
+        </div>
+        
+        <img src="https://gourav-dhar.com/images/blogs/mitm.webp" class="img-fluid w-100 mb-4" alt="Man in the Middle Attacks by ARP Spoofing | Gourav Dhar">
+        
+        <div class="content mb-5">
+          <h2 id="what-is-man-in-the-middle-mitm-attack">What is Man in The Middle (MITM) Attack?</h2>
+<p>A man in the middle (MITM) attack is a general term for when a machine positions itself in between a connection between a client/user and the server/internet — either to eavesdrop or to impersonate one of the parties, making it appear as if a normal exchange of information is underway. This is nicely depicted in the diagram below.</p>
+<p><img src="../../images/blogs/nline.webp" alt="newline"></p>
+<p><img src="https://miro.medium.com/max/1400/1*PdbdGQ0FTixcik0S3KZWoA.jpeg" alt="mitm"></p>
+<p><img src="../../images/blogs/nline.webp" alt="newline"></p>
+<p>The MiTM attacker will be able to place himself/herself between the user and the internet server to see what is happening. We will be using an ARP spoofing attack to achieve this. Before starting let’s know what is ARP protocol and how we are going to exploit it to become the man-in-the-middle.</p>
+<h2 id="what-is-arp">What is ARP?</h2>
+<p>ARP stands for <strong>Address Resolution Protocol</strong>. It links the IP addresses to the device MAC addresses. Each computer in a network will have a table storing IP addresses of the device in a network with their MAC addresses. <strong>So whenever data is sent in a network, it will be sent to the device having the MAC address associated with the destination IP of the packet</strong>. We can see this ARP table by running the following command.</p>
+<pre><code>$ arp -a
+</code></pre><p>For me, this is the output:</p>
+<p><img src="https://miro.medium.com/max/1400/1*WCchoGOF6EzsWTKbi-u_mg.png" alt="mitm"></p>
+<h2 id="arp-spoofing">ARP Spoofing</h2>
+<p>ARP Spoofing can be achieved by telling the router that the user’s IP corresponds to our MAC address. We will also tell the user that the router’s IP address corresponds to my MAC address. <strong>And guess what</strong> !!! all the traffic between the user and router will now flow through our machine.</p>
+<p><strong>The reason</strong> that this exploit is possible is because the ARP protocol is not secure, the client machines will accept responses even if they didn’t send requests and the client machines won’t even verify before updating their ARP table. You can look at the image below for a graphical representation of what we will be achieving.</p>
+<p><img src="../../images/blogs/nline.webp" alt="newline">
+<img src="https://miro.medium.com/max/1400/1*4QWVg3dlgut9JUovHPH09w.png" alt="mitm">
+webp</p>
+<p>As mentioned, we will be using an ARP spoofing attack to be the Man-In-The-Middle. ARP Spoofing will redirect the flow of packets. So instead of packets flowing directly between the client and access point, it would redirect through our system. This means that we will be able to see all the websites, usernames, passwords, images that the user is browsing.</p>
+<p>Let’s practically see how this would work. I am using Ubuntu 20.04 for executing all the below commands. The commands will remain the same for any Debian-based Linux Machine. <code>Kali Linux</code> is preferred since it will have most of the tools pre-installed. The tool I will be using is <code>bettercap</code> . It’s an open-source tool. Let’s download it and install it by running the following commands in your terminal :</p>
+<pre><code>$ wget &quot;https://github.com`curl -s https://github.com/bettercap/bettercap/releases | grep -E -o '/bettercap/bettercap/releases/download/v[0-9.]+/bettercap_linux_amd64_(|v)[0-9.]+zip' | head -n 1`&quot;
+$ unzip bettercap_linux_amd64_*zip
+$ sudo mv bettercap /usr/local/bin/
+$ rm bettercap_linux_amd64_*
+</code></pre><p><img src="../../images/blogs/nline.webp" alt="newline"></p>
+<p>Run <code>bettercap -h</code> to see that the installation is proper</p>
+<pre><code>$ bettercap -h
+</code></pre><p><img src="../../images/blogs/nline.webp" alt="newline"></p>
+<blockquote>
+<p>Note : There’s an optional step. If you want you can change your MAC address. This is a way to hide your identity on the network. To do this, you can follow the steps here: <a href="https://gourav-dhar.com/blogs/how-to-change-mac-address/" title="How to change MAC address">How to change MAC Address</a>?</p>
+</blockquote>
+<h2 id="being-the-man-in-the-middle">Being the Man In The Middle</h2>
+<h3 id="1-get-the-interface-name-by-running-ifconfig-in-the-terminal">1. Get the interface name by running &lsquo;ifconfig&rsquo; in the terminal</h3>
+<p><img src="https://miro.medium.com/max/1400/1*-r6OdsM1pvoRtX9HBT4KFA.png" alt="mitm"></p>
+<p>As you can see I have 2 interfaces, <code>wlan0</code> and <code>wlxb0a7b9b32df2</code> . I will choose <code>wlxb0a7b9b32df2</code> interface and use it in further commands. You can choose any of them.</p>
+<h3 id="2-get-inside-the-bettercap-tool-by-running-the-following-command">2. Get inside the <code>bettercap</code> tool by running the following command.</h3>
+<p><code>interface-name</code> is the name we fetched in the above step.</p>
+<pre><code>$ bettercap -iface &lt;interface-name&gt;
+</code></pre><p><img src="https://miro.medium.com/max/1400/1*Ptz7T4CowKAbWa-Un9X-ZQ.png" alt="image"></p>
+<p><img src="../../images/blogs/nline.webp" alt="newline"></p>
+<p>Hereafter we will write all the commands inside this shell.</p>
+<blockquote>
+<p>ProTip : You can type <code>help</code> inside this shell to get a list of all the cool stuff you can do using bettercap</p>
+</blockquote>
+<h3 id="3-getting-the-list-of-device-ips-connected-with-the-router">3. Getting the list of device IPs connected with the router</h3>
+<p>We require a list of devices connected to the router so that we can select a target device on which we will perform the attack.</p>
+<p>To do this we will start the <code>net.probe</code> module. This module will keep probing for new hosts on the network by sending dummy UDP packets to every possible IP on the subnet. To turn <code>net.probe</code> on, execute the below command</p>
+<pre><code>bettercap-shell&gt; net.probe on
+</code></pre><p><img src="https://miro.medium.com/max/1400/1*g9C1NMj3sEYU3AS1N8TINg.png" alt="image"></p>
+<p><img src="../../images/blogs/nline.webp" alt="newline"></p>
+<p>Turning it on will also trigger the <code>net.recon</code> module on which will read the ARP cache in order to monitor for new hosts on the network and create a nice list out of it.</p>
+<p>To view this list run the following command</p>
+<pre><code>bettercap-shell&gt; net.show
+</code></pre><p><img src="../../images/blogs/nline.webp" alt="newline"></p>
+<p>The output should look something like this:</p>
+<p><img src="https://miro.medium.com/max/1400/1*B_FwE-NKV2GYLjxjhe9YHg.png" alt="image"></p>
+<p><img src="../../images/blogs/nline.webp" alt="newline"></p>
+<p>Note down the IP of the target device on which we want to perform ARP spoofing. For my case, it is the device with the name <code>infinee.local</code> and target IP is <code>192.168.29.65</code>.</p>
+<h3 id="4-arp-spoofing-attack-on-the-target-ip">4. ARP spoofing attack on the target IP</h3>
+<p>Now we will run the ARP spoofing attack on the target device. This will place us in between the user and the router. So we can intercept the data and see all the URLs and the websites the target device is visiting, and anything the user posts. We will use the <code>arp.spoof</code> module provided by <code>berttercap</code>.</p>
+<p>If you wish you can run help <code>arp.spoof</code> to see the list of options provided by this module. We will need to set the <code>arp.spoof.fullduplex</code> option to true. Doing this will spoof both the target device and the router and we will be in the middle of the connection. We will do this by running the following command.</p>
+<pre><code>bettercap-shell&gt; set arp.spoof.fullduplex true
+</code></pre><p><img src="../../images/blogs/nline.webp" alt="newline"></p>
+<p>Next, we should set the target using the below command. <code>target_ip</code> for me here is <code>192.168.29.65</code> . And turn it on by typing <code>arp.spoof on</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">bettercap</span><span style="color:#f92672">-</span><span style="color:#a6e22e">shell</span><span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">set</span> <span style="color:#a6e22e">arp</span>.<span style="color:#a6e22e">spoof</span>.<span style="color:#a6e22e">targets</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">target_ip</span><span style="color:#f92672">&gt;</span>
+<span style="color:#a6e22e">bettercap</span><span style="color:#f92672">-</span><span style="color:#a6e22e">shell</span><span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">arp</span>.<span style="color:#a6e22e">spoof</span> <span style="color:#a6e22e">on</span>
+</code></pre></div><p><img src="https://miro.medium.com/max/1400/1*NG6QrMQJ5fEXJ-ak7SAyrw.png" alt="image"></p>
+<p><img src="../../images/blogs/nline.webp" alt="newline"></p>
+<p><code>arp.spoof</code> on will do 3 things:</p>
+<ul>
+<li>Tell the router that I am the user at <code>target_ip</code></li>
+<li>Tell the machine at <code>target_ip</code> that I am the router</li>
+<li>Enable port forwarding so that my machine can seamlessly transfer data between these two</li>
+</ul>
+<p><em>Kudos!!! We are now Man-in-The-Middle.</em> We can now capture packets using a program of our own or use Wireshark. For this blog, we will use a tool provided by <code>bettercap</code>. Once you are man-in-the-middle, there will be a small lag on the page load time on the target machine.</p>
+<p><img src="../../images/blogs/nline.webp" alt="newline"></p>
+<p><img src="https://miro.medium.com/max/960/1*b2161ERDq2waFv03CffpPA.jpeg" alt="image"></p>
+<h3 id="packet-sniffing">Packet Sniffing</h3>
+<p>We have to tell <code>bettercap</code> to capture all the data that flows through this computer and analyze it for me. To do this we will use the <code>net.sniff </code>module provided by <code>bettercap</code> . Simply run the following command to start sniffing.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">bettercap</span><span style="color:#f92672">-</span><span style="color:#a6e22e">shell</span><span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">net</span>.<span style="color:#a6e22e">sniff</span> <span style="color:#a6e22e">on</span>
+</code></pre></div><p><img src="https://miro.medium.com/max/1400/1*ALZBkUvgs0NXEBj6iis4Rw.png" alt="image"></p>
+<p><img src="../../images/blogs/nline.webp" alt="newline"></p>
+<p>As you can see, we are able to see the API requests and the request bodies transferred between the client machine and the internet.</p>
+<p>We had to write so many <code>bettercap</code> commands for ARP-spoofing. We can write all these commands in a <code>*.cap</code> file where * is any file name and execute them through <code>bettercap</code>. For this, I will create a file called <code>arp-spoof.cap</code> with the following contents</p>
+<p><img src="../../images/blogs/nline.webp" alt="newline"></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">net</span>.<span style="color:#a6e22e">probe</span> <span style="color:#a6e22e">on</span>
+<span style="color:#a6e22e">set</span> <span style="color:#a6e22e">arp</span>.<span style="color:#a6e22e">spoof</span>.<span style="color:#a6e22e">fullduplex</span> <span style="color:#66d9ef">true</span>
+<span style="color:#a6e22e">set</span> <span style="color:#a6e22e">arp</span>.<span style="color:#a6e22e">spoof</span>.<span style="color:#a6e22e">targets</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">target_ip</span><span style="color:#f92672">&gt;</span>
+<span style="color:#a6e22e">arp</span>.<span style="color:#a6e22e">spoof</span> <span style="color:#a6e22e">on</span>
+<span style="color:#a6e22e">net</span>.<span style="color:#a6e22e">sniff</span> <span style="color:#a6e22e">on</span>
+</code></pre></div><p><img src="../../images/blogs/nline.webp" alt="newline"></p>
+<p>We call this a caplet. To execute it, run the following command in the terminal:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">$</span> <span style="color:#a6e22e">bettercap</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">iface</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">interface_name</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">caplet</span> <span style="color:#a6e22e">arp</span><span style="color:#f92672">-</span><span style="color:#a6e22e">spoof</span>.<span style="color:#a6e22e">cap</span>
+</code></pre></div><p><img src="https://miro.medium.com/max/1400/1*EOxM6pcok4FgvL8xYQYwgw.png" alt="image"></p>
+<h3 id="sniff-packets-using-wireshark">Sniff packets using WireShark</h3>
+<p>Alternatively, we can use a sniffing tool called <code>Wireshark</code> to sniff these packets. We will still need to do arp spoofing using <code>bettercap</code>. <code>Wireshark</code> is just a replacement of the <code>net.sniff</code> module of <code>bettercap</code>.</p>
+<p>Run the following commands to install <code>wireshark</code> :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">$</span> <span style="color:#a6e22e">sudo</span> <span style="color:#a6e22e">add</span><span style="color:#f92672">-</span><span style="color:#a6e22e">apt</span><span style="color:#f92672">-</span><span style="color:#a6e22e">repository</span> <span style="color:#a6e22e">ppa</span><span style="color:#f92672">:</span><span style="color:#a6e22e">wireshark</span><span style="color:#f92672">-</span><span style="color:#a6e22e">dev</span><span style="color:#f92672">/</span><span style="color:#a6e22e">stable</span>
+<span style="color:#a6e22e">$</span> <span style="color:#a6e22e">sudo</span> <span style="color:#a6e22e">apt</span><span style="color:#f92672">-</span><span style="color:#a6e22e">get</span> <span style="color:#a6e22e">update</span>
+<span style="color:#a6e22e">$</span> <span style="color:#a6e22e">sudo</span> <span style="color:#a6e22e">apt</span><span style="color:#f92672">-</span><span style="color:#a6e22e">get</span> <span style="color:#a6e22e">install</span> <span style="color:#a6e22e">wireshark</span>
+</code></pre></div><p><img src="../../images/blogs/nline.webp" alt="newline"></p>
+<p>To start <code>wireshark</code> :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">$</span> <span style="color:#a6e22e">sudo</span> <span style="color:#a6e22e">wireshark</span>
+</code></pre></div><p><img src="../../images/blogs/nline.webp" alt="newline"></p>
+<p>From the UI of <code>wireshark</code>, we select the network interface that we got in step 1. And our sniffer will start as shown in the pictures below.</p>
+<p><img src="https://miro.medium.com/max/1400/1*mLPSpGgLc6ZFTfQ80yUthw.png" alt="image">
+<img src="https://miro.medium.com/max/1400/1*v6GwoBKvUE_jDXWOu9WQYg.png" alt="image"></p>
+<p><img src="../../images/blogs/nline.webp" alt="newline"></p>
+<p>The network packets viewed by both the methods — <code>bettercap</code> and <code>Wireshark</code> are the same, just that <code>wireshark</code> is the UI way of <code>net.sniff</code> inbettercap with slightly more information.</p>
+<p>This method won’t work for packets sent over the <code>HTTPS</code> protocol. We will only be able to read packets that are sent over the HTTP protocol.</p>
+<p>However, there are caplets available on the internet that can be executed via <code>bettercap</code> that will help you to partially bypass the <code>HTTPS</code> and the <code>HSTS</code> protocols. You can find one such caplet here: <a href="https://github.com/bettercap/caplets/tree/master/hstshijack" title="Bypass HTTPS">ByPass HTTPS</a></p>
+
+        </div>
+
+        
+        
+      </div>
+
+      
+      <div class="col-lg-4" id="sidebar">
+    <div class="widgets">
+      
+      <div class="widget">
+        
+        <h4 class="widget-title">About the author</h4>
+        
+        <a href="https://gourav-dhar.com/about/"><img src="https://gourav-dhar.com/images/author.webp" alt=""
+          class="img-fluid author-thumb-sm d-block mx-auto rounded-circle mb-4" loading="lazy"></a>
+        
+        
+        <p>I am Gourav Dhar, a 2019 graduate from IIT Roorkee where I pursued my bachelors in Electronics and Communication Engineering.</p>
+        <a href="https://gourav-dhar.com/about/" class="btn btn-outline-primary">Know More</a>
+        
+      </div>
+          
+      <div class="widget">
+          <h4 class="widget-title">Similar Blogs</h4>
+          <div class="container" id="test">
+            <div class="col">
+                
+              <div class="row-lg-4 similar-post-border">
+                <article class="media">
+                  
+                    
+                      <a href= "https://gourav-dhar.com/blogs/how-i-created-my-first-web-crawler-cool-tech-stuff/" class="h5 d-block mb-3"><div class="recent-post-thumb mr-3" style="background-image: url('https://gourav-dhar.com/images/blogs/first-web-crawler/webcrawler.webp');"></div></a>
+                    
+                  
+                  
+                  <div class="media-body">
+                    <div class="mb-3 post-meta">
+                      
+                      <span>12 Mar 2022</span>
+                      
+                    </div>
+                    
+                      <a href= "https://gourav-dhar.com/blogs/how-i-created-my-first-web-crawler-cool-tech-stuff/" class="h5 d-block mb-3">How I created my first Web Crawler!</a>
+                      <a href= "https://gourav-dhar.com/blogs/how-i-created-my-first-web-crawler-cool-tech-stuff/" class="btn btn-outline-primary">read more</a>
+                    
+                    
+                  </div>
+                </article>
+              </div>
+              
+              <div class="row-lg-4 similar-post-border">
+                <article class="media">
+                  
+                    
+                      <a href= "https://gourav-dhar.com/blogs/how-i-created-my-trojan-malware-ethical-hacking/" class="h5 d-block mb-3"><div class="recent-post-thumb mr-3" style="background-image: url('https://gourav-dhar.com/images/blogs/trojan/0_cover.webp');"></div></a>
+                    
+                  
+                  
+                  <div class="media-body">
+                    <div class="mb-3 post-meta">
+                      
+                      <span>06 Mar 2022</span>
+                      
+                    </div>
+                    
+                      <a href= "https://gourav-dhar.com/blogs/how-i-created-my-trojan-malware-ethical-hacking/" class="h5 d-block mb-3">How I created a Trojan Malware</a>
+                      <a href= "https://gourav-dhar.com/blogs/how-i-created-my-trojan-malware-ethical-hacking/" class="btn btn-outline-primary">read more</a>
+                    
+                    
+                  </div>
+                </article>
+              </div>
+              
+              <div class="row-lg-4 similar-post-border">
+                <article class="media">
+                  
+                    
+                      <a href= "https://gourav-dhar.com/blogs/hack-wifi-passwords-crack-wpa2-wifi-passwords-using-brute-force-attacks/" class="h5 d-block mb-3"><div class="recent-post-thumb mr-3" style="background-image: url('https://gourav-dhar.com/images/blogs/wifi/wifi.webp');"></div></a>
+                    
+                  
+                  
+                  <div class="media-body">
+                    <div class="mb-3 post-meta">
+                      
+                      <span>12 Feb 2022</span>
+                      
+                    </div>
+                    
+                      <a href= "https://gourav-dhar.com/blogs/hack-wifi-passwords-crack-wpa2-wifi-passwords-using-brute-force-attacks/" class="h5 d-block mb-3">Hack WiFi Passwords</a>
+                      <a href= "https://gourav-dhar.com/blogs/hack-wifi-passwords-crack-wpa2-wifi-passwords-using-brute-force-attacks/" class="btn btn-outline-primary">read more</a>
+                    
+                    
+                  </div>
+                </article>
+              </div>
+              
+              
+              <div class="row-lg-4 similar-post-border">
+                <article class="media">
+                  
+                    
+                      <a href= "https://gourav-dhar.com/blogs/spoofing-file-extensions-ethical-hacking/" class="h5 d-block mb-3"><div class="recent-post-thumb mr-3" style="background-image: url('https://gourav-dhar.com/images/blogs/exe-spoof/cover-1.webp');"></div></a>
+                    
+                  
+                  
+                  <div class="media-body">
+                    <div class="mb-3 post-meta">
+                      
+                      <span>05 Mar 2022</span>
+                      
+                    </div>
+                    
+                      <a href= "https://gourav-dhar.com/blogs/spoofing-file-extensions-ethical-hacking/" class="h5 d-block mb-3">Spoofing file extensions</a>
+                      <a href= "https://gourav-dhar.com/blogs/spoofing-file-extensions-ethical-hacking/" class="btn btn-outline-primary">read more</a>
+                    
+                    
+                  </div>
+                </article>
+              </div>
+              
+              <div class="row-lg-4 similar-post-border">
+                <article class="media">
+                  
+                    
+                      <a href= "https://gourav-dhar.com/blogs/information-gathering-first-step-towards-website-hacking/" class="h5 d-block mb-3"><div class="recent-post-thumb mr-3" style="background-image: url('https://gourav-dhar.com/images/blogs/infogathering/infogathering1.webp');"></div></a>
+                    
+                  
+                  
+                  <div class="media-body">
+                    <div class="mb-3 post-meta">
+                      
+                      <span>02 Mar 2022</span>
+                      
+                    </div>
+                    
+                      <a href= "https://gourav-dhar.com/blogs/information-gathering-first-step-towards-website-hacking/" class="h5 d-block mb-3">Information Gathering - Hacking</a>
+                      <a href= "https://gourav-dhar.com/blogs/information-gathering-first-step-towards-website-hacking/" class="btn btn-outline-primary">read more</a>
+                    
+                    
+                  </div>
+                </article>
+              </div>
+              
+              <div class="row-lg-4 similar-post-border">
+                <article class="media">
+                  
+                    
+                      <a href= "https://gourav-dhar.com/blogs/how-to-securely-browse-the-internet-prevent-data-leaks-while-connecting-to-public-wifi-networks/" class="h5 d-block mb-3"><div class="recent-post-thumb mr-3" style="background-image: url('https://gourav-dhar.com/images/blogs/securely.webp');"></div></a>
+                    
+                  
+                  
+                  <div class="media-body">
+                    <div class="mb-3 post-meta">
+                      
+                      <span>26 Feb 2022</span>
+                      
+                    </div>
+                    
+                      <a href= "https://gourav-dhar.com/blogs/how-to-securely-browse-the-internet-prevent-data-leaks-while-connecting-to-public-wifi-networks/" class="h5 d-block mb-3">How to securely browse the Internet while conencting to public networks</a>
+                      <a href= "https://gourav-dhar.com/blogs/how-to-securely-browse-the-internet-prevent-data-leaks-while-connecting-to-public-wifi-networks/" class="btn btn-outline-primary">read more</a>
+                    
+                    
+                  </div>
+                </article>
+              </div>
+              
+              <div class="row-lg-4 similar-post-border">
+                <article class="media">
+                  
+                    
+                      <a href= "https://gourav-dhar.com/blogs/man-in-the-middle-attacks-by-arp-spoofing-tutorials-and-examples/" class="h5 d-block mb-3"><div class="recent-post-thumb mr-3" style="background-image: url('https://gourav-dhar.com/images/blogs/mitm.webp');"></div></a>
+                    
+                  
+                  
+                  <div class="media-body">
+                    <div class="mb-3 post-meta">
+                      
+                      <span>19 Feb 2022</span>
+                      
+                    </div>
+                    
+                      <a href= "https://gourav-dhar.com/blogs/man-in-the-middle-attacks-by-arp-spoofing-tutorials-and-examples/" class="h5 d-block mb-3">Man in the Middle Attacks by ARP Spoofing</a>
+                      <a href= "https://gourav-dhar.com/blogs/man-in-the-middle-attacks-by-arp-spoofing-tutorials-and-examples/" class="btn btn-outline-primary">read more</a>
+                    
+                    
+                  </div>
+                </article>
+              </div>
+              
+              <div class="row-lg-4 similar-post-border">
+                <article class="media">
+                  
+                    
+                      <a href= "https://gourav-dhar.com/blogs/how-to-change-mac-address/" class="h5 d-block mb-3"><div class="recent-post-thumb mr-3" style="background-image: url('https://gourav-dhar.com/images/blogs/mac.webp');"></div></a>
+                    
+                  
+                  
+                  <div class="media-body">
+                    <div class="mb-3 post-meta">
+                      
+                      <span>12 Feb 2022</span>
+                      
+                    </div>
+                    
+                      <a href= "https://gourav-dhar.com/blogs/how-to-change-mac-address/" class="h5 d-block mb-3">How to change MAC Address?</a>
+                      <a href= "https://gourav-dhar.com/blogs/how-to-change-mac-address/" class="btn btn-outline-primary">read more</a>
+                    
+                    
+                  </div>
+                </article>
+              </div>
+              
+              <div class="row-lg-4 similar-post-border">
+                <article class="media">
+                  
+                    
+                      <a href= "https://blogs.gourav-dhar.com/create-a-stunning-portfolio-website-with-your-own-website-name-from-scratch-within-1-hour-59c2d3ee8b25"  class="h5 d-block mb-3"><div class="recent-post-thumb mr-3" style="background-image: url('https://gourav-dhar.com/images/blogs/createportfolio.webp');"></div></a>
+                    
+                  
+                  
+                  <div class="media-body">
+                    <div class="mb-3 post-meta">
+                      
+                      <span>15 Jan 2022</span>
+                      
+                    </div>
+                    
+                      <a href= "https://blogs.gourav-dhar.com/create-a-stunning-portfolio-website-with-your-own-website-name-from-scratch-within-1-hour-59c2d3ee8b25"  class="h5 d-block mb-3">Create and deploy a stunning portfolio website with your own website name from scratch within 1 hour</a>
+                      <a href= "https://blogs.gourav-dhar.com/create-a-stunning-portfolio-website-with-your-own-website-name-from-scratch-within-1-hour-59c2d3ee8b25"  class="btn btn-outline-primary">read more</a>
+                    
+                    
+                  </div>
+                </article>
+              </div>
+              
+            </div>
+          </div>
+       </div>
+  
+       
+    
+
+     
+     <div class="widget">
+        <h4 class="widget-title">Filter By Category</h4>
+        <ul class="list-unstyled">
+         
+
+            <li class="mb-3"><a class="p-2 bg-primary text-white"
+                href="/categories/cool-tech-stuff/">Cool-Tech-Stuff</a>
+              <br></li>
+         
+
+            <li class="mb-3"><a class="p-2 bg-primary text-white"
+                href="/categories/ethical-hacking/">Ethical-Hacking</a>
+              <br></li>
+         
+
+            <li class="mb-3"><a class="p-2 bg-primary text-white"
+                href="/categories/system-design/">System-Design</a>
+              <br></li>
+        </ul>
+      </div>
+  
+
+       
+<div class="widget">
+    <h4 class="widget-title">Filter By Tags</h4>
+    <ul class="list-inline">
+      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+          href="/tags/api/">Api</a></li>
+      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+          href="/tags/backend/">Backend</a></li>
+      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+          href="/tags/c&#43;&#43;/">C&#43;&#43;</a></li>
+      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+          href="/tags/cool-tech-stuff/">Cool tech stuff</a></li>
+      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+          href="/tags/hacking/">Hacking</a></li>
+      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+          href="/tags/network-security/">Network security</a></li>
+      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+          href="/tags/portfolio/">Portfolio</a></li>
+      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+          href="/tags/programming/">Programming</a></li>
+      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+          href="/tags/python/">Python</a></li>
+      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+          href="/tags/spoofing/">Spoofing</a></li>
+      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+          href="/tags/system-design/">System design</a></li>
+      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+          href="/tags/threads/">Threads</a></li>
+      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+          href="/tags/web-crawling/">Web crawling</a></li>
+      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+          href="/tags/web-scraping/">Web scraping</a></li>
+    </ul>
+  </div>
+   
+       
+<div class="widget">
+    <h4 class="widget-title">Social</h4>
+    <ul class="list-inline social-links">
+      
+      <li class="list-inline-item"><a href="https://twitter.com/go_rrrave" target="_blank"><i class="ti-twitter-alt"></i></a></li>
+      
+      <li class="list-inline-item"><a href="https://www.instagram.com/go_rrrave" target="_blank"><i class="ti-instagram"></i></a></li>
+      
+      <li class="list-inline-item"><a href="https://github.com/gouravdhar" target="_blank"><i class="ti-github"></i></a></li>
+      
+      <li class="list-inline-item"><a href="https://in.linkedin.com/in/gouravdhar" target="_blank"><i class="ti-linkedin"></i></a></li>
+      
+    </ul>
+  </div>
+      
+    </div>
+  </div>
+  
+      
+
+      <div class = "desktop-view">
+      
+<section>
+    <div class="container" id="test">
+
+      
+      <div class="widget">
+    <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="gouravdhar" data-color="#40DCA5" data-emoji=""  data-font="Arial" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script>    
+</div>
+
+
+        <h2>Similar Blogs</h2>
+        <br>
+      <div class="row">
+        
+        <div class="col-lg-4 small-post-border">
+          <article class="media">
+            
+            
+                  <a href= "https://gourav-dhar.com/blogs/spoofing-file-extensions-ethical-hacking/"><div class="recent-post-thumb mr-3" style="background-image: url('https://gourav-dhar.com/images/blogs/exe-spoof/cover-1.webp');"></div></a>
+                  
+                
+            
+            
+            <div class="media-body">
+              <div class="mb-3 post-meta">
+                
+                <span>05 Mar 2022</span>
+                
+              </div>
+              
+                <a href= "https://gourav-dhar.com/blogs/spoofing-file-extensions-ethical-hacking/" class="h5 d-block mb-3">Spoofing file extensions</a>
+                <a href= "https://gourav-dhar.com/blogs/spoofing-file-extensions-ethical-hacking/" class="btn btn-outline-primary">read more</a>
+              
+              
+            </div>
+          </article>
+        </div>
+        
+        <div class="col-lg-4 small-post-border">
+          <article class="media">
+            
+            
+                  <a href= "https://gourav-dhar.com/blogs/information-gathering-first-step-towards-website-hacking/"><div class="recent-post-thumb mr-3" style="background-image: url('https://gourav-dhar.com/images/blogs/infogathering/infogathering1.webp');"></div></a>
+                  
+                
+            
+            
+            <div class="media-body">
+              <div class="mb-3 post-meta">
+                
+                <span>02 Mar 2022</span>
+                
+              </div>
+              
+                <a href= "https://gourav-dhar.com/blogs/information-gathering-first-step-towards-website-hacking/" class="h5 d-block mb-3">Information Gathering - Hacking</a>
+                <a href= "https://gourav-dhar.com/blogs/information-gathering-first-step-towards-website-hacking/" class="btn btn-outline-primary">read more</a>
+              
+              
+            </div>
+          </article>
+        </div>
+        
+        <div class="col-lg-4 small-post-border">
+          <article class="media">
+            
+            
+                  <a href= "https://gourav-dhar.com/blogs/how-to-securely-browse-the-internet-prevent-data-leaks-while-connecting-to-public-wifi-networks/"><div class="recent-post-thumb mr-3" style="background-image: url('https://gourav-dhar.com/images/blogs/securely.webp');"></div></a>
+                  
+                
+            
+            
+            <div class="media-body">
+              <div class="mb-3 post-meta">
+                
+                <span>26 Feb 2022</span>
+                
+              </div>
+              
+                <a href= "https://gourav-dhar.com/blogs/how-to-securely-browse-the-internet-prevent-data-leaks-while-connecting-to-public-wifi-networks/" class="h5 d-block mb-3">How to securely browse the Internet while conencting to public networks</a>
+                <a href= "https://gourav-dhar.com/blogs/how-to-securely-browse-the-internet-prevent-data-leaks-while-connecting-to-public-wifi-networks/" class="btn btn-outline-primary">read more</a>
+              
+              
+            </div>
+          </article>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+  
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<div id="custom-modal" class="modal">
+
+    
+    <span class="close">&times;</span>
+  
+    
+    <img class="modal-content" id="modal-image">
+  
+    
+    <div id="caption"></div>
+  </div>
+<div id="footer">
+
+<section class="section-sm">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto text-center border-left border-right border-primary">
+        <h2 class = "news-letter-heading">Follow Me</h2>
+        <p class="text-light px-md-5 py-4 ">
+          If you are interested in tech blogs, follow me on Medium or LinkedIn and you will never miss my blogs.</p>
+        
+
+        <ul class="list-unstyled">
+
+            <li class="list-inline-item"><a class="p-2 bg-primary text-white"
+                href="https://blogs.gourav-dhar.com" target="_blank">Follow on Medium</a>
+              </li>
+
+            <li class = "list-inline-item"><a class="p-2 bg-primary text-white"
+                href="https://in.linkedin.com/in/gouravdhar" target="_blank">Follow on LinkedIn</a>
+              </li>
+
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+
+ 
+ <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" 
+ data-id="gouravdhar" data-description="Support me on Buy me a coffee!" 
+ data-message="Thank you for visiting. You can now buy me a coffee as a Thank You! " data-color="#40DCA5" data-position="Right" data-x_margin="18" data-y_margin="18">
+</script>
+
+ 
+
+ 
+ <script type="text/javascript" language="javascript" defer>
+  const postIPData = async () => {
+    
+    var delayInMilliseconds = 1500; 
+    let res2 = await fetch('https://api.ipify.org/?format=json').then(response => response.json());
+    const ip = res2.ip;
+    let addr = await fetch('https://ipinfo.io/'+ip+'?token=360b82d6f0c132').then(response => response.json());
+
+    var bodyFormData = new FormData();
+    bodyFormData.append('ip', ip);
+    bodyFormData.append('loc', addr.loc);
+    bodyFormData.append('city', addr.city);
+    bodyFormData.append('country', addr.country);
+    bodyFormData.append('org', addr.org);
+    bodyFormData.append('postal', addr.postal);
+    bodyFormData.append('region', addr.region);
+    bodyFormData.append('timezone', addr.timezone);
+    bodyFormData.append('time', Date());
+    
+    fetch('https://flask-qa-deploy-postgres.herokuapp.com/api',{
+      method:'post',
+      body: bodyFormData
+    }).then(response => {});
+
+  }
+  postIPData();
+  
+</script>
+
+
+
+
+
+
+<footer class="text-capitalize">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 text-center mb-5">
+        
+      </div>
+               
+      <div class="col-lg-3 col-sm-6 mb-5">
+        <h6 class="mb-4">Contact Me</h6>
+        <ul class="list-unstyled">
+          
+                     
+          <li class="mb-3"><i class="ti-location-pin mr-3 text-primary"></i>Delhi, India</li>
+          
+                     
+          <li class="mb-3"><a class="text-dark" href="mailto:gouravdhar.iitr@gmail.com"><i
+                class="ti-email mr-3 text-primary"></i>gouravdhar.iitr@gmail.com</a>
+          
+          </li>
+        </ul>
+      </div>
+      
+      <div class="col-lg-3 col-sm-6 mb-5 desktop-view">
+        <h6 class="mb-4">Social Contacts</h6>
+        <ul class="list-unstyled">
+          
+          <li class="mb-3"><a class="text-dark" href="https://twitter.com/go_rrrave">twitter</a></li>
+          
+          <li class="mb-3"><a class="text-dark" href="https://www.instagram.com/go_rrrave">instagram</a></li>
+          
+          <li class="mb-3"><a class="text-dark" href="https://github.com/gouravdhar">github</a></li>
+          
+          <li class="mb-3"><a class="text-dark" href="https://in.linkedin.com/in/gouravdhar">linkedin</a></li>
+          
+        </ul>
+      </div>
+      <div class="col-lg-3 col-sm-6 mb-5 desktop-view">
+        <h6 class="mb-4">Categories</h6>
+        <ul class="list-unstyled">
+          <li class="mb-3"><a class="text-dark"
+            href="/categories/cool-tech-stuff/">Cool tech stuff</a>
+          </li>
+          <li class="mb-3"><a class="text-dark"
+            href="/categories/ethical-hacking/">Ethical hacking</a>
+          </li>
+          <li class="mb-3"><a class="text-dark"
+            href="/categories/system-design/">System design</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-sm-6 mb-5">
+        <h6 class="mb-4">Quick Links</h6>
+        <ul class="list-unstyled">
+          
+          <li class="mb-3"><a class="text-dark" href="https://gourav-dhar.com/about/">About</a></li>
+          
+          <li class="mb-3"><a class="text-dark" href="https://gourav-dhar.com/blogs/">Blogs</a></li>
+          
+          <li class="mb-3"><a class="text-dark" href="https://gourav-dhar.com/profile">Profile</a></li>
+          
+          <li class="mb-3"><a class="text-dark" href="https://gourav-dhar.com/contact/">Contact</a></li>
+          
+        </ul>
+      </div>
+      <div class="col-12 border-top py-4 text-center">
+        | Made with ❤️ by Gourav |
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var indexURL = "https://gourav-dhar.com/index.json"
+</script>
+
+<!-- JS Plugins -->
+
+<script src="https://gourav-dhar.com/plugins/jQuery/jquery.min.js"></script>
+
+<script src="https://gourav-dhar.com/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="https://gourav-dhar.com/plugins/slick/slick.min.js"></script>
+
+<script src="https://gourav-dhar.com/plugins/venobox/venobox.min.js"></script>
+
+<script src="https://gourav-dhar.com/plugins/search/fuse.min.js"></script>
+
+<script src="https://gourav-dhar.com/plugins/search/mark.js"></script>
+
+<script src="https://gourav-dhar.com/plugins/search/search.js"></script>
+
+<!-- Main Script -->
+
+<script src="https://gourav-dhar.com/js/script.min.js"></script>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
+<div id="js-cookie-box" class="cookie-box cookie-box-hide">
+	This site uses cookies. By continuing to use this website, you agree to their use. <span id="js-cookie-button" class="btn btn-sm btn-primary ml-2">I Accept</span>
+</div>
+<script>
+	(function ($) {
+		const cookieBox = document.getElementById('js-cookie-box');
+		const cookieButton = document.getElementById('js-cookie-button');
+		if (!Cookies.get('cookie-box')) {
+			cookieBox.classList.remove('cookie-box-hide');
+			cookieButton.onclick = function () {
+				Cookies.set('cookie-box', true, {
+					expires:  2 
+				});
+				cookieBox.classList.add('cookie-box-hide');
+			};
+		}
+	})(jQuery);
+</script>
+
+
+<style>
+.cookie-box {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  z-index: 9999;
+  padding: 1rem 2rem;
+  background: rgb(71, 71, 71);
+  transition: all .75s cubic-bezier(.19, 1, .22, 1);
+  color: #fdfdfd;
+}
+
+.cookie-box-hide {
+  display: none;
+}
+</style>
+
+</div></body>
+</html>

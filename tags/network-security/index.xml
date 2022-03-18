@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Network Security on Gourav Dhar | Software Dev, Blogger, Hacker | IIT Roorkee &#39;19</title>
+    <link>https://gourav-dhar.com/tags/network-security/</link>
+    <description>Recent content in Network Security on Gourav Dhar | Software Dev, Blogger, Hacker | IIT Roorkee &#39;19</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 26 Feb 2022 10:07:47 +0600</lastBuildDate>
+    
+	<atom:link href="https://gourav-dhar.com/tags/network-security/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to securely browse the Internet | Prevent data leaks while connecting to public WiFi networks | Gourav Dhar</title>
+      <link>https://gourav-dhar.com/blogs/how-to-securely-browse-the-internet-prevent-data-leaks-while-connecting-to-public-wifi-networks/</link>
+      <pubDate>Sat, 26 Feb 2022 10:07:47 +0600</pubDate>
+      
+      <guid>https://gourav-dhar.com/blogs/how-to-securely-browse-the-internet-prevent-data-leaks-while-connecting-to-public-wifi-networks/</guid>
+      <description>Feeling insecure while browsing on public WiFi? This blog is for you.</description>
+    </item>
+    
+  </channel>
+</rss>

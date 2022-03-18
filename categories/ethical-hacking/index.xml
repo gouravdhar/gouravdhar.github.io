@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ethical Hacking on Gourav Dhar | Software Dev, Blogger, Hacker | IIT Roorkee &#39;19</title>
+    <link>https://gourav-dhar.com/categories/ethical-hacking/</link>
+    <description>Recent content in Ethical Hacking on Gourav Dhar | Software Dev, Blogger, Hacker | IIT Roorkee &#39;19</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 06 Mar 2022 10:07:47 +0600</lastBuildDate>
+    
+	<atom:link href="https://gourav-dhar.com/categories/ethical-hacking/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How I created a Trojan Malware - Ethical Hacking | By Gourav Dhar</title>
+      <link>https://gourav-dhar.com/blogs/how-i-created-my-trojan-malware-ethical-hacking/</link>
+      <pubDate>Sun, 06 Mar 2022 10:07:47 +0600</pubDate>
+      
+      <guid>https://gourav-dhar.com/blogs/how-i-created-my-trojan-malware-ethical-hacking/</guid>
+      <description>A Trojan horse (or Trojan) is one of the most common and dangerous types of threats that can infect your computer or mobile device.</description>
+    </item>
+    
+    <item>
+      <title>Spoofing file extensions - Ethical Hacking | By Gourav Dhar</title>
+      <link>https://gourav-dhar.com/blogs/spoofing-file-extensions-ethical-hacking/</link>
+      <pubDate>Sat, 05 Mar 2022 10:07:47 +0600</pubDate>
+      
+      <guid>https://gourav-dhar.com/blogs/spoofing-file-extensions-ethical-hacking/</guid>
+      <description>File extension spoofing is a handy trick when creating trojans. In this blog, I will be spoofing the &amp;lsquo;.</description>
+    </item>
+    
+    <item>
+      <title>Information Gathering - Hacking | Gourav Dhar</title>
+      <link>https://gourav-dhar.com/blogs/information-gathering-first-step-towards-website-hacking/</link>
+      <pubDate>Wed, 02 Mar 2022 10:07:47 +0600</pubDate>
+      
+      <guid>https://gourav-dhar.com/blogs/information-gathering-first-step-towards-website-hacking/</guid>
+      <description>Hacking a website? Don’t miss out on this important step!</description>
+    </item>
+    
+    <item>
+      <title>How to securely browse the Internet | Prevent data leaks while connecting to public WiFi networks | Gourav Dhar</title>
+      <link>https://gourav-dhar.com/blogs/how-to-securely-browse-the-internet-prevent-data-leaks-while-connecting-to-public-wifi-networks/</link>
+      <pubDate>Sat, 26 Feb 2022 10:07:47 +0600</pubDate>
+      
+      <guid>https://gourav-dhar.com/blogs/how-to-securely-browse-the-internet-prevent-data-leaks-while-connecting-to-public-wifi-networks/</guid>
+      <description>Feeling insecure while browsing on public WiFi? This blog is for you.</description>
+    </item>
+    
+    <item>
+      <title>Man in the Middle Attacks by ARP Spoofing | Gourav Dhar</title>
+      <link>https://gourav-dhar.com/blogs/man-in-the-middle-attacks-by-arp-spoofing-tutorials-and-examples/</link>
+      <pubDate>Sat, 19 Feb 2022 10:07:47 +0600</pubDate>
+      
+      <guid>https://gourav-dhar.com/blogs/man-in-the-middle-attacks-by-arp-spoofing-tutorials-and-examples/</guid>
+      <description>What is Man in The Middle (MITM) Attack? A man in the middle (MITM) attack is a general term for when a machine positions itself in between a connection between a client/user and the server/internet — either to eavesdrop or to impersonate one of the parties, making it appear as if a normal exchange of information is underway.</description>
+    </item>
+    
+    <item>
+      <title>Hack WiFi Passwords | Gourav Dhar</title>
+      <link>https://gourav-dhar.com/blogs/hack-wifi-passwords-crack-wpa2-wifi-passwords-using-brute-force-attacks/</link>
+      <pubDate>Sat, 12 Feb 2022 10:07:47 +0600</pubDate>
+      
+      <guid>https://gourav-dhar.com/blogs/hack-wifi-passwords-crack-wpa2-wifi-passwords-using-brute-force-attacks/</guid>
+      <description>Almost all modern-day wifi routers use WPA2 encryption. The WEP connections or WPS-enabled networks were easier to hack into because of the flaws in their design.</description>
+    </item>
+    
+    <item>
+      <title>How to change MAC Address? | Gourav Dhar</title>
+      <link>https://gourav-dhar.com/blogs/how-to-change-mac-address/</link>
+      <pubDate>Sat, 12 Feb 2022 10:07:47 +0600</pubDate>
+      
+      <guid>https://gourav-dhar.com/blogs/how-to-change-mac-address/</guid>
+      <description>MAC Address stands for Media Access Control. It is a unique address specific to a device set by the device manufacturer.</description>
+    </item>
+    
+  </channel>
+</rss>

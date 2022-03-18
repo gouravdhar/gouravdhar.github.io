@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+  
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8MEPQP7RCV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-8MEPQP7RCV');
+  </script>
+
+ 
+<script>
+  (function(h,o,t,j,a,r){
+      h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+      h._hjSettings={hjid:2857053,hjsv:6};
+      a=o.getElementsByTagName('head')[0];
+      r=o.createElement('script');r.async=1;
+      r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+      a.appendChild(r);
+  })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+
+  <meta charset="utf-8">
+  
+  <title>APIs and How to design them ! | Gourav Dhar</title>
+  <meta property="og:title" content=APIs&#32;and&#32;How&#32;to&#32;design&#32;them&#32;!&#32;|&#32;Gourav&#32;Dhar />
+  <meta name="twitter:title" content=APIs&#32;and&#32;How&#32;to&#32;design&#32;them&#32;!&#32;|&#32;Gourav&#32;Dhar>
+  
+
+  
+  <meta property="og:image" content=https://gourav-dhar.com/images/blogs/mac.jpeg />
+  <meta name="twitter:image" content=https://gourav-dhar.com/images/blogs/mac.jpeg/>
+  
+
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content=" Suppose you have written a program that performs a task. You would want a way for other people to use your program — You need APIs for this purpose.">
+  <meta name="twitter:description" content=" Suppose you have written a program that performs a task. You would want a way for other people to use your program — You need APIs for this purpose.">
+  <meta property="og:description" content=" Suppose you have written a program that performs a task. You would want a way for other people to use your program — You need APIs for this purpose."/>
+
+  <meta name="author" content="Gourav">
+  <meta name="generator" content="Hugo 0.68.3" />
+
+  <!-- plugins -->
+  
+  <link rel="stylesheet" href="https://gourav-dhar.com/plugins/bootstrap/bootstrap.min.css ">
+  
+  <link rel="stylesheet" href="https://gourav-dhar.com/plugins/slick/slick.css ">
+  
+  <link rel="stylesheet" href="https://gourav-dhar.com/plugins/themify-icons/themify-icons.css ">
+  
+
+  <!-- Main Stylesheet -->
+  
+  <link rel="stylesheet" href="https://gourav-dhar.com/scss/style.min.css" media="screen">
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="https://gourav-dhar.com/images/favicon.png " type="image/x-icon">
+  <link rel="icon" href="https://gourav-dhar.com/images/favicon.png " type="image/x-icon">
+
+  
+  
+
+  
+
+</head><body><div id="preloader">
+
+<!-- preloader start -->
+<div class="preloader">
+  
+  <img src="https://gourav-dhar.com/images/hourglass.gif " alt="preloader">
+  
+</div>
+<!-- preloader end -->
+
+</div><div id="header">
+<!-- navigation -->
+<header class="navigation">
+  <div class="container">
+    
+    <nav class="navbar navbar-expand-lg navbar-white bg-transparent border-bottom pl-0">
+      <a class="navbar-brand mobile-view" href="https://gourav-dhar.com/"><img class="img-fluid"
+          src="https://gourav-dhar.com/images/logo.webp" alt="Gourav Dhar | Software Dev, Blogger, Hacker | IIT Roorkee &#39;19"></a>
+      <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation">
+        <i class="ti-menu"></i>
+      </button>
+
+      <div class="collapse navbar-collapse text-center" id="navigation">
+        <div class="desktop-view">
+          <ul class="navbar-nav mr-auto">
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://twitter.com/go_rrrave" target="_blank"><i class="ti-twitter-alt"></i></a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.instagram.com/go_rrrave" target="_blank"><i class="ti-instagram"></i></a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/gouravdhar" target="_blank"><i class="ti-github"></i></a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://in.linkedin.com/in/gouravdhar" target="_blank"><i class="ti-linkedin"></i></a>
+            </li>
+            
+          </ul>
+        </div>
+
+        <a class="navbar-brand mx-auto desktop-view" href="https://gourav-dhar.com/"><img class="img-logo"
+            src="https://gourav-dhar.com/images/logo.webp" alt="Gourav Dhar | Software Dev, Blogger, Hacker | IIT Roorkee &#39;19"></a>
+
+        <ul class="navbar-nav">
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://gourav-dhar.com/about/">About</a>
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://gourav-dhar.com/blogs/">Blogs</a>
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://gourav-dhar.com/profile">profile</a>
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://gourav-dhar.com/contact/">Contact</a>
+          </li>
+          
+          
+        </ul>
+
+        
+        <!-- search -->
+        <div class="search pl-lg-4">
+          <button id="searchOpen" class="search-btn"><i class="ti-search"></i></button>
+          <div class="search-wrapper">
+            <form action="https://gourav-dhar.com//search" class="h-100">
+              <input class="search-box px-4" id="search-query" name="s" type="search" placeholder="Type & Hit Enter...">
+            </form>
+            <button id="searchClose" class="search-close"><i class="ti-close text-dark"></i></button>
+          </div>
+        </div>
+        
+
+        
+      </div>
+    </nav>
+  </div>
+</header>
+<!-- /navigation -->
+</div>
+
+<section class="section-sm">
+  <div class="container">
+    <div class="row">
+       
+      <div class="col-lg-8 mx-auto">
+        
+        <a href="/categories/system-design"
+          class="text-primary">System design</a>
+        
+        <h1>APIs and How to design them - All you need to know!</h1>
+        <div class="mb-3 post-meta">
+          <span>By Gourav</span>
+          
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          <span>27 June 2021</span>
+          
+        </div>
+        
+        <img src="https://gourav-dhar.com/images/blogs/APIs.webp" class="img-fluid w-100 mb-4" alt="APIs and How to design them ! | Gourav Dhar">
+        
+        <div class="content mb-5">
+          <p><img src="../../images/blogs/nline.webp" alt="newline"></p>
+<blockquote>
+<p>Have you created a service and want others to use it? Well!!! Apis are the way to do it.</p>
+</blockquote>
+<h2 id="what-is-an-api">What is an API?</h2>
+<p>Suppose you have written a program that performs a task (maybe takes an input and returns an output based on it). You would want a way for other people to use your program — You need APIs for this purpose.</p>
+<p>API stands for <strong>Application Programming Interface</strong>, which is a software interface between external users or other services and your program. We can expose API endpoints on the internet through which other applications can interact with our program.</p>
+<p><img src="https://miro.medium.com/max/1400/0*hF0b12KLhp_rbp5O.png" alt="Source: www.altexsoft.com"></p>
+<h2 id="designing-good-apis">Designing good APIs</h2>
+<blockquote>
+<p>There’s no one right set of characteristics. Whatever design serves the purpose in an efficient manner is a “good API design”.</p>
+</blockquote>
+<p>As a software developer, I would want the APIs to have the following set of characteristics which would ensure consistency, security, and efficiency in my system.</p>
+<h3 id="srp-single-responsibility-principle">SRP (Single Responsibility Principle)</h3>
+<p><img src="../../images/blogs/apis/SRP.png" alt="SRP"></p>
+<p>Ensure each API has a single responsibility. This makes the operation performed atomic and our database is consistent with what the clients expect. This way the client knows that if the API fails or returns an exception, then no part of the operation was performed. It reduces ambiguity.</p>
+<p><strong>Let’s take an example —</strong> Suppose we want to create a user and assign a label to it. If we use a single API to execute the operations and the API fails and returns an exception, there would be confusion whether the user was created and an exception occurred while creating the label, or exception was returned while creating the user and no user was created. So it is better to create 2 separate APIs, one for creating users and the other to update parameters/assign labels to users.</p>
+<h3 id="naming-the-api">Naming the API</h3>
+<p>Name the APIs so that it becomes easy for the clients to guess the purpose of the API. The type of request (GET, PUT, POST, DELETE) adds context to the naming as well. This way if your server has a bunch of APIs exposed, it becomes easy for the client to manage the APIs while using them. Also, it makes debugging easier.</p>
+<p><strong>For example,</strong> if you want to get details of a user, you could name the API as</p>
+<pre><code>GET - /api/user/{userId}
+</code></pre><p>Similarly to delete the user you could name it as</p>
+<pre><code>DELETE — /api/user/{userId}
+</code></pre><h3 id="abstraction">Abstraction</h3>
+<p>Return only what is needed.</p>
+<ul>
+<li>Sometimes you may be convinced to return extra information through your API maybe by apprehending certain requirements for the future. Trust me it’s not a good idea! (A lot of times it will happen that those requirements don’t come up or you will end up creating a separate API for it for some reason).</li>
+<li>You don’t want to expose certain information which can be exploited by hackers to get into your system. Be careful!</li>
+<li>Also exposing only what is needed is a neat way to present, creates less confusion, and also reduces coupling in some cases.</li>
+<li>Returning less data — reduces response time and saves internet bandwidth. (And makes surfing easy for everyone!)</li>
+</ul>
+<h3 id="logging">Logging</h3>
+<p>Logging API name, request parameters, response time is a good practice that helps to debug issues and maintain your program.</p>
+<p>It is also important that you accidentally <strong>don’t log user sensitive information,</strong> like email, passwords, credit card details, etc. which may be received as part of the API request, and can be a probable security vulnerability.</p>
+<p><img src="../../images/blogs/apis/logging.png" alt="logging"></p>
+<h3 id="validate-user-roles--permissions">Validate User Roles / Permissions</h3>
+<p>Add user role validations to APIs. It is obvious right!, you don’t want the regular users to have access to APIs meant for Admin.</p>
+<h3 id="throw-custom-exceptions">Throw Custom Exceptions</h3>
+<p>In case your API fails — due to some internal function failure or a database network call, maybe due to invalid input or whatever, it is a good practice to throw a custom exception message along with the exception. (Maybe create a custom Exception class).</p>
+<p>This helps a lot while reading logs and debugging issues. The client also gets an idea of what is going wrong.
+The way to do this would be to identify probable scenarios where the API is likely to throw an exception, for example when a client is trying to access information he/she is not entitled to or maybe if the client requests to modify user details which don’t exist.</p>
+<h3 id="response-time">Response Time</h3>
+<p>The less response time the better! — Obvious right.</p>
+<p><img src="../../images/blogs/apis/responsetime.gif" alt="responsetime"></p>
+<ul>
+<li>Make sure to place the endpoint on the correct micro-service which would optimize the number of external calls made to other microservices. Also while making database calls, try to reduce the number of calls (by maybe fetching all the data together or other ways).</li>
+<li>Another way would be to receive extra parameters as part of the request body which would prevent the need to make extra database calls to fetch that information.</li>
+<li>Try to use Threads and Futures wherever possible. Multi-threading generally makes execution faster right!</li>
+<li>You may also want to use caches at the API level. The data returned by APIs which is called frequently and which is generally not updated so frequently can be stored in the local cache of the server.</li>
+</ul>
+<h3 id="handling-scale">Handling Scale</h3>
+<p>Suppose all of a sudden you see a large influx of clients using your API. (After all, things tend to increase exponentially!). Your database and server have a certain limit on the number of connections. Your system was not designed to handle such a scale! Obviously, you would have to scale up your system, but in the meantime, as a hotfix, you could temporarily remove certain unimportant database calls or functions so that your API can still perform. This is a good thing to keep in mind while designing APIs.</p>
+<h3 id="pagination">Pagination</h3>
+<p><img src="../../images/blogs/apis/pagination.gif" alt="pagination">
+Pagination is a must. Suppose you are exposing an API that returns registered user details. Your system could have like 1,00,000 registered users. One way to go around this would be to fetch all the users from the database, process all their information, and send the result back over the internet. Well, there are lots of problems with this approach</p>
+<ol>
+<li>Sending so much data over the network would consume a lot of bandwidth.</li>
+<li>Querying the database with so much data, sending, and processing it would increase the response time. (You don’t want your client to wait minutes for the response)</li>
+<li>There are high chances the client would not even use all the info which he requested, which is a waste of resources.</li>
+</ol>
+<p>There’s no way the client would show or use all the 1,00,000 user information at once. Using filters in the request body and pagination is the solution for it.</p>
+<ul>
+<li>Using pagination, the API would query certain fragments of data (maybe 100 records) from the database and return those 100 records along with a token which the client can again use to fetch the next fragment (maybe the next 100 records). This way the response time is less, we are using only the information which is useful and it reduces complexity and load on resources.</li>
+</ul>
+<h3 id="rate-limiting">Rate Limiting</h3>
+<p>Set rate limits — You may want to limit the number of API calls made by a user (or a token) within a given time frame. If a user exceeds that limit you throttle their request for that time period. There can be several reasons why you want to add rate limits —</p>
+<ol>
+<li>prevents resource starvation</li>
+<li>this is a way to keep a check that you are not denying service to other clients because one client is using your API a lot.</li>
+<li>prevents malicious attacks like DDOS(Distributed Denial of Service) by hackers</li>
+</ol>
+<p>You could rate limit programmatically or you could also charge clients some amount of money whenever they make an API call.</p>
+<h5 id="heading"></h5>
+<p><img src="../../images/blogs/apis/spacevstime.jpg" alt="spacevstime"></p>
+<blockquote>
+<p>While I think the above rules contribute to good API designs, you may be in situations where you would need to compromise on certain design rules to make some other aspect of system more efficient. As a software developer it’s your responsibility to weigh the pros and cons and make a call. After all, designing systems are all about trade-offs (time vs space).</p>
+</blockquote>
+
+        </div>
+
+        
+        
+      </div>
+
+      
+      <div class="col-lg-4" id="sidebar">
+    <div class="widgets">
+      
+      <div class="widget">
+        
+        <h4 class="widget-title">About the author</h4>
+        
+        <a href="https://gourav-dhar.com/about/"><img src="https://gourav-dhar.com/images/author.webp" alt=""
+          class="img-fluid author-thumb-sm d-block mx-auto rounded-circle mb-4" loading="lazy"></a>
+        
+        
+        <p>I am Gourav Dhar, a 2019 graduate from IIT Roorkee where I pursued my bachelors in Electronics and Communication Engineering.</p>
+        <a href="https://gourav-dhar.com/about/" class="btn btn-outline-primary">Know More</a>
+        
+      </div>
+          
+      <div class="widget">
+          <h4 class="widget-title">Similar Blogs</h4>
+          <div class="container" id="test">
+            <div class="col">
+                
+              <div class="row-lg-4 similar-post-border">
+                <article class="media">
+                  
+                    
+                      <a href= "https://gourav-dhar.com/blogs/how-i-created-my-first-web-crawler-cool-tech-stuff/" class="h5 d-block mb-3"><div class="recent-post-thumb mr-3" style="background-image: url('https://gourav-dhar.com/images/blogs/first-web-crawler/webcrawler.webp');"></div></a>
+                    
+                  
+                  
+                  <div class="media-body">
+                    <div class="mb-3 post-meta">
+                      
+                      <span>12 Mar 2022</span>
+                      
+                    </div>
+                    
+                      <a href= "https://gourav-dhar.com/blogs/how-i-created-my-first-web-crawler-cool-tech-stuff/" class="h5 d-block mb-3">How I created my first Web Crawler!</a>
+                      <a href= "https://gourav-dhar.com/blogs/how-i-created-my-first-web-crawler-cool-tech-stuff/" class="btn btn-outline-primary">read more</a>
+                    
+                    
+                  </div>
+                </article>
+              </div>
+              
+              <div class="row-lg-4 similar-post-border">
+                <article class="media">
+                  
+                    
+                      <a href= "https://gourav-dhar.com/blogs/how-i-created-my-trojan-malware-ethical-hacking/" class="h5 d-block mb-3"><div class="recent-post-thumb mr-3" style="background-image: url('https://gourav-dhar.com/images/blogs/trojan/0_cover.webp');"></div></a>
+                    
+                  
+                  
+                  <div class="media-body">
+                    <div class="mb-3 post-meta">
+                      
+                      <span>06 Mar 2022</span>
+                      
+                    </div>
+                    
+                      <a href= "https://gourav-dhar.com/blogs/how-i-created-my-trojan-malware-ethical-hacking/" class="h5 d-block mb-3">How I created a Trojan Malware</a>
+                      <a href= "https://gourav-dhar.com/blogs/how-i-created-my-trojan-malware-ethical-hacking/" class="btn btn-outline-primary">read more</a>
+                    
+                    
+                  </div>
+                </article>
+              </div>
+              
+              <div class="row-lg-4 similar-post-border">
+                <article class="media">
+                  
+                    
+                      <a href= "https://gourav-dhar.com/blogs/hack-wifi-passwords-crack-wpa2-wifi-passwords-using-brute-force-attacks/" class="h5 d-block mb-3"><div class="recent-post-thumb mr-3" style="background-image: url('https://gourav-dhar.com/images/blogs/wifi/wifi.webp');"></div></a>
+                    
+                  
+                  
+                  <div class="media-body">
+                    <div class="mb-3 post-meta">
+                      
+                      <span>12 Feb 2022</span>
+                      
+                    </div>
+                    
+                      <a href= "https://gourav-dhar.com/blogs/hack-wifi-passwords-crack-wpa2-wifi-passwords-using-brute-force-attacks/" class="h5 d-block mb-3">Hack WiFi Passwords</a>
+                      <a href= "https://gourav-dhar.com/blogs/hack-wifi-passwords-crack-wpa2-wifi-passwords-using-brute-force-attacks/" class="btn btn-outline-primary">read more</a>
+                    
+                    
+                  </div>
+                </article>
+              </div>
+              
+              
+              <div class="row-lg-4 similar-post-border">
+                <article class="media">
+                  
+                    
+                      <a href= "https://gourav-dhar.com/blogs/spoofing-file-extensions-ethical-hacking/" class="h5 d-block mb-3"><div class="recent-post-thumb mr-3" style="background-image: url('https://gourav-dhar.com/images/blogs/exe-spoof/cover-1.webp');"></div></a>
+                    
+                  
+                  
+                  <div class="media-body">
+                    <div class="mb-3 post-meta">
+                      
+                      <span>05 Mar 2022</span>
+                      
+                    </div>
+                    
+                      <a href= "https://gourav-dhar.com/blogs/spoofing-file-extensions-ethical-hacking/" class="h5 d-block mb-3">Spoofing file extensions</a>
+                      <a href= "https://gourav-dhar.com/blogs/spoofing-file-extensions-ethical-hacking/" class="btn btn-outline-primary">read more</a>
+                    
+                    
+                  </div>
+                </article>
+              </div>
+              
+              <div class="row-lg-4 similar-post-border">
+                <article class="media">
+                  
+                    
+                      <a href= "https://gourav-dhar.com/blogs/information-gathering-first-step-towards-website-hacking/" class="h5 d-block mb-3"><div class="recent-post-thumb mr-3" style="background-image: url('https://gourav-dhar.com/images/blogs/infogathering/infogathering1.webp');"></div></a>
+                    
+                  
+                  
+                  <div class="media-body">
+                    <div class="mb-3 post-meta">
+                      
+                      <span>02 Mar 2022</span>
+                      
+                    </div>
+                    
+                      <a href= "https://gourav-dhar.com/blogs/information-gathering-first-step-towards-website-hacking/" class="h5 d-block mb-3">Information Gathering - Hacking</a>
+                      <a href= "https://gourav-dhar.com/blogs/information-gathering-first-step-towards-website-hacking/" class="btn btn-outline-primary">read more</a>
+                    
+                    
+                  </div>
+                </article>
+              </div>
+              
+              <div class="row-lg-4 similar-post-border">
+                <article class="media">
+                  
+                    
+                      <a href= "https://gourav-dhar.com/blogs/how-to-securely-browse-the-internet-prevent-data-leaks-while-connecting-to-public-wifi-networks/" class="h5 d-block mb-3"><div class="recent-post-thumb mr-3" style="background-image: url('https://gourav-dhar.com/images/blogs/securely.webp');"></div></a>
+                    
+                  
+                  
+                  <div class="media-body">
+                    <div class="mb-3 post-meta">
+                      
+                      <span>26 Feb 2022</span>
+                      
+                    </div>
+                    
+                      <a href= "https://gourav-dhar.com/blogs/how-to-securely-browse-the-internet-prevent-data-leaks-while-connecting-to-public-wifi-networks/" class="h5 d-block mb-3">How to securely browse the Internet while conencting to public networks</a>
+                      <a href= "https://gourav-dhar.com/blogs/how-to-securely-browse-the-internet-prevent-data-leaks-while-connecting-to-public-wifi-networks/" class="btn btn-outline-primary">read more</a>
+                    
+                    
+                  </div>
+                </article>
+              </div>
+              
+              <div class="row-lg-4 similar-post-border">
+                <article class="media">
+                  
+                    
+                      <a href= "https://gourav-dhar.com/blogs/man-in-the-middle-attacks-by-arp-spoofing-tutorials-and-examples/" class="h5 d-block mb-3"><div class="recent-post-thumb mr-3" style="background-image: url('https://gourav-dhar.com/images/blogs/mitm.webp');"></div></a>
+                    
+                  
+                  
+                  <div class="media-body">
+                    <div class="mb-3 post-meta">
+                      
+                      <span>19 Feb 2022</span>
+                      
+                    </div>
+                    
+                      <a href= "https://gourav-dhar.com/blogs/man-in-the-middle-attacks-by-arp-spoofing-tutorials-and-examples/" class="h5 d-block mb-3">Man in the Middle Attacks by ARP Spoofing</a>
+                      <a href= "https://gourav-dhar.com/blogs/man-in-the-middle-attacks-by-arp-spoofing-tutorials-and-examples/" class="btn btn-outline-primary">read more</a>
+                    
+                    
+                  </div>
+                </article>
+              </div>
+              
+              <div class="row-lg-4 similar-post-border">
+                <article class="media">
+                  
+                    
+                      <a href= "https://gourav-dhar.com/blogs/how-to-change-mac-address/" class="h5 d-block mb-3"><div class="recent-post-thumb mr-3" style="background-image: url('https://gourav-dhar.com/images/blogs/mac.webp');"></div></a>
+                    
+                  
+                  
+                  <div class="media-body">
+                    <div class="mb-3 post-meta">
+                      
+                      <span>12 Feb 2022</span>
+                      
+                    </div>
+                    
+                      <a href= "https://gourav-dhar.com/blogs/how-to-change-mac-address/" class="h5 d-block mb-3">How to change MAC Address?</a>
+                      <a href= "https://gourav-dhar.com/blogs/how-to-change-mac-address/" class="btn btn-outline-primary">read more</a>
+                    
+                    
+                  </div>
+                </article>
+              </div>
+              
+              <div class="row-lg-4 similar-post-border">
+                <article class="media">
+                  
+                    
+                      <a href= "https://blogs.gourav-dhar.com/create-a-stunning-portfolio-website-with-your-own-website-name-from-scratch-within-1-hour-59c2d3ee8b25"  class="h5 d-block mb-3"><div class="recent-post-thumb mr-3" style="background-image: url('https://gourav-dhar.com/images/blogs/createportfolio.webp');"></div></a>
+                    
+                  
+                  
+                  <div class="media-body">
+                    <div class="mb-3 post-meta">
+                      
+                      <span>15 Jan 2022</span>
+                      
+                    </div>
+                    
+                      <a href= "https://blogs.gourav-dhar.com/create-a-stunning-portfolio-website-with-your-own-website-name-from-scratch-within-1-hour-59c2d3ee8b25"  class="h5 d-block mb-3">Create and deploy a stunning portfolio website with your own website name from scratch within 1 hour</a>
+                      <a href= "https://blogs.gourav-dhar.com/create-a-stunning-portfolio-website-with-your-own-website-name-from-scratch-within-1-hour-59c2d3ee8b25"  class="btn btn-outline-primary">read more</a>
+                    
+                    
+                  </div>
+                </article>
+              </div>
+              
+            </div>
+          </div>
+       </div>
+  
+       
+    
+
+     
+     <div class="widget">
+        <h4 class="widget-title">Filter By Category</h4>
+        <ul class="list-unstyled">
+         
+
+            <li class="mb-3"><a class="p-2 bg-primary text-white"
+                href="/categories/cool-tech-stuff/">Cool-Tech-Stuff</a>
+              <br></li>
+         
+
+            <li class="mb-3"><a class="p-2 bg-primary text-white"
+                href="/categories/ethical-hacking/">Ethical-Hacking</a>
+              <br></li>
+         
+
+            <li class="mb-3"><a class="p-2 bg-primary text-white"
+                href="/categories/system-design/">System-Design</a>
+              <br></li>
+        </ul>
+      </div>
+  
+
+       
+<div class="widget">
+    <h4 class="widget-title">Filter By Tags</h4>
+    <ul class="list-inline">
+      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+          href="/tags/api/">Api</a></li>
+      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+          href="/tags/backend/">Backend</a></li>
+      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+          href="/tags/c&#43;&#43;/">C&#43;&#43;</a></li>
+      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+          href="/tags/cool-tech-stuff/">Cool tech stuff</a></li>
+      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+          href="/tags/hacking/">Hacking</a></li>
+      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+          href="/tags/network-security/">Network security</a></li>
+      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+          href="/tags/portfolio/">Portfolio</a></li>
+      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+          href="/tags/programming/">Programming</a></li>
+      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+          href="/tags/python/">Python</a></li>
+      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+          href="/tags/spoofing/">Spoofing</a></li>
+      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+          href="/tags/system-design/">System design</a></li>
+      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+          href="/tags/threads/">Threads</a></li>
+      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+          href="/tags/web-crawling/">Web crawling</a></li>
+      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+          href="/tags/web-scraping/">Web scraping</a></li>
+    </ul>
+  </div>
+   
+       
+<div class="widget">
+    <h4 class="widget-title">Social</h4>
+    <ul class="list-inline social-links">
+      
+      <li class="list-inline-item"><a href="https://twitter.com/go_rrrave" target="_blank"><i class="ti-twitter-alt"></i></a></li>
+      
+      <li class="list-inline-item"><a href="https://www.instagram.com/go_rrrave" target="_blank"><i class="ti-instagram"></i></a></li>
+      
+      <li class="list-inline-item"><a href="https://github.com/gouravdhar" target="_blank"><i class="ti-github"></i></a></li>
+      
+      <li class="list-inline-item"><a href="https://in.linkedin.com/in/gouravdhar" target="_blank"><i class="ti-linkedin"></i></a></li>
+      
+    </ul>
+  </div>
+      
+    </div>
+  </div>
+  
+      
+
+      <div class = "desktop-view">
+      
+<section>
+    <div class="container" id="test">
+
+      
+      <div class="widget">
+    <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="gouravdhar" data-color="#40DCA5" data-emoji=""  data-font="Arial" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script>    
+</div>
+
+
+        <h2>Similar Blogs</h2>
+        <br>
+      <div class="row">
+        
+        <div class="col-lg-4 small-post-border">
+          <article class="media">
+            
+            
+                  <a href= "https://gourav-dhar.com/blogs/spoofing-file-extensions-ethical-hacking/"><div class="recent-post-thumb mr-3" style="background-image: url('https://gourav-dhar.com/images/blogs/exe-spoof/cover-1.webp');"></div></a>
+                  
+                
+            
+            
+            <div class="media-body">
+              <div class="mb-3 post-meta">
+                
+                <span>05 Mar 2022</span>
+                
+              </div>
+              
+                <a href= "https://gourav-dhar.com/blogs/spoofing-file-extensions-ethical-hacking/" class="h5 d-block mb-3">Spoofing file extensions</a>
+                <a href= "https://gourav-dhar.com/blogs/spoofing-file-extensions-ethical-hacking/" class="btn btn-outline-primary">read more</a>
+              
+              
+            </div>
+          </article>
+        </div>
+        
+        <div class="col-lg-4 small-post-border">
+          <article class="media">
+            
+            
+                  <a href= "https://gourav-dhar.com/blogs/information-gathering-first-step-towards-website-hacking/"><div class="recent-post-thumb mr-3" style="background-image: url('https://gourav-dhar.com/images/blogs/infogathering/infogathering1.webp');"></div></a>
+                  
+                
+            
+            
+            <div class="media-body">
+              <div class="mb-3 post-meta">
+                
+                <span>02 Mar 2022</span>
+                
+              </div>
+              
+                <a href= "https://gourav-dhar.com/blogs/information-gathering-first-step-towards-website-hacking/" class="h5 d-block mb-3">Information Gathering - Hacking</a>
+                <a href= "https://gourav-dhar.com/blogs/information-gathering-first-step-towards-website-hacking/" class="btn btn-outline-primary">read more</a>
+              
+              
+            </div>
+          </article>
+        </div>
+        
+        <div class="col-lg-4 small-post-border">
+          <article class="media">
+            
+            
+                  <a href= "https://gourav-dhar.com/blogs/how-to-securely-browse-the-internet-prevent-data-leaks-while-connecting-to-public-wifi-networks/"><div class="recent-post-thumb mr-3" style="background-image: url('https://gourav-dhar.com/images/blogs/securely.webp');"></div></a>
+                  
+                
+            
+            
+            <div class="media-body">
+              <div class="mb-3 post-meta">
+                
+                <span>26 Feb 2022</span>
+                
+              </div>
+              
+                <a href= "https://gourav-dhar.com/blogs/how-to-securely-browse-the-internet-prevent-data-leaks-while-connecting-to-public-wifi-networks/" class="h5 d-block mb-3">How to securely browse the Internet while conencting to public networks</a>
+                <a href= "https://gourav-dhar.com/blogs/how-to-securely-browse-the-internet-prevent-data-leaks-while-connecting-to-public-wifi-networks/" class="btn btn-outline-primary">read more</a>
+              
+              
+            </div>
+          </article>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+  
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<div id="custom-modal" class="modal">
+
+    
+    <span class="close">&times;</span>
+  
+    
+    <img class="modal-content" id="modal-image">
+  
+    
+    <div id="caption"></div>
+  </div>
+<div id="footer">
+
+<section class="section-sm">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto text-center border-left border-right border-primary">
+        <h2 class = "news-letter-heading">Follow Me</h2>
+        <p class="text-light px-md-5 py-4 ">
+          If you are interested in tech blogs, follow me on Medium or LinkedIn and you will never miss my blogs.</p>
+        
+
+        <ul class="list-unstyled">
+
+            <li class="list-inline-item"><a class="p-2 bg-primary text-white"
+                href="https://blogs.gourav-dhar.com" target="_blank">Follow on Medium</a>
+              </li>
+
+            <li class = "list-inline-item"><a class="p-2 bg-primary text-white"
+                href="https://in.linkedin.com/in/gouravdhar" target="_blank">Follow on LinkedIn</a>
+              </li>
+
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+
+ 
+ <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" 
+ data-id="gouravdhar" data-description="Support me on Buy me a coffee!" 
+ data-message="Thank you for visiting. You can now buy me a coffee as a Thank You! " data-color="#40DCA5" data-position="Right" data-x_margin="18" data-y_margin="18">
+</script>
+
+ 
+
+ 
+ <script type="text/javascript" language="javascript" defer>
+  const postIPData = async () => {
+    
+    var delayInMilliseconds = 1500; 
+    let res2 = await fetch('https://api.ipify.org/?format=json').then(response => response.json());
+    const ip = res2.ip;
+    let addr = await fetch('https://ipinfo.io/'+ip+'?token=360b82d6f0c132').then(response => response.json());
+
+    var bodyFormData = new FormData();
+    bodyFormData.append('ip', ip);
+    bodyFormData.append('loc', addr.loc);
+    bodyFormData.append('city', addr.city);
+    bodyFormData.append('country', addr.country);
+    bodyFormData.append('org', addr.org);
+    bodyFormData.append('postal', addr.postal);
+    bodyFormData.append('region', addr.region);
+    bodyFormData.append('timezone', addr.timezone);
+    bodyFormData.append('time', Date());
+    
+    fetch('https://flask-qa-deploy-postgres.herokuapp.com/api',{
+      method:'post',
+      body: bodyFormData
+    }).then(response => {});
+
+  }
+  postIPData();
+  
+</script>
+
+
+
+
+
+
+<footer class="text-capitalize">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 text-center mb-5">
+        
+      </div>
+               
+      <div class="col-lg-3 col-sm-6 mb-5">
+        <h6 class="mb-4">Contact Me</h6>
+        <ul class="list-unstyled">
+          
+                     
+          <li class="mb-3"><i class="ti-location-pin mr-3 text-primary"></i>Delhi, India</li>
+          
+                     
+          <li class="mb-3"><a class="text-dark" href="mailto:gouravdhar.iitr@gmail.com"><i
+                class="ti-email mr-3 text-primary"></i>gouravdhar.iitr@gmail.com</a>
+          
+          </li>
+        </ul>
+      </div>
+      
+      <div class="col-lg-3 col-sm-6 mb-5 desktop-view">
+        <h6 class="mb-4">Social Contacts</h6>
+        <ul class="list-unstyled">
+          
+          <li class="mb-3"><a class="text-dark" href="https://twitter.com/go_rrrave">twitter</a></li>
+          
+          <li class="mb-3"><a class="text-dark" href="https://www.instagram.com/go_rrrave">instagram</a></li>
+          
+          <li class="mb-3"><a class="text-dark" href="https://github.com/gouravdhar">github</a></li>
+          
+          <li class="mb-3"><a class="text-dark" href="https://in.linkedin.com/in/gouravdhar">linkedin</a></li>
+          
+        </ul>
+      </div>
+      <div class="col-lg-3 col-sm-6 mb-5 desktop-view">
+        <h6 class="mb-4">Categories</h6>
+        <ul class="list-unstyled">
+          <li class="mb-3"><a class="text-dark"
+            href="/categories/cool-tech-stuff/">Cool tech stuff</a>
+          </li>
+          <li class="mb-3"><a class="text-dark"
+            href="/categories/ethical-hacking/">Ethical hacking</a>
+          </li>
+          <li class="mb-3"><a class="text-dark"
+            href="/categories/system-design/">System design</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-sm-6 mb-5">
+        <h6 class="mb-4">Quick Links</h6>
+        <ul class="list-unstyled">
+          
+          <li class="mb-3"><a class="text-dark" href="https://gourav-dhar.com/about/">About</a></li>
+          
+          <li class="mb-3"><a class="text-dark" href="https://gourav-dhar.com/blogs/">Blogs</a></li>
+          
+          <li class="mb-3"><a class="text-dark" href="https://gourav-dhar.com/profile">Profile</a></li>
+          
+          <li class="mb-3"><a class="text-dark" href="https://gourav-dhar.com/contact/">Contact</a></li>
+          
+        </ul>
+      </div>
+      <div class="col-12 border-top py-4 text-center">
+        | Made with ❤️ by Gourav |
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var indexURL = "https://gourav-dhar.com/index.json"
+</script>
+
+<!-- JS Plugins -->
+
+<script src="https://gourav-dhar.com/plugins/jQuery/jquery.min.js"></script>
+
+<script src="https://gourav-dhar.com/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="https://gourav-dhar.com/plugins/slick/slick.min.js"></script>
+
+<script src="https://gourav-dhar.com/plugins/venobox/venobox.min.js"></script>
+
+<script src="https://gourav-dhar.com/plugins/search/fuse.min.js"></script>
+
+<script src="https://gourav-dhar.com/plugins/search/mark.js"></script>
+
+<script src="https://gourav-dhar.com/plugins/search/search.js"></script>
+
+<!-- Main Script -->
+
+<script src="https://gourav-dhar.com/js/script.min.js"></script>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
+<div id="js-cookie-box" class="cookie-box cookie-box-hide">
+	This site uses cookies. By continuing to use this website, you agree to their use. <span id="js-cookie-button" class="btn btn-sm btn-primary ml-2">I Accept</span>
+</div>
+<script>
+	(function ($) {
+		const cookieBox = document.getElementById('js-cookie-box');
+		const cookieButton = document.getElementById('js-cookie-button');
+		if (!Cookies.get('cookie-box')) {
+			cookieBox.classList.remove('cookie-box-hide');
+			cookieButton.onclick = function () {
+				Cookies.set('cookie-box', true, {
+					expires:  2 
+				});
+				cookieBox.classList.add('cookie-box-hide');
+			};
+		}
+	})(jQuery);
+</script>
+
+
+<style>
+.cookie-box {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  z-index: 9999;
+  padding: 1rem 2rem;
+  background: rgb(71, 71, 71);
+  transition: all .75s cubic-bezier(.19, 1, .22, 1);
+  color: #fdfdfd;
+}
+
+.cookie-box-hide {
+  display: none;
+}
+</style>
+
+</div></body>
+</html>

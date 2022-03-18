@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>C&#43;&#43; on Gourav Dhar | Software Dev, Blogger, Hacker | IIT Roorkee &#39;19</title>
+    <link>https://gourav-dhar.com/tags/c&#43;&#43;/</link>
+    <description>Recent content in C&#43;&#43; on Gourav Dhar | Software Dev, Blogger, Hacker | IIT Roorkee &#39;19</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 22 Sep 2020 10:07:47 +0600</lastBuildDate>
+    
+	<atom:link href="https://gourav-dhar.com/tags/c++/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>C&#43;&#43; Threads for beginners</title>
+      <link>https://gourav-dhar.com/blogs/c&#43;&#43;-threads-for-beginners/</link>
+      <pubDate>Tue, 22 Sep 2020 10:07:47 +0600</pubDate>
+      
+      <guid>https://gourav-dhar.com/blogs/c&#43;&#43;-threads-for-beginners/</guid>
+      <description>In computer science, a thread of execution is the smallest sequence of programmed instructions that can be managed independently by a scheduler, which is typically a part of the operating system.</description>
+    </item>
+    
+  </channel>
+</rss>
