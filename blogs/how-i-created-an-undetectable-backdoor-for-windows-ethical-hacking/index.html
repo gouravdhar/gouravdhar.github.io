@@ -190,17 +190,17 @@
           <p><img src="../../images/blogs/nline.webp" alt="newline"></p>
 <h2 id="what-is-a-backdoor">What is a Backdoor ?</h2>
 <p>Backdoor is a method of secretly gaining remote access to a computer by bypassing the normal authentication and firewall of the machine. </p>
-<p>In this blog I will be writing on <strong>How I created a backdoor for my Windows machine that even the antivirus could not detect.</strong> After creating the backdoor, I was able to do a lot of stuff on the Windows machine remotely like controlling the webcam, taking screenshots, using keyloggers etc. Let&rsquo;s get started.</p>
-<p>I created the executable (.exe file) on my <code>Ubuntu machine</code>. This <code>.exe</code> file when run on a windows machine created a backdoor to my Ubuntu machine from where I was able to control everything on the windows machine.</p>
+<p>In this blog, I will be writing on <strong>How I created a backdoor for my Windows machine that even the antivirus could not detect.</strong> After creating the backdoor, I was able to do a lot of stuff on the Windows machine remotely like controlling the webcam, taking screenshots, using keyloggers etc. Let&rsquo;s get started.</p>
+<p>I created the executable (.exe file) on my <code>Ubuntu machine</code>. This <code>.exe</code> file, when run on a windows machine, created a backdoor to my Ubuntu machine from where I was able to control everything on the windows machine.</p>
 <p><img src="../../images/blogs/nline.webp" alt="newline">
 <img src="https://cdn-images-1.medium.com/max/880/1*ZNFovOzzWUxq72beMX-avg.gif" alt="a gif"></p>
 <p><img src="../../images/blogs/nline.webp" alt="newline"></p>
 <p>Let&rsquo;s look at the steps that need to be followed.</p>
 <h3 id="1-installing-veil">1. Installing Veil</h3>
-<p>As a first step, we need to install Veil. To instal Veil you can go through this link <a href="https://www.javatpoint.com/installing-veil">https://www.javatpoint.com/installing-veil</a>.  It will also require installing the <strong>metasploitable-framework</strong> for ubuntu users (not required for Kali) which can be downloaded from here: <a href="https://www.darkoperator.com/installing-metasploit-in-ubunt">https://www.darkoperator.com/installing-metasploit-in-ubunt</a>.</p>
+<p>As a first step, we need to install Veil. To install Veil you can go through this link <a href="https://www.javatpoint.com/installing-veil">https://www.javatpoint.com/installing-veil</a>.  It will also require installing the <strong>metasploitable-framework</strong> for ubuntu users (not required for Kali) which can be downloaded from here: <a href="https://www.darkoperator.com/installing-metasploit-in-ubunt">https://www.darkoperator.com/installing-metasploit-in-ubunt</a>.</p>
 <p>Once installed, you can start by just typing <code>veil </code>. (or you can execute it by typing <code>./Veil.py</code> in the directory veil is installed). The veil shell will open as shown below:</p>
 <p><img src="../../images/blogs/backdoor/2.webp" alt="Image"></p>
-<h3 id="2using-evasion-inveil">2.Using Evasion in Veil</h3>
+<h3 id="2-using-evasion-inveil">2. Using Evasion in Veil</h3>
 <p>The veil framework has 2 tools (<code>Evasion</code> and <code>Ordinance</code>) which can be seen by typing list in the veil shell. We are interested in <code>Evasion</code>, so we type</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">use</span> <span style="color:#ae81ff">1</span>
 </code></pre></div><p><img src="../../images/blogs/nline.webp" alt="newline"></p>
@@ -225,7 +225,7 @@
 <p><img src="../../images/blogs/backdoor/7.webp" alt="Image"></p>
 <p><img src="../../images/blogs/nline.webp" alt="newline"></p>
 <p><strong>The way anti-virus programs work is that they have a very large database of file signatures that are flagged as suspicious.</strong> If your file&rsquo;s signature is present in that database then your file will be flagged as suspicious by the anti-virus softwares. So it is a good practice to use the updated version of <code>veil </code>, since the updated version of <code>veil</code> will generate backdoors to bypass the antivirus softwares.</p>
-<p>We should try to modify the file and make it more unique so that it bypasses the antivirus. There&rsquo;s no real reason I have written the next 2 lines. It is just to make the signature little different to bypass the antivirus.</p>
+<p>We should try to modify the file and make it more unique so that it bypasses the antivirus. There&rsquo;s no real reason I have written the next 2 lines. It is just to make the signature a little different to bypass the antivirus.</p>
 <p><img src="../../images/blogs/backdoor/8.webp" alt="Image"></p>
 <p><img src="../../images/blogs/nline.webp" alt="newline"></p>
 <p>Next type <code>generate</code> to generate the file. A prompt will appear to name the backdoor. I named it <code>backdoor_8080</code> but you could name it somewhat different so that it does not cause suspicion.</p>
@@ -268,7 +268,7 @@
 </code></pre></div><p><img src="../../images/blogs/nline.webp" alt="newline"></p>
 <p><img src="../../images/blogs/backdoor/16.webp" alt="Image"></p>
 <h3 id="5-delivering-the-backdoor-to-a-targetcomputer">5. Delivering the backdoor to a target computer</h3>
-<p>There are various social engineering ways to deliver the backdoor to a target computer. One such way is described in the blog below, where I have written how to create a trojan. Basically it disguised the <code>.exe</code> file in an image in a <code>.jpg</code> file .</p>
+<p>There are various social engineering ways to deliver the backdoor to a target computer. One such way is described in the blog below, where I have written how to create a trojan. Basically, it disguised the <code>.exe</code> file in an image in a <code>.jpg</code> file.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">use</span> <span style="color:#ae81ff">1</span>
 </code></pre></div><p><img src="../../images/blogs/nline.webp" alt="newline"></p>
 <p><a href="https://infosecwriteups.com/how-i-created-a-trojan-malware-ethical-hacking-82239a6b64c6" title="How I created a trojan malware"><img src="../../images/blogs/backdoor/17.webp" alt="Image"></a></p>
@@ -287,7 +287,7 @@
 </code></pre></div><p><img src="../../images/blogs/nline.webp" alt="newline"></p>
 <p>Apart from these, you can also change user privileges, upload/download files, run this executable as a service, take screenshots, store keystrokes, and lots of other stuff.</p>
 <h2 id="summarising-backdoors">Summarising Backdoors</h2>
-<p>While it seems that creating backdoors is something which is wrong and is done only by blackhat hackers, it is not entirely true. Some of the product based companies also create backdoors into their products so that if their users lose access to their accounts or products the companies can help them gain access. While the above method is a good way to create backdoors, if you want to be on the ethical side of the line, do not use it to gain access to computers you don&rsquo;t have permission to.</p>
+<p>While it seems that creating backdoors is something that is wrong and is done only by blackhat hackers, it is not entirely true. Some of the product-based companies also create backdoors into their products so that if their users lose access to their accounts or products the companies can help them gain access. While the above method is a good way to create backdoors, if you want to be on the ethical side of the line, do not use it to gain access to computers you don&rsquo;t have permission to.</p>
 
         </div>
 
@@ -321,7 +321,7 @@
                 <article class="media">
                   
                     
-                      <a href= "https://gourav-dhar.com/blogs/how-i-created-an-undectable-backdoor-for-windows-ethical-hacking/" class="h5 d-block mb-3"><div class="recent-post-thumb mr-3" style="background-image: url('https://gourav-dhar.com/images/blogs/backdoor/1.png');"></div></a>
+                      <a href= "https://gourav-dhar.com/blogs/how-i-created-an-undetectable-backdoor-for-windows-ethical-hacking/" class="h5 d-block mb-3"><div class="recent-post-thumb mr-3" style="background-image: url('https://gourav-dhar.com/images/blogs/backdoor/1.png');"></div></a>
                     
                   
                   
@@ -332,8 +332,8 @@
                       
                     </div>
                     
-                      <a href= "https://gourav-dhar.com/blogs/how-i-created-an-undectable-backdoor-for-windows-ethical-hacking/" class="h5 d-block mb-3">How I created an undetectable Backdoor for Windows</a>
-                      <a href= "https://gourav-dhar.com/blogs/how-i-created-an-undectable-backdoor-for-windows-ethical-hacking/" class="btn btn-outline-primary">read more</a>
+                      <a href= "https://gourav-dhar.com/blogs/how-i-created-an-undetectable-backdoor-for-windows-ethical-hacking/" class="h5 d-block mb-3">How I created an undetectable Backdoor for Windows</a>
+                      <a href= "https://gourav-dhar.com/blogs/how-i-created-an-undetectable-backdoor-for-windows-ethical-hacking/" class="btn btn-outline-primary">read more</a>
                     
                     
                   </div>
