@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# ./webp-convert.sh /home/batman/Desktop/gouravdhar.github.io/static/images
+# ./webp-convert.sh /home/batman/Desktop/personal-website/blogging-website/static/images
 
 # converting JPEG images
 find $1 -type f -and \( -iname "*.jpg" -o -iname "*.jpeg" \) \
