@@ -256,7 +256,7 @@ move_pointer()
 </code></pre><p><img src="../../images/blogs/nline.webp" alt="newline"></p>
 <p>This code will move the mouse pointer to the smilie icon on WhatsApp. Run this python code to verify that the code actually works. The way to do that would be to run the python program and quickly switch to the screen where WhatsApp web is running. (If the program does not move, try playing with the confidence parameter and try it with values between <code>0.6</code> to <code>0.9</code>)</p>
 <p>Once you verify that the code is working, we will proceed to read the last sent message. Some calibration is required here to move the mouse pointer to the last received message. <code>pt.moveTo(x, y, duration=0.5)</code> will actually move the mouse pointer to the smilie image. The received message is slightly above it, so we will edit it to hover over that message. For me it is <code>pt.moveTo(x+100, y-45, duration=0.5)</code> . You can use trial and error to find out the pixel difference for your screen.</p>
-<h2 id="2-click-on-unread-messages-and-extract-themessage">2. Click on unread messages and extract the message</h2>
+<h2 id="2-programmatically-click-on-unread-messages-and-extract-the-message">2. Programmatically click on unread messages and extract the message</h2>
 <p>The next step is to programmatically select the last received message, copy it, and read the text from the clipboard. Adding the following lines of code will do it</p>
 <pre><code>pt.tripleClick()
 pt.rightClick()
@@ -273,7 +273,7 @@ pt.click()
 <p><img src="../../images/blogs/nline.webp" alt="newline">
 <img src="../../images/blogs/wp-bot/7.webp" alt="Image"></p>
 <p>Run it to see everything works as expected.</p>
-<h2 id="3-process-the-message-and-reply-toit">3. Process the message and Reply to it</h2>
+<h2 id="3-process-the-message-and-programmatically-reply-to-it">3. Process the message and programmatically reply to it</h2>
 <p>Next, I will add a function <code>send_message</code> in <code>main.py</code> . The function definition would look like this.</p>
 <pre><code>def send_message(message):
     position = pt.locateOnScreen(&quot;whatsapp/smilie.png&quot;, confidence=.6)
@@ -301,7 +301,7 @@ pt.click()
     else:
         return &quot;Wassup! How you doin&quot;
 </code></pre><p>The above code returns the response as per certain criteria, for eg, if anyone sends a message containing <strong>Happy birthday</strong>, the program will return &ldquo;Thank You&rdquo; and so on. This is the place where you would be adding an A.I. model (if you have one) to chat with a person.</p>
-<h2 id="opening-unreadchats">Opening unread chats</h2>
+<h2 id="4-programmatically-opening-unread-chats">4. Programmatically opening unread chats</h2>
 <p>Now we have to write a function that continuously checks for new messages. Basically, search for the green dot I took a screenshot of earlier. I will create a function <code>check_for_unread_messages </code>:</p>
 <pre><code>def check_for_unread_messages():
     while True:
