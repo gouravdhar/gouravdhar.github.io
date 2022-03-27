@@ -6,10 +6,37 @@
     <description>Recent content in Tags on Gourav Dhar | Blogger, Software Developer | IIT Roorkee &#39;19</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 19 Mar 2022 10:07:47 +0600</lastBuildDate>
+    <lastBuildDate>Sun, 27 Mar 2022 10:07:47 +0600</lastBuildDate>
     
 	<atom:link href="https://gourav-dhar.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Cool Tech Stuff</title>
+      <link>https://gourav-dhar.com/tags/cool-tech-stuff/</link>
+      <pubDate>Sun, 27 Mar 2022 10:07:47 +0600</pubDate>
+      
+      <guid>https://gourav-dhar.com/tags/cool-tech-stuff/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://gourav-dhar.com/tags/python/</link>
+      <pubDate>Sun, 27 Mar 2022 10:07:47 +0600</pubDate>
+      
+      <guid>https://gourav-dhar.com/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Whatsapp Reply Bot</title>
+      <link>https://gourav-dhar.com/tags/whatsapp-reply-bot/</link>
+      <pubDate>Sun, 27 Mar 2022 10:07:47 +0600</pubDate>
+      
+      <guid>https://gourav-dhar.com/tags/whatsapp-reply-bot/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Hacking</title>
@@ -35,24 +62,6 @@
       <pubDate>Sat, 19 Mar 2022 10:07:47 +0600</pubDate>
       
       <guid>https://gourav-dhar.com/tags/spoofing/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Cool Tech Stuff</title>
-      <link>https://gourav-dhar.com/tags/cool-tech-stuff/</link>
-      <pubDate>Sat, 12 Mar 2022 10:07:47 +0600</pubDate>
-      
-      <guid>https://gourav-dhar.com/tags/cool-tech-stuff/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>https://gourav-dhar.com/tags/python/</link>
-      <pubDate>Sat, 12 Mar 2022 10:07:47 +0600</pubDate>
-      
-      <guid>https://gourav-dhar.com/tags/python/</guid>
       <description></description>
     </item>
     

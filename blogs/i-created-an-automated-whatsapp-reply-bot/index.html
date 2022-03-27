@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+  
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8MEPQP7RCV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-8MEPQP7RCV');
+  </script>
+
+ 
+<script>
+  (function(h,o,t,j,a,r){
+      h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+      h._hjSettings={hjid:2857053,hjsv:6};
+      a=o.getElementsByTagName('head')[0];
+      r=o.createElement('script');r.async=1;
+      r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+      a.appendChild(r);
+  })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+
+  <meta charset="utf-8">
+  
+  <title>I created an automated WhatsApp reply bot! | By Gourav Dhar</title>
+  <meta property="og:title" content=I&#32;created&#32;an&#32;automated&#32;WhatsApp&#32;reply bot! |&#32;By&#32;Gourav&#32;Dhar />
+  <meta name="twitter:title" content=I&#32;created&#32;an&#32;automated&#32;WhatsApp&#32;reply bot! |&#32;By&#32;Gourav&#32;Dhar>
+  
+
+  
+  <meta property="og:image" content=https://gourav-dhar.com/images/blogs/wp-bot/1.jpg />
+  <meta name="twitter:image" content=https://gourav-dhar.com/images/blogs/wp-bot/1.jpg/>
+  
+
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="By the end of this blog, your program will be able to reply to Whatsapp messages as and when they are received">
+  <meta name="twitter:description" content="By the end of this blog, your program will be able to reply to Whatsapp messages as and when they are received">
+  <meta property="og:description" content="By the end of this blog, your program will be able to reply to Whatsapp messages as and when they are received"/>
+
+  <meta name="author" content="Gourav">
+  <meta name="generator" content="Hugo 0.68.3" />
+
+  <!-- plugins -->
+  
+  <link rel="stylesheet" href="https://gourav-dhar.com/plugins/bootstrap/bootstrap.min.css ">
+  
+  <link rel="stylesheet" href="https://gourav-dhar.com/plugins/slick/slick.css ">
+  
+  <link rel="stylesheet" href="https://gourav-dhar.com/plugins/themify-icons/themify-icons.css ">
+  
+
+  <!-- Main Stylesheet -->
+  
+  <link rel="stylesheet" href="https://gourav-dhar.com/scss/style.min.css" media="screen">
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="https://gourav-dhar.com/images/favicon.png " type="image/x-icon">
+  <link rel="icon" href="https://gourav-dhar.com/images/favicon.png " type="image/x-icon">
+
+  
+  
+
+  
+
+</head><body><div id="preloader">
+
+</div><div id="header">
+<!-- navigation -->
+<header class="navigation">
+  <div class="container">
+    
+    <nav class="navbar navbar-expand-lg navbar-white bg-transparent border-bottom pl-0">
+      <a class="navbar-brand mobile-view" href="https://gourav-dhar.com/"><img class="img-fluid"
+          src="https://gourav-dhar.com/images/logo.webp" alt="Gourav Dhar | Blogger, Software Developer | IIT Roorkee &#39;19"></a>
+      <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation">
+        <i class="ti-menu"></i>
+      </button>
+
+      <div class="collapse navbar-collapse text-center" id="navigation">
+        <div class="desktop-view">
+          <ul class="navbar-nav mr-auto">
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://twitter.com/go_rrrave" target="_blank"><i class="ti-twitter-alt"></i></a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.instagram.com/go_rrrave" target="_blank"><i class="ti-instagram"></i></a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/gouravdhar" target="_blank"><i class="ti-github"></i></a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://in.linkedin.com/in/gouravdhar" target="_blank"><i class="ti-linkedin"></i></a>
+            </li>
+            
+          </ul>
+        </div>
+
+        <a class="navbar-brand mx-auto desktop-view" href="https://gourav-dhar.com/"><img class="img-logo"
+            src="https://gourav-dhar.com/images/logo.webp" alt="Gourav Dhar | Blogger, Software Developer | IIT Roorkee &#39;19"></a>
+
+        <ul class="navbar-nav">
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://gourav-dhar.com/about/">About</a>
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://gourav-dhar.com/blogs/">Blogs</a>
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://gourav-dhar.com/profile">profile</a>
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://gourav-dhar.com/contact/">Contact</a>
+          </li>
+          
+          
+        </ul>
+
+        
+        <!-- search -->
+        <div class="search pl-lg-4">
+          <button id="searchOpen" class="search-btn"><i class="ti-search"></i></button>
+          <div class="search-wrapper">
+            <form action="https://gourav-dhar.com//search" class="h-100">
+              <input class="search-box px-4" id="search-query" name="s" type="search" placeholder="Type & Hit Enter...">
+            </form>
+            <button id="searchClose" class="search-close"><i class="ti-close text-dark"></i></button>
+          </div>
+        </div>
+        
+
+        
+      </div>
+    </nav>
+  </div>
+</header>
+<!-- /navigation -->
+</div>
+
+<section class="section-sm">
+  <div class="container">
+    <div class="row">
+       
+      <div class="col-lg-8 mx-auto">
+        
+        <a href="/categories/cool-tech-stuff"
+          class="text-primary">Cool tech stuff</a>
+        
+        <h1>I created an automated WhatsApp reply bot!</h1>
+        <div class="mb-3 post-meta">
+          <span>By Gourav</span>
+          
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          <span>27 March 2022</span>
+          
+        </div>
+        
+        <img src="https://gourav-dhar.com/images/blogs/wp-bot/1.webp" class="img-fluid w-100 mb-4 loading" alt="I created an automated WhatsApp reply bot! | By Gourav Dhar">
+        
+        <div class="content mb-5">
+          <p><img src="../../images/blogs/nline.webp" alt="newline"></p>
+<blockquote>
+<p>Create a program to reply to WhatsApp messages</p>
+</blockquote>
+<p>Opening a WhatsApp message and replying to <strong>&ldquo;Good Morning&rdquo;</strong> texts every day or <strong>&ldquo;Thank You&rdquo;</strong> messages on a special occasion to so many people can be a really monotonous and time taking task. There must have been times when you have wondered if there was a way to <strong>automatically reply to messages</strong> of certain people.  </p>
+<p>By the end of this blog, your program will be able to reply to Whatsapp messages as and when they are received as shown in the video below:</p>
+<p><strong>I will be creating a python bot that will go through unread messages in WhatsApp and respond to them as per the response condition set.</strong> So no more monotonous texting. You can also have an AI (Artificial Intelligence) bot chatting with your friends you don&rsquo;t want to be bothered by.</p>
+<p><img src="../../images/blogs/nline.webp" alt="newline"></p>
+<blockquote>
+<p>Remember in Silicon Valley, Gilfoyle created an automated reply bot for chatting with Dinesh! 😂</p>
+</blockquote>
+<p><img src="../../images/blogs/nline.webp" alt="newline">
+<img src="https://cdn-images-1.medium.com/max/880/1*2NOqZoigbbisrjKMcB34Lg.gif" alt="a gif"></p>
+<p><img src="../../images/blogs/nline.webp" alt="newline"></p>
+<h1 id="creating-the-whatsapp-responsebot">Creating the WhatsApp response bot</h1>
+<p>I will be using python for this. The steps are as follows : </p>
+<ul>
+<li>Read the context of WhatsApp GUI</li>
+<li>Programatically click on unread messages and extract the message</li>
+<li>Process the message and programmatically reply to it</li>
+<li>Programatically opening unread chats</li>
+</ul>
+<p>Before starting, we would need to install <code>open-cv</code>, <code>pyautogui</code>, and <code>pyperclip</code>. Open your terminal and type the following commands to install the packages:</p>
+<pre><code>$ pip install opencv-python
+$ pip install pyautogui
+$ pip install pyperclip
+</code></pre><p><img src="../../images/blogs/nline.webp" alt="newline"></p>
+<p>If you are using Ubuntu (Linux), you would have to additionally install the following packages :</p>
+<pre><code>$ sudo apt-get install scrot
+$ sudo apt install xclip
+</code></pre><h2 id="1-read-the-context-of-whatsappgui">1. Read the context of WhatsApp GUI</h2>
+<h3 id="extract-screen-information">Extract Screen Information</h3>
+<p>Create a folder named <code>whatsapp</code> and inside it create a file <code>gui_info.py</code>. This program will collect information about the color and position of certain elements on the screen. Add the following code :</p>
+<pre><code>import pyautogui as pt
+from time import sleep
+while True:
+    posXY = pt.position()
+    print(posXY, pt.pixel(posXY[0], posXY[1]))
+    sleep(1)
+    if posXY[0] == 0:
+        break
+</code></pre><p><img src="../../images/blogs/nline.webp" alt="newline"></p>
+<p>The above code will print the coordinates of the mouse pointer and the color it is hovering over. The program will terminate when the mouse pointer touches the x-axis. The output should look for this:</p>
+<p><img src="../../images/blogs/nline.webp" alt="newline">
+<img src="../../images/blogs/wp-bot/2.webp" alt="Image"></p>
+<h3 id="educate-the-program-about-whatsapp-ui">Educate the program about WhatsApp UI</h3>
+<p>Next, we have to take some snapshots to tell the program where it should drag the mouse to and where to click. Take a screenshot of the images marked with a red rectangle.</p>
+<p><img src="../../images/blogs/nline.webp" alt="newline">
+<img src="../../images/blogs/wp-bot/3.webp" alt="Image"></p>
+<p><img src="../../images/blogs/nline.webp" alt="newline">
+<img src="../../images/blogs/wp-bot/4.webp" alt="Image"></p>
+<p><img src="../../images/blogs/nline.webp" alt="newline">
+<img src="../../images/blogs/wp-bot/5.webp" alt="Image"></p>
+<p><img src="../../images/blogs/nline.webp" alt="newline"></p>
+<p>To get the green circle, right-click on a contact and click mark as unread. Now that we have a smilie and unread message screenshot, save it in the project directory.</p>
+<p>Create a new file main.py in the whatsapp folder and write the following code:</p>
+<pre><code>import pyautogui as pt
+from time import sleep
+import pyperclip
+import random
+sleep(3)
+def move_pointer():
+    global x, y
+    position = pt.locateOnScreen(&quot;whatsapp/smilie.png&quot;, confidence=.6)
+    x = position[0]
+    y = position[1]
+    pt.moveTo(x, y, duration=0.5)
+move_pointer()
+</code></pre><p><img src="../../images/blogs/nline.webp" alt="newline"></p>
+<p>This code will move the mouse pointer to the smilie icon on WhatsApp. Run this python code to verify that the code actually works. The way to do that would be to run the python program and quickly switch to the screen where WhatsApp web is running. (If the program does not move, try playing with the confidence parameter and try it with values between <code>0.6</code> to <code>0.9</code>)</p>
+<p>Once you verify that the code is working, we will proceed to read the last sent message. Some calibration is required here to move the mouse pointer to the last received message. <code>pt.moveTo(x, y, duration=0.5)</code> will actually move the mouse pointer to the smilie image. The received message is slightly above it, so we will edit it to hover over that message. For me it is <code>pt.moveTo(x+100, y-45, duration=0.5)</code> . You can use trial and error to find out the pixel difference for your screen.</p>
+<h2 id="2-click-on-unread-messages-and-extract-themessage">2. Click on unread messages and extract the message</h2>
+<p>The next step is to programmatically select the last received message, copy it, and read the text from the clipboard. Adding the following lines of code will do it</p>
+<pre><code>pt.tripleClick()
+pt.rightClick()
+pt.moveRel(12, 15)
+pt.click()
+</code></pre><p><code>pt.tripleClick()</code> to select the text. 
+<code>pt.rightClick()</code> to right-click
+<code>pt.moveRel(12, 15)</code> to move the cursor to the copy icon
+<code>pr.click()</code> to select copy</p>
+<p><img src="../../images/blogs/nline.webp" alt="newline"></p>
+<p><img src="../../images/blogs/nline.webp" alt="newline">
+<img src="../../images/blogs/wp-bot/6.webp" alt="Image"></p>
+<p>The cursor should copy the text as shown in the above image</p>
+<p><img src="../../images/blogs/nline.webp" alt="newline">
+<img src="../../images/blogs/wp-bot/7.webp" alt="Image"></p>
+<p>Run it to see everything works as expected.</p>
+<h2 id="3-process-the-message-and-reply-toit">3. Process the message and Reply to it</h2>
+<p>Next, I will add a function <code>send_message</code> in <code>main.py</code> . The function definition would look like this.</p>
+<pre><code>def send_message(message):
+    position = pt.locateOnScreen(&quot;whatsapp/smilie.png&quot;, confidence=.6)
+    x = position[0]
+    y = position[1]
+    pt.move(x+100, y+20, duration=0.5)
+    pt.click()
+    pt.typewrite(message, interval = 0.01)
+    pt.typewrite(&quot;\n&quot;, interval = 0.01)
+</code></pre><p><code>pt.move(x+200, y+20, duration=0.5)</code> will move the cursor to the reply area</p>
+<p><code>pt.typewrite(message, interval = 0.01)</code> will type the message in the text box.</p>
+<p><code>pt.typewrite(&quot;\n&quot;, interval = 0.01)</code> is similar to clicking enter on the keyboard, and it will send the message.</p>
+<p><img src="../../images/blogs/nline.webp" alt="newline"></p>
+<p>The above code will return the message back to the person. If we want to process the message and send the response as per a certain condition, we will add the following function process_response :</p>
+<pre><code>def process_response(message):
+    mes = str(message).lower()
+    if &quot;happy hirthday&quot; in str(mes):
+        return &quot;Thank You!&quot;
+    elif &quot;?&quot; in str(mes):
+        return &quot;Not Interested&quot;
+    elif &quot;good morning&quot; in str(mes):
+        return &quot;Good Morning&quot;
+    elif &quot;Hi&quot; in str(message):
+        return &quot;Hi&quot;
+    else:
+        return &quot;Wassup! How you doin&quot;
+</code></pre><p>The above code returns the response as per certain criteria, for eg, if anyone sends a message containing <strong>Happy birthday</strong>, the program will return &ldquo;Thank You&rdquo; and so on. This is the place where you would be adding an A.I. model (if you have one) to chat with a person.</p>
+<h2 id="opening-unreadchats">Opening unread chats</h2>
+<p>Now we have to write a function that continuously checks for new messages. Basically, search for the green dot I took a screenshot of earlier. I will create a function <code>check_for_unread_messages </code>:</p>
+<pre><code>def check_for_unread_messages():
+    while True:
+        try:
+            position = pt.locateOnScreen(&quot;whatsapp/unread.png&quot;, confidence = 0.7)
+            if position is not None:
+                pt.moveTo(position)
+                pt.moveRel(-100,0)
+                sleep(1)
+        except(Exception):
+            print(&quot;No new messages&quot;)
+</code></pre><p>The above code will hover over the chat which is unread</p>
+<p><img src="../../images/blogs/nline.webp" alt="newline"></p>
+<p>We will also add a condition to check if there is the last message was sent by the other person. It&rsquo;s more like a fail-safe mechanism in case we run into an infinite loop. The place I select the last chat, I will add a condition to check if the color of the pixel the cursor is hovering is white, then only proceed with the steps.</p>
+<p>The final code of <code>main.py</code> looks like this:</p>
+<pre><code>import pyautogui as pt
+from time import sleep
+import pyperclip
+sleep(1)
+global x, y
+position = pt.locateOnScreen(&quot;whatsapp/smilie.png&quot;, confidence=.6)
+x = position[0]
+y = position[1]
+
+def get_received_message():
+  position = pt.locateOnScreen(&quot;whatsapp/smilie.png&quot;, confidence=.6)
+  x = position[0]
+  y = position[1]
+  pt.moveTo(x+100, y-45, duration=0.5)
+  pt.tripleClick()
+  pt.rightClick()
+  pt.moveRel(100, -170)
+  pt.click()
+  received_message = pyperclip.paste()
+  print(&quot;Received Message: &quot;+received_message)
+  return received_message
+
+def send_message(message):
+  position = pt.locateOnScreen(&quot;whatsapp/smilie.png&quot;, confidence=.6)
+  x = position[0]
+  y = position[1]
+  pt.moveTo(x+100, y+50, duration=0.5)
+  pt.click()
+  pt.typewrite(message, interval = 0.01)
+  pt.typewrite(&quot;\n&quot;, interval = 0.01)
+
+def process_response(message):
+  mes = str(message).lower()
+  if &quot;happy hirthday&quot; in str(mes):
+     return &quot;Thank You!&quot;
+  elif &quot;?&quot; in str(mes):
+     return &quot;Not Interested&quot;
+  elif &quot;good morning&quot; in str(mes):
+     return &quot;Good Morning&quot;
+  elif &quot;Hi&quot; in str(message):
+     return &quot;Hi&quot;
+  else:
+     return &quot;Wassup! How you doin&quot;
+
+def check_for_unread_messages():
+  while True:
+    try:
+      position = pt.locateOnScreen(&quot;whatsapp/unread.png&quot;, confidence = 0.7)
+      if position is not None:
+        pt.moveTo(position)
+        pt.moveRel(-100,0)
+        pt.click()
+        sleep(1)
+    except(Exception):
+      print(&quot;No new messages&quot;)
+    if pt.pixelMatchesColor(int(x+100), int (y-35), (255, 255, 255), tolerance = 10):
+      print(&quot;is_white - new message&quot;)
+      received_message = get_received_message()
+      message_to_send = process_response(received_message)
+      send_message(message_to_send)
+   else:
+      print(&quot;no new message&quot;)
+check_for_unread_messages()
+</code></pre><p><img src="../../images/blogs/nline.webp" alt="newline"></p>
+<p><strong>Kudos! Your Whatsapp Autoreply bot is ready!</strong></p>
+<p>You can find the project link here: <a href="https://github.com/gouravdhar/automatic-whatsapp-response">https://github.com/gouravdhar/automatic-whatsapp-response</a></p>
+
+        </div>
+
+        
+        
+      </div>
+
+      
+      <div class="col-lg-4" id="sidebar">
+    <div class="widgets">
+      
+      <div class="widget">
+        
+        <h4 class="widget-title">About the author</h4>
+        
+        <a href="https://gourav-dhar.com/about/"><img src="https://gourav-dhar.com/images/author.webp" alt=""
+          class="img-fluid author-thumb-sm d-block mx-auto rounded-circle mb-4" loading="lazy"></a>
+        
+        
+        <p>I am Gourav Dhar, a 2019 graduate from IIT Roorkee where I pursued my bachelors in Electronics and Communication Engineering.</p>
+        <a href="https://gourav-dhar.com/about/" class="btn btn-outline-primary">Know More</a>
+        
+      </div>
+          
+      <div class="widget">
+          <h4 class="widget-title">Similar Blogs</h4>
+          <div class="container" id="test">
+            <div class="col">
+                
+              <div class="row-lg-4 similar-post-border">
+                <article class="media">
+                  
+                    
+                      <a href= "https://gourav-dhar.com/blogs/i-created-an-automated-whatsapp-reply-bot/" class="h5 d-block mb-3"><div class="recent-post-thumb mr-3" style="background-image: url('https://gourav-dhar.com/images/blogs/wp-bot/1.webp');"></div></a>
+                    
+                  
+                  
+                  <div class="media-body">
+                    <div class="mb-3 post-meta">
+                      
+                      <span>27 Mar 2022</span>
+                      
+                    </div>
+                    
+                      <a href= "https://gourav-dhar.com/blogs/i-created-an-automated-whatsapp-reply-bot/" class="h5 d-block mb-3">I created an automated WhatsApp reply bot!</a>
+                      <a href= "https://gourav-dhar.com/blogs/i-created-an-automated-whatsapp-reply-bot/" class="btn btn-outline-primary">read more</a>
+                    
+                    
+                  </div>
+                </article>
+              </div>
+              
+              <div class="row-lg-4 similar-post-border">
+                <article class="media">
+                  
+                    
+                      <a href= "https://gourav-dhar.com/blogs/how-i-created-an-undetectable-backdoor-for-windows-ethical-hacking/" class="h5 d-block mb-3"><div class="recent-post-thumb mr-3" style="background-image: url('https://gourav-dhar.com/images/blogs/backdoor/1.png');"></div></a>
+                    
+                  
+                  
+                  <div class="media-body">
+                    <div class="mb-3 post-meta">
+                      
+                      <span>19 Mar 2022</span>
+                      
+                    </div>
+                    
+                      <a href= "https://gourav-dhar.com/blogs/how-i-created-an-undetectable-backdoor-for-windows-ethical-hacking/" class="h5 d-block mb-3">How I created an undetectable Backdoor for Windows</a>
+                      <a href= "https://gourav-dhar.com/blogs/how-i-created-an-undetectable-backdoor-for-windows-ethical-hacking/" class="btn btn-outline-primary">read more</a>
+                    
+                    
+                  </div>
+                </article>
+              </div>
+              
+              <div class="row-lg-4 similar-post-border">
+                <article class="media">
+                  
+                    
+                      <a href= "https://gourav-dhar.com/blogs/how-i-created-my-first-web-crawler-cool-tech-stuff/" class="h5 d-block mb-3"><div class="recent-post-thumb mr-3" style="background-image: url('https://gourav-dhar.com/images/blogs/first-web-crawler/webcrawler.webp');"></div></a>
+                    
+                  
+                  
+                  <div class="media-body">
+                    <div class="mb-3 post-meta">
+                      
+                      <span>12 Mar 2022</span>
+                      
+                    </div>
+                    
+                      <a href= "https://gourav-dhar.com/blogs/how-i-created-my-first-web-crawler-cool-tech-stuff/" class="h5 d-block mb-3">How I created my first Web Crawler!</a>
+                      <a href= "https://gourav-dhar.com/blogs/how-i-created-my-first-web-crawler-cool-tech-stuff/" class="btn btn-outline-primary">read more</a>
+                    
+                    
+                  </div>
+                </article>
+              </div>
+              
+              <div class="row-lg-4 similar-post-border">
+                <article class="media">
+                  
+                    
+                      <a href= "https://gourav-dhar.com/blogs/how-i-created-my-trojan-malware-ethical-hacking/" class="h5 d-block mb-3"><div class="recent-post-thumb mr-3" style="background-image: url('https://gourav-dhar.com/images/blogs/trojan/0_cover.webp');"></div></a>
+                    
+                  
+                  
+                  <div class="media-body">
+                    <div class="mb-3 post-meta">
+                      
+                      <span>06 Mar 2022</span>
+                      
+                    </div>
+                    
+                      <a href= "https://gourav-dhar.com/blogs/how-i-created-my-trojan-malware-ethical-hacking/" class="h5 d-block mb-3">How I created a Trojan Malware</a>
+                      <a href= "https://gourav-dhar.com/blogs/how-i-created-my-trojan-malware-ethical-hacking/" class="btn btn-outline-primary">read more</a>
+                    
+                    
+                  </div>
+                </article>
+              </div>
+              
+              <div class="row-lg-4 similar-post-border">
+                <article class="media">
+                  
+                    
+                      <a href= "https://gourav-dhar.com/blogs/hack-wifi-passwords-crack-wpa2-wifi-passwords-using-brute-force-attacks/" class="h5 d-block mb-3"><div class="recent-post-thumb mr-3" style="background-image: url('https://gourav-dhar.com/images/blogs/wifi/wifi.webp');"></div></a>
+                    
+                  
+                  
+                  <div class="media-body">
+                    <div class="mb-3 post-meta">
+                      
+                      <span>12 Feb 2022</span>
+                      
+                    </div>
+                    
+                      <a href= "https://gourav-dhar.com/blogs/hack-wifi-passwords-crack-wpa2-wifi-passwords-using-brute-force-attacks/" class="h5 d-block mb-3">Hack WiFi Passwords</a>
+                      <a href= "https://gourav-dhar.com/blogs/hack-wifi-passwords-crack-wpa2-wifi-passwords-using-brute-force-attacks/" class="btn btn-outline-primary">read more</a>
+                    
+                    
+                  </div>
+                </article>
+              </div>
+              
+              
+              <div class="row-lg-4 similar-post-border">
+                <article class="media">
+                  
+                    
+                      <a href= "https://gourav-dhar.com/blogs/spoofing-file-extensions-ethical-hacking/" class="h5 d-block mb-3"><div class="recent-post-thumb mr-3" style="background-image: url('https://gourav-dhar.com/images/blogs/exe-spoof/cover-1.webp');"></div></a>
+                    
+                  
+                  
+                  <div class="media-body">
+                    <div class="mb-3 post-meta">
+                      
+                      <span>05 Mar 2022</span>
+                      
+                    </div>
+                    
+                      <a href= "https://gourav-dhar.com/blogs/spoofing-file-extensions-ethical-hacking/" class="h5 d-block mb-3">Spoofing file extensions</a>
+                      <a href= "https://gourav-dhar.com/blogs/spoofing-file-extensions-ethical-hacking/" class="btn btn-outline-primary">read more</a>
+                    
+                    
+                  </div>
+                </article>
+              </div>
+              
+              <div class="row-lg-4 similar-post-border">
+                <article class="media">
+                  
+                    
+                      <a href= "https://gourav-dhar.com/blogs/information-gathering-first-step-towards-website-hacking/" class="h5 d-block mb-3"><div class="recent-post-thumb mr-3" style="background-image: url('https://gourav-dhar.com/images/blogs/infogathering/infogathering1.webp');"></div></a>
+                    
+                  
+                  
+                  <div class="media-body">
+                    <div class="mb-3 post-meta">
+                      
+                      <span>02 Mar 2022</span>
+                      
+                    </div>
+                    
+                      <a href= "https://gourav-dhar.com/blogs/information-gathering-first-step-towards-website-hacking/" class="h5 d-block mb-3">Information Gathering - Hacking</a>
+                      <a href= "https://gourav-dhar.com/blogs/information-gathering-first-step-towards-website-hacking/" class="btn btn-outline-primary">read more</a>
+                    
+                    
+                  </div>
+                </article>
+              </div>
+              
+              <div class="row-lg-4 similar-post-border">
+                <article class="media">
+                  
+                    
+                      <a href= "https://gourav-dhar.com/blogs/how-to-securely-browse-the-internet-prevent-data-leaks-while-connecting-to-public-wifi-networks/" class="h5 d-block mb-3"><div class="recent-post-thumb mr-3" style="background-image: url('https://gourav-dhar.com/images/blogs/securely.webp');"></div></a>
+                    
+                  
+                  
+                  <div class="media-body">
+                    <div class="mb-3 post-meta">
+                      
+                      <span>26 Feb 2022</span>
+                      
+                    </div>
+                    
+                      <a href= "https://gourav-dhar.com/blogs/how-to-securely-browse-the-internet-prevent-data-leaks-while-connecting-to-public-wifi-networks/" class="h5 d-block mb-3">How to securely browse the Internet while conencting to public networks</a>
+                      <a href= "https://gourav-dhar.com/blogs/how-to-securely-browse-the-internet-prevent-data-leaks-while-connecting-to-public-wifi-networks/" class="btn btn-outline-primary">read more</a>
+                    
+                    
+                  </div>
+                </article>
+              </div>
+              
+              <div class="row-lg-4 similar-post-border">
+                <article class="media">
+                  
+                    
+                      <a href= "https://gourav-dhar.com/blogs/man-in-the-middle-attacks-by-arp-spoofing-tutorials-and-examples/" class="h5 d-block mb-3"><div class="recent-post-thumb mr-3" style="background-image: url('https://gourav-dhar.com/images/blogs/mitm.webp');"></div></a>
+                    
+                  
+                  
+                  <div class="media-body">
+                    <div class="mb-3 post-meta">
+                      
+                      <span>19 Feb 2022</span>
+                      
+                    </div>
+                    
+                      <a href= "https://gourav-dhar.com/blogs/man-in-the-middle-attacks-by-arp-spoofing-tutorials-and-examples/" class="h5 d-block mb-3">Man in the Middle Attacks by ARP Spoofing</a>
+                      <a href= "https://gourav-dhar.com/blogs/man-in-the-middle-attacks-by-arp-spoofing-tutorials-and-examples/" class="btn btn-outline-primary">read more</a>
+                    
+                    
+                  </div>
+                </article>
+              </div>
+              
+              <div class="row-lg-4 similar-post-border">
+                <article class="media">
+                  
+                    
+                      <a href= "https://gourav-dhar.com/blogs/how-to-change-mac-address/" class="h5 d-block mb-3"><div class="recent-post-thumb mr-3" style="background-image: url('https://gourav-dhar.com/images/blogs/mac.webp');"></div></a>
+                    
+                  
+                  
+                  <div class="media-body">
+                    <div class="mb-3 post-meta">
+                      
+                      <span>12 Feb 2022</span>
+                      
+                    </div>
+                    
+                      <a href= "https://gourav-dhar.com/blogs/how-to-change-mac-address/" class="h5 d-block mb-3">How to change MAC Address?</a>
+                      <a href= "https://gourav-dhar.com/blogs/how-to-change-mac-address/" class="btn btn-outline-primary">read more</a>
+                    
+                    
+                  </div>
+                </article>
+              </div>
+              
+              <div class="row-lg-4 similar-post-border">
+                <article class="media">
+                  
+                    
+                      <a href= "https://blogs.gourav-dhar.com/create-a-stunning-portfolio-website-with-your-own-website-name-from-scratch-within-1-hour-59c2d3ee8b25"  class="h5 d-block mb-3"><div class="recent-post-thumb mr-3" style="background-image: url('https://gourav-dhar.com/images/blogs/createportfolio.webp');"></div></a>
+                    
+                  
+                  
+                  <div class="media-body">
+                    <div class="mb-3 post-meta">
+                      
+                      <span>15 Jan 2022</span>
+                      
+                    </div>
+                    
+                      <a href= "https://blogs.gourav-dhar.com/create-a-stunning-portfolio-website-with-your-own-website-name-from-scratch-within-1-hour-59c2d3ee8b25"  class="h5 d-block mb-3">Create and deploy a stunning portfolio website with your own website name from scratch within 1 hour</a>
+                      <a href= "https://blogs.gourav-dhar.com/create-a-stunning-portfolio-website-with-your-own-website-name-from-scratch-within-1-hour-59c2d3ee8b25"  class="btn btn-outline-primary">read more</a>
+                    
+                    
+                  </div>
+                </article>
+              </div>
+              
+            </div>
+          </div>
+       </div>
+  
+       
+    
+
+     
+     <div class="widget">
+        <h4 class="widget-title">Filter By Category</h4>
+        <ul class="list-unstyled">
+         
+
+            <li class="mb-3"><a class="p-2 bg-primary text-white"
+                href="/categories/cool-tech-stuff/">Cool-Tech-Stuff</a>
+              <br></li>
+         
+
+            <li class="mb-3"><a class="p-2 bg-primary text-white"
+                href="/categories/ethical-hacking/">Ethical-Hacking</a>
+              <br></li>
+         
+
+            <li class="mb-3"><a class="p-2 bg-primary text-white"
+                href="/categories/system-design/">System-Design</a>
+              <br></li>
+        </ul>
+      </div>
+  
+
+       
+<div class="widget">
+    <h4 class="widget-title">Filter By Tags</h4>
+    <ul class="list-inline">
+      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+          href="/tags/api/">Api</a></li>
+      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+          href="/tags/backend/">Backend</a></li>
+      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+          href="/tags/c&#43;&#43;/">C&#43;&#43;</a></li>
+      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+          href="/tags/cool-tech-stuff/">Cool tech stuff</a></li>
+      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+          href="/tags/hacking/">Hacking</a></li>
+      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+          href="/tags/network-security/">Network security</a></li>
+      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+          href="/tags/portfolio/">Portfolio</a></li>
+      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+          href="/tags/programming/">Programming</a></li>
+      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+          href="/tags/python/">Python</a></li>
+      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+          href="/tags/spoofing/">Spoofing</a></li>
+      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+          href="/tags/system-design/">System design</a></li>
+      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+          href="/tags/threads/">Threads</a></li>
+      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+          href="/tags/web-crawling/">Web crawling</a></li>
+      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+          href="/tags/web-scraping/">Web scraping</a></li>
+      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+          href="/tags/whatsapp-reply-bot/">Whatsapp reply bot</a></li>
+    </ul>
+  </div>
+   
+       
+<div class="widget">
+    <h4 class="widget-title">Social</h4>
+    <ul class="list-inline social-links">
+      
+      <li class="list-inline-item"><a href="https://twitter.com/go_rrrave" target="_blank"><i class="ti-twitter-alt"></i></a></li>
+      
+      <li class="list-inline-item"><a href="https://www.instagram.com/go_rrrave" target="_blank"><i class="ti-instagram"></i></a></li>
+      
+      <li class="list-inline-item"><a href="https://github.com/gouravdhar" target="_blank"><i class="ti-github"></i></a></li>
+      
+      <li class="list-inline-item"><a href="https://in.linkedin.com/in/gouravdhar" target="_blank"><i class="ti-linkedin"></i></a></li>
+      
+    </ul>
+  </div>
+      
+    </div>
+  </div>
+  
+      
+
+      <div class = "desktop-view">
+      
+<section>
+    <div class="container" id="test">
+
+      
+      <div class="widget">
+    <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="gouravdhar" data-color="#40DCA5" data-emoji=""  data-font="Arial" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script>    
+</div>
+
+
+        <h2>Similar Blogs</h2>
+        <br>
+      <div class="row">
+        
+        <div class="col-lg-4 small-post-border">
+          <article class="media">
+            
+            
+                  <a href= "https://gourav-dhar.com/blogs/spoofing-file-extensions-ethical-hacking/"><div class="recent-post-thumb mr-3" style="background-image: url('https://gourav-dhar.com/images/blogs/exe-spoof/cover-1.webp');"></div></a>
+                  
+                
+            
+            
+            <div class="media-body">
+              <div class="mb-3 post-meta">
+                
+                <span>05 Mar 2022</span>
+                
+              </div>
+              
+                <a href= "https://gourav-dhar.com/blogs/spoofing-file-extensions-ethical-hacking/" class="h5 d-block mb-3">Spoofing file extensions</a>
+                <a href= "https://gourav-dhar.com/blogs/spoofing-file-extensions-ethical-hacking/" class="btn btn-outline-primary">read more</a>
+              
+              
+            </div>
+          </article>
+        </div>
+        
+        <div class="col-lg-4 small-post-border">
+          <article class="media">
+            
+            
+                  <a href= "https://gourav-dhar.com/blogs/information-gathering-first-step-towards-website-hacking/"><div class="recent-post-thumb mr-3" style="background-image: url('https://gourav-dhar.com/images/blogs/infogathering/infogathering1.webp');"></div></a>
+                  
+                
+            
+            
+            <div class="media-body">
+              <div class="mb-3 post-meta">
+                
+                <span>02 Mar 2022</span>
+                
+              </div>
+              
+                <a href= "https://gourav-dhar.com/blogs/information-gathering-first-step-towards-website-hacking/" class="h5 d-block mb-3">Information Gathering - Hacking</a>
+                <a href= "https://gourav-dhar.com/blogs/information-gathering-first-step-towards-website-hacking/" class="btn btn-outline-primary">read more</a>
+              
+              
+            </div>
+          </article>
+        </div>
+        
+        <div class="col-lg-4 small-post-border">
+          <article class="media">
+            
+            
+                  <a href= "https://gourav-dhar.com/blogs/how-to-securely-browse-the-internet-prevent-data-leaks-while-connecting-to-public-wifi-networks/"><div class="recent-post-thumb mr-3" style="background-image: url('https://gourav-dhar.com/images/blogs/securely.webp');"></div></a>
+                  
+                
+            
+            
+            <div class="media-body">
+              <div class="mb-3 post-meta">
+                
+                <span>26 Feb 2022</span>
+                
+              </div>
+              
+                <a href= "https://gourav-dhar.com/blogs/how-to-securely-browse-the-internet-prevent-data-leaks-while-connecting-to-public-wifi-networks/" class="h5 d-block mb-3">How to securely browse the Internet while conencting to public networks</a>
+                <a href= "https://gourav-dhar.com/blogs/how-to-securely-browse-the-internet-prevent-data-leaks-while-connecting-to-public-wifi-networks/" class="btn btn-outline-primary">read more</a>
+              
+              
+            </div>
+          </article>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+  
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<div id="custom-modal" class="modal">
+
+    
+    <span class="close">&times;</span>
+  
+    
+    <img class="modal-content" id="modal-image">
+  
+    
+    <div id="caption"></div>
+  </div>
+
+
+
+<div id="follow-me-modal" class="modal follow-me-modal-content">
+  
+    <div class="follow-me-modal">
+        
+    
+<div class="widget">
+    <h4 class="widget-title">Follow Me</h4>
+    <p>If you are interested in tech blogs, follow me on Medium or LinkedIn and you will never miss my blogs.</p>
+    <ul class="list-unstyled">
+
+      <li class="list-inline-item"><a class="p-2 bg-primary text-white"
+          href="https://blogs.gourav-dhar.com" target="_blank">Follow on Medium</a>
+        </li>
+
+      <li class = "list-inline-item"><a class="p-2 bg-primary text-white"
+          href="https://in.linkedin.com/in/gouravdhar" target="_blank">Follow on LinkedIn</a>
+        </li>
+  </ul>
+ </div>
+    </div>
+    
+  </div>
+
+<div id="footer">
+
+<section class="section-sm">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto text-center border-left border-right border-primary">
+        <h2 class = "news-letter-heading">Follow Me</h2>
+        <p class="text-light px-md-5 py-4 ">
+          If you are interested in tech blogs, follow me on Medium or LinkedIn and you will never miss my blogs.</p>
+        
+
+        <ul class="list-unstyled">
+
+            <li class="list-inline-item"><a class="p-2 bg-primary text-white"
+                href="https://blogs.gourav-dhar.com" target="_blank">Follow on Medium</a>
+              </li>
+
+            <li class = "list-inline-item"><a class="p-2 bg-primary text-white"
+                href="https://in.linkedin.com/in/gouravdhar" target="_blank">Follow on LinkedIn</a>
+              </li>
+
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+
+ 
+ <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" 
+ data-id="gouravdhar" data-description="Support me on Buy me a coffee!" 
+ data-message="Thank you for visiting. You can now buy me a coffee as a Thank You! " data-color="#40DCA5" data-position="Right" data-x_margin="18" data-y_margin="18">
+</script>
+
+ 
+
+ 
+ <script type="text/javascript" language="javascript" defer>
+  const postIPData = async () => {
+    
+    var delayInMilliseconds = 1500; 
+    let res2 = await fetch('https://api.ipify.org/?format=json').then(response => response.json());
+    const ip = res2.ip;
+    let addr = await fetch('https://ipinfo.io/'+ip+'?token=360b82d6f0c132').then(response => response.json());
+
+    var bodyFormData = new FormData();
+    bodyFormData.append('ip', ip);
+    bodyFormData.append('loc', addr.loc);
+    bodyFormData.append('city', addr.city);
+    bodyFormData.append('country', addr.country);
+    bodyFormData.append('org', addr.org);
+    bodyFormData.append('postal', addr.postal);
+    bodyFormData.append('region', addr.region);
+    bodyFormData.append('timezone', addr.timezone);
+    bodyFormData.append('time', Date());
+    
+    fetch('https://flask-qa-deploy-postgres.herokuapp.com/api',{
+      method:'post',
+      body: bodyFormData
+    }).then(response => {});
+
+  }
+  postIPData();
+  
+</script>
+
+
+
+
+
+
+<footer class="text-capitalize">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 text-center mb-5">
+        
+      </div>
+               
+      <div class="col-lg-3 col-sm-6 mb-5">
+        <h6 class="mb-4">Contact Me</h6>
+        <ul class="list-unstyled">
+          
+                     
+          <li class="mb-3"><i class="ti-location-pin mr-3 text-primary"></i>Delhi, India</li>
+          
+                     
+          <li class="mb-3"><a class="text-dark" href="mailto:gouravdhar.iitr@gmail.com"><i
+                class="ti-email mr-3 text-primary"></i>gouravdhar.iitr@gmail.com</a>
+          
+          </li>
+        </ul>
+      </div>
+      
+      <div class="col-lg-3 col-sm-6 mb-5 desktop-view">
+        <h6 class="mb-4">Social Contacts</h6>
+        <ul class="list-unstyled">
+          
+          <li class="mb-3"><a class="text-dark" href="https://twitter.com/go_rrrave">twitter</a></li>
+          
+          <li class="mb-3"><a class="text-dark" href="https://www.instagram.com/go_rrrave">instagram</a></li>
+          
+          <li class="mb-3"><a class="text-dark" href="https://github.com/gouravdhar">github</a></li>
+          
+          <li class="mb-3"><a class="text-dark" href="https://in.linkedin.com/in/gouravdhar">linkedin</a></li>
+          
+        </ul>
+      </div>
+      <div class="col-lg-3 col-sm-6 mb-5 desktop-view">
+        <h6 class="mb-4">Categories</h6>
+        <ul class="list-unstyled">
+          <li class="mb-3"><a class="text-dark"
+            href="/categories/cool-tech-stuff/">Cool tech stuff</a>
+          </li>
+          <li class="mb-3"><a class="text-dark"
+            href="/categories/ethical-hacking/">Ethical hacking</a>
+          </li>
+          <li class="mb-3"><a class="text-dark"
+            href="/categories/system-design/">System design</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-sm-6 mb-5">
+        <h6 class="mb-4">Quick Links</h6>
+        <ul class="list-unstyled">
+          
+          <li class="mb-3"><a class="text-dark" href="https://gourav-dhar.com/about/">About</a></li>
+          
+          <li class="mb-3"><a class="text-dark" href="https://gourav-dhar.com/blogs/">Blogs</a></li>
+          
+          <li class="mb-3"><a class="text-dark" href="https://gourav-dhar.com/profile">Profile</a></li>
+          
+          <li class="mb-3"><a class="text-dark" href="https://gourav-dhar.com/contact/">Contact</a></li>
+          
+        </ul>
+      </div>
+      <div class="col-12 border-top py-4 text-center">
+        | Made with ❤️ by Gourav |
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var indexURL = "https://gourav-dhar.com/index.json"
+</script>
+
+<!-- JS Plugins -->
+
+<script src="https://gourav-dhar.com/plugins/jQuery/jquery.min.js"></script>
+
+<script src="https://gourav-dhar.com/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="https://gourav-dhar.com/plugins/slick/slick.min.js"></script>
+
+<script src="https://gourav-dhar.com/plugins/venobox/venobox.min.js"></script>
+
+<script src="https://gourav-dhar.com/plugins/search/fuse.min.js"></script>
+
+<script src="https://gourav-dhar.com/plugins/search/mark.js"></script>
+
+<script src="https://gourav-dhar.com/plugins/search/search.js"></script>
+
+<!-- Main Script -->
+
+<script src="https://gourav-dhar.com/js/script.min.js"></script>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
+<div id="js-cookie-box" class="cookie-box cookie-box-hide">
+	This site uses cookies. By continuing to use this website, you agree to their use. <span id="js-cookie-button" class="btn btn-sm btn-primary ml-2">I Accept</span>
+</div>
+<script>
+	(function ($) {
+		const cookieBox = document.getElementById('js-cookie-box');
+		const cookieButton = document.getElementById('js-cookie-button');
+		if (!Cookies.get('cookie-box')) {
+			cookieBox.classList.remove('cookie-box-hide');
+			cookieButton.onclick = function () {
+				Cookies.set('cookie-box', true, {
+					expires:  2 
+				});
+				cookieBox.classList.add('cookie-box-hide');
+			};
+		}
+	})(jQuery);
+</script>
+
+
+<style>
+.cookie-box {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  z-index: 9999;
+  padding: 1rem 2rem;
+  background: rgb(71, 71, 71);
+  transition: all .75s cubic-bezier(.19, 1, .22, 1);
+  color: #fdfdfd;
+}
+
+.cookie-box-hide {
+  display: none;
+}
+</style>
+
+</div></body>
+</html>
