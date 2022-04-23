@@ -12,6 +12,24 @@
     
     
     <item>
+      <title>How to perform a basic SQL Injection Attack? - Ethical Hacking | By Gourav Dhar</title>
+      <link>https://gourav-dhar.com/blogs/how-to-perform-a-basic-sql-injection-attack-ethical-hacking/</link>
+      <pubDate>Sat, 23 Apr 2022 10:07:47 +0600</pubDate>
+      
+      <guid>https://gourav-dhar.com/blogs/how-to-perform-a-basic-sql-injection-attack-ethical-hacking/</guid>
+      <description>How does a SQL Injection attack work? SQL injection attack is possible when a website exposes inputs to be taken from the user and uses the user input to directly run a query in MySQL.</description>
+    </item>
+    
+    <item>
+      <title>How hackers impersonate email-id’s : Email Spoofing and Phishing Attacks | By Gourav Dhar</title>
+      <link>https://gourav-dhar.com/blogs/how-hackers-impersonate-email-ids-email-spoofing-and-phishing-attacks/</link>
+      <pubDate>Wed, 13 Apr 2022 10:07:47 +0600</pubDate>
+      
+      <guid>https://gourav-dhar.com/blogs/how-hackers-impersonate-email-ids-email-spoofing-and-phishing-attacks/</guid>
+      <description>Email Spoofing Email Spoofing is a type of cyber-attack where the attacker sends fake emails which appear to have been sent by a legitimate/known person or entity.</description>
+    </item>
+    
+    <item>
       <title>Finding Vulnerable Info Using Google Dorks - Ethical Hacking | By Gourav Dhar</title>
       <link>https://gourav-dhar.com/blogs/finding-vulnerable-info-using-google-dorks-/</link>
       <pubDate>Thu, 31 Mar 2022 10:07:47 +0600</pubDate>
