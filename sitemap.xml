@@ -3,17 +3,47 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://gourav-dhar.com/categories/</loc>
-    <lastmod>2022-04-23T10:07:47+06:00</lastmod>
+    <loc>https://gourav-dhar.com/categories/amazon-web-services-aws/</loc>
+    <lastmod>2022-05-03T10:07:47+06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://gourav-dhar.com/categories/ethical-hacking/</loc>
-    <lastmod>2022-04-23T10:07:47+06:00</lastmod>
+    <loc>https://gourav-dhar.com/tags/aws/</loc>
+    <lastmod>2022-05-03T10:07:47+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gourav-dhar.com/categories/</loc>
+    <lastmod>2022-05-03T10:07:47+06:00</lastmod>
   </url>
   
   <url>
     <loc>https://gourav-dhar.com/</loc>
+    <lastmod>2022-05-03T10:07:47+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gourav-dhar.com/blogs/how-to-add-a-python-library-as-an-aws-layer/</loc>
+    <lastmod>2022-05-03T10:07:47+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gourav-dhar.com/tags/programming/</loc>
+    <lastmod>2022-05-03T10:07:47+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gourav-dhar.com/tags/python/</loc>
+    <lastmod>2022-05-03T10:07:47+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gourav-dhar.com/tags/</loc>
+    <lastmod>2022-05-03T10:07:47+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gourav-dhar.com/categories/ethical-hacking/</loc>
     <lastmod>2022-04-23T10:07:47+06:00</lastmod>
   </url>
   
@@ -24,16 +54,6 @@
   
   <url>
     <loc>https://gourav-dhar.com/blogs/how-to-perform-a-basic-sql-injection-attack-ethical-hacking/</loc>
-    <lastmod>2022-04-23T10:07:47+06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://gourav-dhar.com/tags/programming/</loc>
-    <lastmod>2022-04-23T10:07:47+06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://gourav-dhar.com/tags/</loc>
     <lastmod>2022-04-23T10:07:47+06:00</lastmod>
   </url>
   
@@ -64,11 +84,6 @@
   
   <url>
     <loc>https://gourav-dhar.com/blogs/i-created-an-automated-whatsapp-reply-bot/</loc>
-    <lastmod>2022-03-27T10:07:47+06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://gourav-dhar.com/tags/python/</loc>
     <lastmod>2022-03-27T10:07:47+06:00</lastmod>
   </url>
   

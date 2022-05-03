@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>How to add a Python library as an AWS layer | By Gourav Dhar</title>
+      <link>https://gourav-dhar.com/blogs/how-to-add-a-python-library-as-an-aws-layer/</link>
+      <pubDate>Tue, 03 May 2022 10:07:47 +0600</pubDate>
+      
+      <guid>https://gourav-dhar.com/blogs/how-to-add-a-python-library-as-an-aws-layer/</guid>
+      <description>Not all libraries are present in the environment provided by AWS lambda (Obviously!</description>
+    </item>
+    
+    <item>
       <title>How to perform a basic SQL Injection Attack? - Ethical Hacking | By Gourav Dhar</title>
       <link>https://gourav-dhar.com/blogs/how-to-perform-a-basic-sql-injection-attack-ethical-hacking/</link>
       <pubDate>Sat, 23 Apr 2022 10:07:47 +0600</pubDate>
