@@ -208,7 +208,7 @@
 <p>Theoretically, with this ledger system, there would be no need for actual currencies. The amount of money a person has can be found using the ledger (history of transactions). <strong>Isn&rsquo;t it interesting!</strong> This is exactly what a cryptocurrency is - a history of transactions. </p>
 <p>In the above analogy, I have used a common ledger. But this would make the system centralized since there is only one server where the is ledger maintained. To make it decentralized, I will let everyone have their own copy of the ledger.</p>
 <p>Whenever a transaction is made, the people broadcast the information out for everyone to record the entry into their private ledgers.</p>
-<p><img src="https://gourav-dhar.com/images/blogs/blockchains/3.gif" alt="gif"></p>
+<p><img src="https://gourav-dhar.com/images/blogs/blockchains/4.gif" alt="gif"></p>
 <h3 id="any-problems-with-thissystem">Any Problems with this system?</h3>
 <p>Yes of course, when any transaction is made, how can everyone be sure and believe that the transaction was actually made. <strong>Also, how can anyone be sure that everyone is also recording the same transaction and in the same order?</strong> This is the problem addressed in the original bitcoin paper by <strong>Satoshi Nakamoto-</strong> (an unknown person who developed the bitcoin protocol.)</p>
 <h3 id="the-solution-proof-ofwork">The Solution - Proof of Work</h3>
@@ -217,13 +217,13 @@ Each block will have a <code>list of transactions</code> and a <code>hash</code>
 <h2 id="blockchains">Blockchains</h2>
 <p>Now that we have a distributed ledger system, we want a way for everyone to agree on what the correct ledger is and what is the order of this transaction. The core idea is to trust the block which has the most work put into it. The transactions on the ledger are divided into blocks along with the proof of work. <strong>The proof of work</strong> is the number when added to the block makes its hash start with a certain number of 0s. </p>
 <p>A transaction is valid if it is signed by the sender. A block is valid if it has proof of work. To make sure that the order is correct, a block contains the hash of the block proceeding it.</p>
-<p><img src="https://gourav-dhar.com/images/blogs/blockchains/4.gif" alt="gif"></p>
+<p><img src="https://gourav-dhar.com/images/blogs/blockchains/5.webp" alt="image"></p>
 <p><img src="../../images/blogs/nline.webp" alt="newline"></p>
 <p>If someone changes the order of the block or the information in the block, all the subsequent hashes will change and it is impossible for anyone to do such large computational work, hence making any such change is impossible. </p>
 <p><strong>Since blocks are chained together, it is called a blockchain.</strong></p>
 <h2 id="blockchain-miners">Blockchain Miners</h2>
 <p>There are a whole bunch of people who create blocks. They listen for transactions, create a block for these transactions, do the proof of work for the blocks and broadcast the blocks so that everyone can add these transactions to their ledger. As a reward for the block creators, for each block that is accepted, the block creators are paid a certain amount in cryptocurrencies. <strong>This is just money coming out of thin air.</strong> This is called a <strong>block reward</strong>.</p>
-<p><img src="https://gourav-dhar.com/images/blogs/blockchains/5.gif" alt="gif"></p>
+<p><img src="https://gourav-dhar.com/images/blogs/blockchains/6.gif" alt="gif"></p>
 <p><img src="../../images/blogs/nline.webp" alt="newline"></p>
 <p>Creating a block is also called <strong>mining</strong> since it requires a lot of work and with each block that is accepted, new money is added to the system.  The block creators who create this block are called <strong>Miners</strong>. </p>
 <p>From a <strong>miner&rsquo;s</strong> perspective, creating blocks is highly competitive since everyone is listening to the same transactions and creating blocks. The miner whose blocks will be accepted will get rewarded.</p>
