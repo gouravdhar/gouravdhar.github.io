@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web3 on Gourav Dhar | Blogger, Software Developer | IIT Roorkee &#39;19</title>
+    <link>https://gourav-dhar.com/tags/web3/</link>
+    <description>Recent content in Web3 on Gourav Dhar | Blogger, Software Developer | IIT Roorkee &#39;19</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 08 May 2022 10:07:47 +0600</lastBuildDate>
+    
+	<atom:link href="https://gourav-dhar.com/tags/web3/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>So how do blockchains and cryptocurrencies actually work! - Exploring Web3 | By Gourav Dhar</title>
+      <link>https://gourav-dhar.com/blogs/so-how-do-blockchains-and-cryptocurrencies-actually-work-exploring-web3/</link>
+      <pubDate>Sun, 08 May 2022 10:07:47 +0600</pubDate>
+      
+      <guid>https://gourav-dhar.com/blogs/so-how-do-blockchains-and-cryptocurrencies-actually-work-exploring-web3/</guid>
+      <description>What is a blockchain? A blockchain is a system of recording transactions in a way that is not controlled by any single entity or organization, thereby reducing the chances of the data being tampered with.</description>
+    </item>
+    
+  </channel>
+</rss>

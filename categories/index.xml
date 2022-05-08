@@ -6,10 +6,19 @@
     <description>Recent content in Categories on Gourav Dhar | Blogger, Software Developer | IIT Roorkee &#39;19</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 03 May 2022 10:07:47 +0600</lastBuildDate>
+    <lastBuildDate>Sun, 08 May 2022 10:07:47 +0600</lastBuildDate>
     
 	<atom:link href="https://gourav-dhar.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Web3</title>
+      <link>https://gourav-dhar.com/categories/web3/</link>
+      <pubDate>Sun, 08 May 2022 10:07:47 +0600</pubDate>
+      
+      <guid>https://gourav-dhar.com/categories/web3/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Amazon-Web-Services-AWS</title>
